@@ -90,20 +90,20 @@ window.addEventListener("resize", resizeSidenavPanelWidth);
 function resizeSidenavPanelWidth() {
 	// Responsive Web Design: Side Navigation Push or Full-Width Overlay (Explanation): The code window.innerWidth is used so that the side navigation (mySidenav) panel opens to different widths depending on the screen size.
     if (window.innerWidth > "1400") {
-      sidenavWidth = "30%";
-      pageMarginLeftWidth = "30%";
+      sidenavWidth = "300px";
+      pageMarginLeftWidth = "300px";
 
  	  // Responsive Web Design: Side Navigation Push or Full-Width Overlay (Explanation): Closes side navigation (mySidenav) panel upon screen size change. User will need to open to see the change.
       closeNav();
     }
-    else if (window.innerWidth <= "1400"  && window.innerWidth > "800") {
-      sidenavWidth = "40%";
-      pageMarginLeftWidth = "40%";
+    else if (window.innerWidth <= "1400"  && window.innerWidth > "600") {
+      sidenavWidth = "250px";
+      pageMarginLeftWidth = "250px";
 
       // Responsive Web Design: Side Navigation Push or Full-Width Overlay (Explanation): Closes side navigation (mySidenav) panel upon screen size change. User will need to open to see the change.
       closeNav();
     }
-    else if (window.innerWidth <= "800") {
+    else if (window.innerWidth <= "600") {
       sidenavWidth = "100%";
       pageMarginLeftWidth = "0px";
 
@@ -111,6 +111,7 @@ function resizeSidenavPanelWidth() {
       closeNav();
     }
     // Responsive Web Design: Side Navigation Push or Full-Width Overlay (Explanation): Add the following one line that is in brackets if you want to see side navigation (mySidenav) panel changes automatically as the screen changes. It automatically opens the side navigation (mySidenav) panel back up as the screen width size dynamically changes. [openNav();]
+    openNav();
 }
 
 // *** Responsive Web Design: Side Navigation Push or Full-Width Overlay (1 of 2)
