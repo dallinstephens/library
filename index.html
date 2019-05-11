@@ -3,10 +3,7 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-body {
-  font-family: "Lato", sans-serif;
-}
-
+/* *Side Navigation (1 of 3): Sidenav Push Content */
 .sidenav {
   height: 100%;
   width: 0;
@@ -41,18 +38,25 @@ body {
   margin-left: 50px;
 }
 
-#main {
+#sidenavButton {
   transition: margin-left .5s;
-  padding: 16px;
+  padding: 1px;
 }
+
+/* Side Navigation Button Hover Color (1 of 1): Side navigation button (sidenavButton) turns lime color upon hover. */
+#sidenavButton :hover {color:lime;}
 
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
+
+/* ***Side Navigation (1 of 3): Sidenav Push Content */
+
 </style>
 </head>
 <body>
+<!-- *Side Navigation (2 of 3): Sidenav Push Content -->
 
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -62,22 +66,84 @@ body {
   <a href="#">Contact</a>
 </div>
 
-<div id="main">
-  <h2>Sidenav Push Example</h2>
-  <p>Click on the element below to open the side navigation menu, and push this content to the right.</p>
-  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+<div id = "sidenavButton">
+	<!-- Side Navigation Button (1 of 4): Close & open side navigationn panel (mySidenav) when clicking side navigation button (sidenavButton) [onclick="toggleNav()" replaced onclick="openNav()"] () -->
+	<span style="font-size:30px;cursor:pointer" onclick="toggleNav()">&#9776;</span>
 </div>
 
+<!-- ***Side Navigation (2 of 3): Sidenav Push Content -->
+
 <script>
+// * Responsive Web Design: Side Navigation Push or Full-Width Overlay (1 of 2)
+
+// Responsive Web Design: Side Navigation Push or Full-Width Overlay (Explanation): For larger screen widths, the side navigation panel will push. The side navigation panel width will change depending on the screen size width for better functionality. If the screen width is really small like on a phone in portrait mode, the side navigation panel will be full width; it will be overlay and cover the full screen.
+
+// Responsive Web Design: Side Navigation Push or Full-Width Overlay (Explanation): The variables represent the width when the side navigation panel (mySidenav) is open.
+var sidenavWidth;
+var pageMarginLeftWidth;
+var pageWidth;
+
+resizeSidenavPanelWidth();
+
+window.addEventListener("resize", resizeSidenavPanelWidth);
+
+function resizeSidenavPanelWidth() {
+	// Responsive Web Design: Side Navigation Push or Full-Width Overlay (Explanation): The code window.innerWidth is used so that the side navigation (mySidenav) panel opens to different widths depending on the screen size.
+    if (window.innerWidth > "1400") {
+      sidenavWidth = "30%";
+      pageMarginLeftWidth = "30%";
+
+ 	  // Responsive Web Design: Side Navigation Push or Full-Width Overlay (Explanation): Closes side navigation (mySidenav) panel upon screen size change. User will need to open to see the change.
+      closeNav();
+    }
+    else if (window.innerWidth <= "1400"  && window.innerWidth > "800") {
+      sidenavWidth = "40%";
+      pageMarginLeftWidth = "40%";
+
+      // Responsive Web Design: Side Navigation Push or Full-Width Overlay (Explanation): Closes side navigation (mySidenav) panel upon screen size change. User will need to open to see the change.
+      closeNav();
+    }
+    else if (window.innerWidth <= "800") {
+      sidenavWidth = "100%";
+      pageMarginLeftWidth = "0px";
+
+      // Responsive Web Design: Side Navigation Push or Full-Width Overlay (Explanation): Closes side navigation (mySidenav) panel upon screen size change. User will need to open to see the change.
+      closeNav();
+    }
+    // Responsive Web Design: Side Navigation Push or Full-Width Overlay (Explanation): Add the following one line that is in brackets if you want to see side navigation (mySidenav) panel changes automatically as the screen changes. It automatically opens the side navigation (mySidenav) panel back up as the screen width size dynamically changes. [openNav();]
+}
+
+// *** Responsive Web Design: Side Navigation Push or Full-Width Overlay (1 of 2)
+
+// *Side Navigation (3 of 3): Sidenav Push Content
 function openNav() {
-  document.getElementById("mySidenav").style.width = "250px";
-  document.getElementById("main").style.marginLeft = "250px";
+	// * Responsive Web Design: Side Navigation Push or Full-Width Overlay (2 of 2): Change back to the following in brackets if you want to remove 'Responsive Web Design: Side Navigation Push or Full-Width Overlay'. [document.getElementById("mySidenav").style.width = "250px"; document.getElementById("sidenavButton").style.marginLeft = "250px";]
+  	document.getElementById("mySidenav").style.width = sidenavWidth;
+  	document.getElementById("sidenavButton").style.marginLeft = pageMarginLeftWidth;
+    // *** Responsive Web Design: Side Navigation Push or Full-Width Overlay (2 of 2)
+
+	// Side Navigation Button (2 of 4): Close & open side navigationn panel (sidenav) when clicking side navigation button (sidenavButton).
+	nav = true;
 }
 
 function closeNav() {
-  document.getElementById("mySidenav").style.width = "0";
-  document.getElementById("main").style.marginLeft= "0";
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("sidenavButton").style.marginLeft= "0";
+
+	// Side Navigation Button (3 of 4): Close & open side navigationn panel (sidenav) when clicking side navigation button (sidenavButton).
+	nav = false;
 }
+// ***Side Navigation (3 of 3): Sidenav Push Content
+
+// * Side Navigation Button (4 of 4): Close & open side navigationn panel (sidenav) when clicking side navigation button (sidenavButton).
+var nav = false;
+
+function toggleNav() {
+	// Side Navigation Button (Explanation): If nav is false, then openNav(). if nav is true, then closeNav(). Executes the same as this: if (nav === false) {openNav();} else {closeNav();}.
+    nav ? closeNav() : openNav();
+}
+// *** Side Navigation Button (4 of 4): close & open side navigationn panel (sidenav) when clicking side navigation button (sidenavButton).
+
 </script>
 
 </body>
