@@ -2,6 +2,9 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Greybox for Code (1 of 4) -->
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
 <style>
 /* * Side Navigation (1 of 3): Sidenav Push Content */
 .sidenav {
@@ -18,9 +21,9 @@
 }
 
 .sidenav a {
-  padding: 8px 8px 8px 32px;
+  padding: 0px 8px 0px 8px;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 15px;
   color: white;
   display: block;
   transition: 0.3s;
@@ -65,6 +68,31 @@
 
 /* *** Side Navigation (1 of 3): Sidenav Push Content */
 
+/* * Greybox for Code (2 of 4) */
+
+.greybox {
+	margin-top:10px; margin-bottom: 8px; padding: 5px 10px 5px 10px; 		background: lightgrey; border-radius: 25px; box-shadow: 0px 0px 5px 1px #888888;
+}
+
+/* Greybox for Code (Explanation): This makes it so that text can be wrapped in pre tags. */
+pre {
+    overflow-x: auto;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+}
+
+/* *** Greybox for Code (2 of 4) */
+
+/* * JAVASCRIPT: PAGE 1 (1 of 2) */
+#myDIV {
+  border: 1px solid black;
+  margin: 5px;
+  background: lightblue;
+}
+/* *** JAVASCRIPT: PAGE 1 (1 of 2) */
 </style>
 </head>
 <body>
@@ -73,8 +101,15 @@
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <!-- * Loading Pages (1 of 3) -->
-  <a href="javascript:void(0)" onclick="loadPage('htmlPages', 'htmlPage1')">HTML: Page 1</a>
-  <a href="javascript:void(0)" onclick="loadPage('htmlPages', 'htmlPage2')">HTML: Page 2</a>
+
+  <!-- * Load My Pages Onmouseover & Load Online Pages On Click (1 of 1) -->
+
+  <a href="https://www.w3schools.com/jsref/prop_element_children.asp" target="_blank" onmouseover="loadPage('htmlPages', 'htmlPage1')">HTML: Page 1</a>
+  <a href="https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_element_children_length" target="_blank" onmouseover="loadPage('htmlPages', 'htmlPage2')">HTML: Page 2</a>
+  <a href="https://stackoverflow.com/questions/17928816/how-to-get-and-hide-siblings-in-javascript" target="_blank" onmouseover="loadPage('javascriptPages', 'javascriptPage1')">JavaScript: Page 1</a>
+
+  <!-- *** Load My Pages Onmouseover & Load Online Pages On Click (1 of 1) -->
+
   <!-- *** Loading Pages (1 of 3) -->
 </div>
 
@@ -84,15 +119,88 @@
 </div>
 
 <!-- * Loading Pages (2 of 3) -->
+<!-- HTML PAGES -->
 <main id="htmlPages" class="allPages">
-  <!-- PAGE 1 -->
+  <!-- HTML: PAGE 1 -->
   <section id="htmlPage1">
 	<div>Page 1</div>
   </section>
-  <!-- PAGE 2 -->
+  <!-- HTML: PAGE 2 -->
   <section id="htmlPage2">
 	<div>Page 2</div>
   </section>
+</main>
+
+<!-- JAVASCRIPT PAGES -->
+<main id="javascriptPages" class="allPages">
+  <!-- * JAVASCRIPT: PAGE 1 (2 of 2) -->
+  <section id="javascriptPage1">
+	<h3>Page 1 (JavaScript)</h3>
+
+    <button onclick="myFunction()">Try it</button>
+
+    <div id="myDIV">
+      <p>First p element (index 0)</p>
+      <p>Second p element (index 1)</p>
+      <p id="index2">Second p element (index 2)</p>
+      <p>Second p element (index 3)</p>
+      <p>Second p element (index 4)</p>
+      <p>Second p element (index 5)</p>
+    </div>
+
+    <script>
+    function myFunction() {
+      var i;
+      for (i = 0; i < document.getElementById("myDIV").children.length; i++) {
+        document.getElementById("myDIV").children[i].style.display = "none";
+      }
+      document.getElementById("index2").style.display="block";
+    }
+    </script>
+
+    <!-- * Greybox for Code (3 of 4) -->
+    <div class="greybox">
+
+<h4>CSS</h4>
+<pre class="w3-code cssHigh">
+#myDIV {
+  border: 1px solid black;
+  margin: 5px;
+  background: lightblue;
+}
+</pre>
+
+<h4>HTML</h4>
+<pre class="w3-code htmlHigh">
+&lt;button onclick=&quot;myFunction()&quot;&gt;Try it&lt;/button&gt;
+
+&lt;div id=&quot;myDIV&quot;&gt;
+  &lt;p&gt;First p element (index 0)&lt;/p&gt;
+  &lt;p&gt;Second p element (index 1)&lt;/p&gt;
+  &lt;p id=&quot;index2&quot;&gt;Second p element (index 2)&lt;/p&gt;
+  &lt;p&gt;Second p element (index 3)&lt;/p&gt;
+  &lt;p&gt;Second p element (index 4)&lt;/p&gt;
+  &lt;p&gt;Second p element (index 5)&lt;/p&gt;
+&lt;/div&gt;
+</pre>
+
+<h4>JavaScript</h4>
+<pre class="w3-code jsHigh">
+&lt;script&gt;
+function myFunction() {
+  var i;
+  for (i = 0; i &lt; document.getElementById(&quot;myDIV&quot;).children.length; i++) {
+    document.getElementById(&quot;myDIV&quot;).children[i].style.display = &quot;none&quot;;
+  }
+  document.getElementById(&quot;index2&quot;).style.display=&quot;block&quot;;
+}
+&lt;/script&gt;
+</pre>
+
+    </div>
+    <!-- *** Greybox for Code (3 of 4) -->
+  </section>
+  <!-- *** JAVASCRIPT: PAGE 1 (2 of 2) -->
 </main>
 <!-- *** Loading Pages (2 of 3) -->
 
@@ -214,6 +322,14 @@ loadPage("htmlPages", "");
 
 // *** Loading Pages (3 of 3)
 </script>
+
+<!-- * Greybox for Code (4 of 4) -->
+
+<script src="https://www.w3schools.com/lib/w3codecolor.js"></script>
+
+<script>w3CodeColor();</script>
+
+<!-- *** Greybox for Code (4 of 4) -->
 
 </body>
 </html>
