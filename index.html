@@ -3,7 +3,7 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-/* *Side Navigation (1 of 3): Sidenav Push Content */
+/* * Side Navigation (1 of 3): Sidenav Push Content */
 .sidenav {
   height: 100%;
   width: 0;
@@ -21,13 +21,13 @@
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
-  color: #818181;
+  color: white;
   display: block;
   transition: 0.3s;
 }
 
 .sidenav a:hover {
-  color: #f1f1f1;
+  color: red;
 }
 
 .sidenav .closebtn {
@@ -43,7 +43,7 @@
   padding: 1px;
 }
 
-/* *Left Margin Transition for Pages (1 of 3) */
+/* * Left Margin Transition for Pages (1 of 3) */
 
 /* Left Margin Transition for Pages (Explanation): Pages need a left margin transition when the side navigation panel (mySidenav) opens. Otherwise, the side navigation panel overlays the page. We do not want side navigation panel overlay of each page except when the screen size is small. */
 
@@ -53,7 +53,7 @@
   padding: 1px;
 }
 
-/* ***Left Margin Transition for Pages (1 of 3) */
+/* *** Left Margin Transition for Pages (1 of 3) */
 
 /* Side Navigation Button Hover Color (1 of 1): Side navigation button (sidenavButton) turns lime color upon hover. */
 #sidenavButton :hover {color:lime;}
@@ -63,19 +63,19 @@
   .sidenav a {font-size: 18px;}
 }
 
-/* ***Side Navigation (1 of 3): Sidenav Push Content */
+/* *** Side Navigation (1 of 3): Sidenav Push Content */
 
 </style>
 </head>
 <body>
-<!-- *Side Navigation (2 of 3): Sidenav Push Content -->
+<!-- * Side Navigation (2 of 3): Sidenav Push Content -->
 
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <!-- *Loading Pages (1 of 3) -->
+  <!-- * Loading Pages (1 of 3) -->
   <a href="javascript:void(0)" onclick="loadPage('htmlPages', 'htmlPage1')">HTML: Page 1</a>
   <a href="javascript:void(0)" onclick="loadPage('htmlPages', 'htmlPage2')">HTML: Page 2</a>
-  <!-- ***Loading Pages (1 of 3) -->
+  <!-- *** Loading Pages (1 of 3) -->
 </div>
 
 <div id = "sidenavButton">
@@ -83,7 +83,7 @@
 	<span style="font-size:30px;cursor:pointer" onclick="toggleNav()">&#9776;</span>
 </div>
 
-<!-- *Loading Pages (2 of 3) -->
+<!-- * Loading Pages (2 of 3) -->
 <main id="htmlPages" class="allPages">
   <!-- PAGE 1 -->
   <section id="htmlPage1">
@@ -94,9 +94,9 @@
 	<div>Page 2</div>
   </section>
 </main>
-<!-- ***Loading Pages (2 of 3) -->
+<!-- *** Loading Pages (2 of 3) -->
 
-<!-- ***Side Navigation (2 of 3): Sidenav Push Content -->
+<!-- *** Side Navigation (2 of 3): Sidenav Push Content -->
 
 <script>
 // * Responsive Web Design: Side Navigation Push or Full-Width Overlay (1 of 2)
@@ -141,21 +141,21 @@ function resizeSidenavPanelWidth() {
 
 // *** Responsive Web Design: Side Navigation Push or Full-Width Overlay (1 of 2)
 
-// *Side Navigation (3 of 3): Sidenav Push Content
+// * Side Navigation (3 of 3): Sidenav Push Content
 function openNav() {
 	// * Responsive Web Design: Side Navigation Push or Full-Width Overlay (2 of 2): Change back to the following in brackets if you want to remove 'Responsive Web Design: Side Navigation Push or Full-Width Overlay'. [document.getElementById("mySidenav").style.width = "250px"; document.getElementById("sidenavButton").style.marginLeft = "250px";]
   	document.getElementById("mySidenav").style.width = sidenavWidth;
   	document.getElementById("sidenavButton").style.marginLeft = pageMarginLeftWidth;
     // *** Responsive Web Design: Side Navigation Push or Full-Width Overlay (2 of 2)
 
-    // *Left Margin Transition for Pages (2 of 3)
+    // * Left Margin Transition for Pages (2 of 3)
 
 	// Left Margin Transition for Pages (Explanation): This changes the page margin left width for all pages with the class .allPages. There will be pages for each programming language. So, id="htmlPages" will have class="allPages" and id="cssPages" will have class="allPages", etc.
 	[].forEach.call(document.querySelectorAll('.allPages'), function (el) {
           el.style.marginLeft = pageMarginLeftWidth;
 	});
 
-	// ***Left Margin Transition for Pages (2 of 3)
+	// *** Left Margin Transition for Pages (2 of 3)
 
 	// Side Navigation Button (2 of 4): Close & open side navigationn panel (sidenav) when clicking side navigation button (sidenavButton).
 	nav = true;
@@ -165,19 +165,19 @@ function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
     document.getElementById("sidenavButton").style.marginLeft= "0";
 
-	// *Left Margin Transition for Pages (3 of 3)
+	// * Left Margin Transition for Pages (3 of 3)
 
 	// Left Margin Transition for Pages (Explanation): When the user clicks to close the side navigation panel (mySidenav), the left margin all of pages needs to be 0px. This changes the page margin left width for all pages to 0px with the class .allPages. There will be pages for each programming language. So, id="htmlPages" will have class="allPages" and id="cssPages" will have class="allPages", etc.
 	[].forEach.call(document.querySelectorAll('.allPages'), function (el) {
           el.style.marginLeft = "0";
 	});
 
-	// ***Left Margin Transition for Pages (3 of 3)
+	// *** Left Margin Transition for Pages (3 of 3)
 
 	// Side Navigation Button (3 of 4): Close & open side navigationn panel (sidenav) when clicking side navigation button (sidenavButton).
 	nav = false;
 }
-// ***Side Navigation (3 of 3): Sidenav Push Content
+// *** Side Navigation (3 of 3): Sidenav Push Content
 
 // * Side Navigation Button (4 of 4): Close & open side navigationn panel (sidenav) when clicking side navigation button (sidenavButton).
 
@@ -190,7 +190,7 @@ function toggleNav() {
 }
 // *** Side Navigation Button (4 of 4): close & open side navigationn panel (sidenav) when clicking side navigation button (sidenavButton).
 
-// *Loading Pages (3 of 3)
+// * Loading Pages (3 of 3)
 function loadPage(programmingLanguagePages, page) {
   // Loading Pages (Explanation): Hides all children pages for id = programmingLanguagePages (example: id = "htmlPages").
   var i;
@@ -199,12 +199,20 @@ function loadPage(programmingLanguagePages, page) {
   }
   // Loading Pages (Explanation): Shows or loads the page for id = page (example: id = "htmlPage1").
   document.getElementById(page).style.display="block";
+
+  // * Responsive Web Design: Close Side Navigation Panel Upon Click for Full-Width Overlay (1 of 1)
+
+    // Responsive Web Design: Close Side Navigation Panel Upon Click for Full-Width Overlay (Explanation): When clicking on the side navigation panel to go to a page, the full-width overlay side navigation panel needs to close. Otherwise, the user will need to click the 'X' to close it. So, this automatically will do it upon clicking to go to a page. The side navigation panel does not need to close upon clicking to go to a page when the screen width is larger.
+
+  if (window.innerWidth <= "600") {closeNav();}
+
+  // *** Responsive Web Design: Close Side Navigation Panel Upon Click for Full-Width Overlay (1 of 1)
 }
 
 // Loading Pages (Explanation): All pages need to be hidden (display = "none") initially when the page loads. So, no page is loaded.
 loadPage("htmlPages", "");
 
-// ***Loading Pages (3 of 3)
+// *** Loading Pages (3 of 3)
 </script>
 
 </body>
