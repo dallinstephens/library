@@ -44,6 +44,13 @@
 #sidenavButton {
   transition: margin-left .5s;
   padding: 1px;
+
+  /* * Headers (1 of 7) */
+  /* Headers (Explanation): The sidenavButton needs to be in front of each header. */
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  /*** * Headers (1 of 7) */
 }
 
 /* * Left Margin Transition for Pages (1 of 3) */
@@ -54,6 +61,9 @@
 .allPages {
   transition: margin-left .5s;
   padding: 1px;
+
+  /* Headers (2 of 7): This helps each page to be below the header. */
+  margin-top:25px;
 }
 
 /* *** Left Margin Transition for Pages (1 of 3) */
@@ -93,6 +103,18 @@ pre {
   background: lightblue;
 }
 /* *** JAVASCRIPT: PAGE 1 (1 of 2) */
+
+/* * Headers (3 of 7) */
+header {
+  position: fixed;
+  top: 0;
+  padding: 10px;
+  text-align: center;
+  background: #1abc9c;
+  color: black;
+  font-size: 20px;
+}
+/*** Headers (3 of 7) */
 </style>
 </head>
 <body>
@@ -104,9 +126,9 @@ pre {
 
   <!-- * Load My Pages Onmouseover & Load Online Pages On Click (1 of 1) -->
 
-  <a href="https://www.w3schools.com/jsref/prop_element_children.asp" target="_blank" onmouseover="loadPage('htmlPages', 'htmlPage1')">HTML: Page 1</a>
-  <a href="https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_element_children_length" target="_blank" onmouseover="loadPage('htmlPages', 'htmlPage2')">HTML: Page 2</a>
-  <a href="https://stackoverflow.com/questions/17928816/how-to-get-and-hide-siblings-in-javascript" target="_blank" onmouseover="loadPage('javascriptPages', 'javascriptPage1')">JavaScript: Page 1</a>
+  <a href="https://www.w3schools.com/jsref/prop_element_children.asp" target="_blank" onmouseover="loadPage('htmlPage1')">HTML: Page 1</a>
+  <a href="https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_element_children_length" target="_blank" onmouseover="loadPage('htmlPage2')">HTML: Page 2</a>
+  <a href="https://stackoverflow.com/questions/17928816/how-to-get-and-hide-siblings-in-javascript" target="_blank" onmouseover="loadPage('javascriptPage1')">JavaScript: Page 1</a>
 
   <!-- *** Load My Pages Onmouseover & Load Online Pages On Click (1 of 1) -->
 
@@ -123,11 +145,12 @@ pre {
 <main id="htmlPages" class="allPages">
   <!-- HTML: PAGE 1 -->
   <section id="htmlPage1">
-	<div>Page 1</div>
+  	/* * Headers ( of ): Header tags added where needed. */
+	<header>Page 1</header>
   </section>
   <!-- HTML: PAGE 2 -->
   <section id="htmlPage2">
-	<div>Page 2</div>
+	<header>Page 2</header>
   </section>
 </main>
 
@@ -135,7 +158,7 @@ pre {
 <main id="javascriptPages" class="allPages">
   <!-- * JAVASCRIPT: PAGE 1 (2 of 2) -->
   <section id="javascriptPage1">
-	<h3>Page 1 (JavaScript)</h3>
+	<header>Page 1 (JavaScript)</header>
 
     <button onclick="myFunction()">Try it</button>
 
@@ -226,12 +249,18 @@ function resizeSidenavPanelWidth() {
       sidenavWidth = "300px";
       pageMarginLeftWidth = "300px";
 
+ 	  /* Headers (4 of 7) */
+      pageWidth = window.innerWidth - 300;
+
  	  // Responsive Web Design: Side Navigation Push or Full-Width Overlay (Explanation): Closes side navigation (mySidenav) panel upon screen size change. User will need to open to see the change.
       closeNav();
     }
     else if (window.innerWidth <= "1400"  && window.innerWidth > "600") {
       sidenavWidth = "250px";
       pageMarginLeftWidth = "250px";
+
+ 	  /* Headers (5 of 7) */
+      pageWidth = window.innerWidth - 250;
 
       // Responsive Web Design: Side Navigation Push or Full-Width Overlay (Explanation): Closes side navigation (mySidenav) panel upon screen size change. User will need to open to see the change.
       closeNav();
@@ -240,9 +269,21 @@ function resizeSidenavPanelWidth() {
       sidenavWidth = "100%";
       pageMarginLeftWidth = "0px";
 
+      /* Headers (6 of 7) */
+      pageWidth = window.innerWidth - 0;
+
       // Responsive Web Design: Side Navigation Push or Full-Width Overlay (Explanation): Closes side navigation (mySidenav) panel upon screen size change. User will need to open to see the change.
       closeNav();
     }
+
+    /* * Headers (7 of 7) */
+    var j;
+
+    for (j = 0; j < document.getElementsByTagName("header").length; j++) {
+      document.getElementsByTagName("header")[j].style.width = pageWidth + "px";
+    }
+    /* *** Headers (7 of 7) */
+
     // Responsive Web Design: Side Navigation Push or Full-Width Overlay (Explanation): Add the following one line that is in brackets if you want to see side navigation (mySidenav) panel changes automatically as the screen changes. It automatically opens the side navigation (mySidenav) panel back up as the screen width size dynamically changes. [openNav();]
     openNav();
 }
@@ -299,14 +340,25 @@ function toggleNav() {
 // *** Side Navigation Button (4 of 4): close & open side navigationn panel (sidenav) when clicking side navigation button (sidenavButton).
 
 // * Loading Pages (3 of 3)
-function loadPage(programmingLanguagePages, page) {
-  // Loading Pages (Explanation): Hides all children pages for id = programmingLanguagePages (example: id = "htmlPages").
+function loadPage(page) {
+  // * Hide All Pages Except for Given Page Onmouseover (1 of 2)
+
+  // Hide All Pages Except for Given Page Onmouseover (Explanation): Hides all children pages for id = "htmlPages".
   var i;
-  for (i = 0; i < document.getElementById(programmingLanguagePages).children.length; i++) {
-    document.getElementById(programmingLanguagePages).children[i].style.display = "none";
+
+  for (i = 0; i < document.getElementById("htmlPages").children.length; i++) {
+    document.getElementById("htmlPages").children[i].style.display = "none";
   }
+
+  // Hide All Pages Except for Given Page Onmouseover (Explanation): Hides all children pages for id = "javascriptPages".
+  for (i = 0; i < document.getElementById("javascriptPages").children.length; i++) {
+    document.getElementById("javascriptPages").children[i].style.display = "none";
+  }
+
   // Loading Pages (Explanation): Shows or loads the page for id = page (example: id = "htmlPage1").
   document.getElementById(page).style.display="block";
+
+  // *** Hide All Pages Except for Given Page Onmouseover (1 of 2)
 
   // * Responsive Web Design: Close Side Navigation Panel Upon Click for Full-Width Overlay (1 of 1)
 
@@ -317,8 +369,12 @@ function loadPage(programmingLanguagePages, page) {
   // *** Responsive Web Design: Close Side Navigation Panel Upon Click for Full-Width Overlay (1 of 1)
 }
 
-// Loading Pages (Explanation): All pages need to be hidden (display = "none") initially when the page loads. So, no page is loaded.
-loadPage("htmlPages", "");
+// * Hide All Pages Except for Given Page Onmouseover (2 of 2)
+
+// Hide All Pages Except for Given Page Onmouseover (Explanation): This hides all pages initially.
+loadPage();
+
+// *** Hide All Pages Except for Given Page Onmouseover (2 of 2)
 
 // *** Loading Pages (3 of 3)
 </script>
