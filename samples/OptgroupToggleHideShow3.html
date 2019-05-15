@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<!-- * Optgroup Toggle Hide Show (1 of 2) -->
+
+<div id="select-container">
+  <!-- * Select Value Upon Enter Key (1 of 3) -->
+  <!-- * Select Value Upon Enter Key (Explanation): Added id="mySelect" -->
+  <select id="mySelect" multiple="multiple" style="width:300px">
+  <!-- *** Select Value Upon Enter Key (Explanation) -->
+  <!-- *** Select Value Upon Enter Key (1 of 3) -->
+    <optgroup id="group1" label="Group 1" onclick="toggleHideShowOptions('group1')">
+      <option value="1">Option 1</option>
+      <option value="2">Option 2</option>
+      <option value="3">Option 3</option>
+    </optgroup>
+    <optgroup id="group2" label="Group 2" onclick="toggleHideShowOptions('group2')">
+      <option value="4">Option 4</option>
+      <option value="5">Option 5</option>
+      <option value="6">Option 6</option>
+    </optgroup>
+  </select>
+</div>
+
+<!-- * Select Value Upon Enter Key (2 of 3) -->
+<p id="demo"></p>
+<!-- *** Select Value Upon Enter Key (2 of 3) -->
+
+<!-- *** Optgroup Toggle Hide Show (1 of 2) -->
+
+<script>
+
+// * Optgroup Toggle Hide Show (2 of 2)
+
+// * Optgroup Toggle Hide Show (Explanation): This makes it so that all groups are intially collapsed.
+var group = ["group1", "group2"];
+
+for (j = 0; j < group.length; j++) {
+
+  for (i = 0; i < document.getElementById(group[j]).children.length; i++) {
+    document.getElementById(group[j]).children[i].style.display = "none";
+  }
+
+}
+// *** Optgroup Toggle Hide Show (Explanation)
+
+// * Optgroup Toggle Hide Show (Explanation): This toggles between collapsing and expanding each group upon optgroup click.
+function toggleHideShowOptions(a) {
+  if (document.getElementById(a).children[0].style.display === "none") {
+    for (i = 0; i < document.getElementById(a).children.length; i++) {
+      document.getElementById(a).children[i].style.display = "block";
+    }
+  }
+  else {
+    for (i = 0; i < document.getElementById(a).children.length; i++) {
+      document.getElementById(a).children[i].style.display = "none";
+    }
+  }
+}
+// *** Optgroup Toggle Hide Show (Explanation)
+
+// * Select Value Upon Enter Key (3 of 3)
+document.getElementById("mySelect").onchange = function() {
+	selectOption(document.getElementById("mySelect").value);
+};
+
+function selectOption(x) {
+  document.getElementById("demo").innerHTML = "You selected: " + x;
+}
+// *** Select Value Upon Enter Key (3 of 3)
+
+// *** Optgroup Toggle Hide Show (2 of 2)
+
+</script>
+
+</body>
+</html>

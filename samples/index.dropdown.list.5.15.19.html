@@ -5,7 +5,86 @@
 <!-- Greybox for Code (1 of 4) -->
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
+<!-- * Dropdown Menu (1 of 4) -->
+
+<!-- * Dropdown Menu (Explanation): This is used to produce the down arrow. -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- *** Dropdown Menu (1 of 4) -->
+
 <style>
+/* * Dropdown Menu (2 of 4) */
+
+.navbar {
+  width: 100%;
+  overflow: hidden;
+  background-color: #333;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar a {
+  float: left;
+  font-size: 6px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  cursor: pointer;
+  font-size: 15px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 7px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
+  background-color: red;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Width of Dropdowns (1 of 1) */
+#allDropdown.dropdown-content {min-width: 53px;}
+#htmlDropdown.dropdown-content {min-width: 68px;}
+#cssDropdown.dropdown-content {min-width: 58px;}
+#jsDropdown.dropdown-content {min-width: 44px;}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 1px 17px;
+  margin-left: -9px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* * Add New Web Language to Dropdown (1 of 4) */
+.show-allDropdown, .show-htmlDropdown, .show-cssDropdown, .show-jsDropdown {
+  display: block;
+}
+/* *** Add New Web Language to Dropdown (1 of 4) */
+
+/* *** Dropdown Menu (2 of 4) */
 
 /* * Filter By Letter & or Web Language (1 of 4) */
 
@@ -33,7 +112,7 @@
 
 #mySidenav {
   position: relative;
-  top: 105px;
+  top: 59px;
   height: 82vh;
   list-style-type: none;
   padding-left: 7px;
@@ -94,9 +173,9 @@
 
 /* *** Multiple Columns (1 of 2) */
 
+/* Dropdown & Search Bars Position Fixed (1 of 3) */
+#containerDropdownSearchBars {position: fixed; z-index:1; top: 0; width: 100%;}
 
-/* Optgroup & Search Bars Position Fixed (1 of 3) */
-#containerOptgroupSearchBars {position: fixed; z-index:1; top: 0; width: 100%;}
 
 /* * Greybox for Code (2 of 4) */
 
@@ -138,160 +217,176 @@ header {
 }
 /* *** Headers (1 of 1) */
 
-#htmlPages, #javascriptPages {position: relative; margin-top: 123px; width: 80%; margin-left: 20px; font-size: 8px;}
-
-/* * Optgroup Toggle Hide Show (1 of 3) */
-#select-container {width: 100%;}
-optgroup {background: #f2f2f2;}
-optgroup:hover {background: #d9d9d9;}
-optgroup option {background: #f2f2f2;}
-/* *** Optgroup Toggle Hide Show (1 of 3) */
+#htmlPages, #javascriptPages {position: relative; margin-top: 79px; width: 80%; margin-left: 20px; font-size: 8px;}
 </style>
 </head>
 <body>
 
-<!-- Optgroup & Search Bars Position Fixed (2 of 3) -->
-<div id="containerOptgroupSearchBars">
+<!-- Dropdown & Search Bars Position Fixed (2 of 3) -->
+<div id="containerDropdownSearchBars">
+
+<!-- * Dropdown Menu (3 of 4) -->
+<div class="navbar">
+
+  <!-- * Add New Web Language to Dropdown (2 of 4) -->
 
   <!-- * Filter By Letter & or Web Language (2 of 4) -->
 
-  <!-- * Optgroup Toggle Hide Show (2 of 3) -->
-
-  <div>
-    <select id="select-container" multiple="multiple">
-      <!-- Optgroup Toggle Hide Show (Explanation): openNav opens the side navigation panel and load page hides any pages. -->
-      <optgroup id="all" label="ALL" onclick="toggleHideShowOptions('all'); openNav(); loadPage()">
-        <option value="all">All</option>
-        <option value="a ">A</option>
-        <option value="b ">B</option>
-        <option value="c ">C</option>
-        <option value="d ">D</option>
-        <option value="e ">E</option>
-        <option value="f ">F</option>
-        <option value="g ">G</option>
-        <option value="h ">H</option>
-        <option value="i ">I</option>
-        <option value="j ">J</option>
-        <option value="k ">K</option>
-        <option value="l ">L</option>
-        <option value="m ">M</option>
-        <option value="n ">N</option>
-        <option value="o ">O</option>
-        <option value="p ">P</option>
-        <option value="q ">Q</option>
-        <option value="r ">R</option>
-        <option value="s ">S</option>
-        <option value="t ">T</option>
-        <option value="u ">U</option>
-        <option value="v ">V</option>
-        <option value="w ">W</option>
-        <option value="x ">X</option>
-        <option value="y ">Y</option>
-        <option value="z ">Z</option>
-      </optgroup>
-      <optgroup id="html" label="HTML" onclick="toggleHideShowOptions('html'); openNav(); loadPage()">
-        <option value="html">All</option>
-        <option value="a html">A</option>
-        <option value="b html">B</option>
-        <option value="c html">C</option>
-        <option value="d html">D</option>
-        <option value="e html">E</option>
-        <option value="f html">F</option>
-        <option value="g html">G</option>
-        <option value="h html">H</option>
-        <option value="i html">I</option>
-        <option value="j html">J</option>
-        <option value="k html">K</option>
-        <option value="l html">L</option>
-        <option value="m html">M</option>
-        <option value="n html">N</option>
-        <option value="o html">O</option>
-        <option value="p html">P</option>
-        <option value="q html">Q</option>
-        <option value="r html">R</option>
-        <option value="s html">S</option>
-        <option value="t html">T</option>
-        <option value="u html">U</option>
-        <option value="v html">V</option>
-        <option value="w html">W</option>
-        <option value="x html">X</option>
-        <option value="y html">Y</option>
-        <option value="z html">Z</option>
-      </optgroup>
-      <optgroup id="css" label="CSS" onclick="toggleHideShowOptions('css'); openNav(); loadPage()">
-        <option value="css">All</option>
-        <option value="a css">A</option>
-        <option value="b css">B</option>
-        <option value="c css">C</option>
-        <option value="d css">D</option>
-        <option value="e css">E</option>
-        <option value="f css">F</option>
-        <option value="g css">G</option>
-        <option value="h css">H</option>
-        <option value="i css">I</option>
-        <option value="j css">J</option>
-        <option value="k css">K</option>
-        <option value="l css">L</option>
-        <option value="m css">M</option>
-        <option value="n css">N</option>
-        <option value="o css">O</option>
-        <option value="p css">P</option>
-        <option value="q css">Q</option>
-        <option value="r css">R</option>
-        <option value="s css">S</option>
-        <option value="t css">T</option>
-        <option value="u css">U</option>
-        <option value="v css">V</option>
-        <option value="w css">W</option>
-        <option value="x css">X</option>
-        <option value="y css">Y</option>
-        <option value="z css">Z</option>
-      </optgroup>
-      <optgroup id="js" label="JS" onclick="toggleHideShowOptions('js'); openNav(); loadPage()">
-        <option value="js">All</option>
-        <option value="a js">A</option>
-        <option value="b js">B</option>
-        <option value="c js">C</option>
-        <option value="d js">D</option>
-        <option value="e js">E</option>
-        <option value="f js">F</option>
-        <option value="g js">G</option>
-        <option value="h js">H</option>
-        <option value="i js">I</option>
-        <option value="j js">J</option>
-        <option value="k js">K</option>
-        <option value="l js">L</option>
-        <option value="m js">M</option>
-        <option value="n js">N</option>
-        <option value="o js">O</option>
-        <option value="p js">P</option>
-        <option value="q js">Q</option>
-        <option value="r js">R</option>
-        <option value="s js">S</option>
-        <option value="t js">T</option>
-        <option value="u js">U</option>
-        <option value="v js">V</option>
-        <option value="w js">W</option>
-        <option value="x js">X</option>
-        <option value="y js">Y</option>
-        <option value="z js">Z</option>
-      </optgroup>
-    </select>
+  <div class="dropdown">
+    <button class="dropbtn" onclick="allDropdownFunction()">ALL
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content" id="allDropdown">
+      <a href="javascript:void(0)" onclick="filterSelection('all')">All</a>
+      <a href="javascript:void(0)" onclick="filterSelection('a ')">A</a>
+      <a href="javascript:void(0)" onclick="filterSelection('b ')">B</a>
+      <a href="javascript:void(0)" onclick="filterSelection('c ')">C</a>
+      <a href="javascript:void(0)" onclick="filterSelection('d ')">D</a>
+      <a href="javascript:void(0)" onclick="filterSelection('e ')">E</a>
+      <a href="javascript:void(0)" onclick="filterSelection('f ')">F</a>
+      <a href="javascript:void(0)" onclick="filterSelection('g ')">G</a>
+      <a href="javascript:void(0)" onclick="filterSelection('h ')">H</a>
+      <a href="javascript:void(0)" onclick="filterSelection('i ')">I</a>
+      <a href="javascript:void(0)" onclick="filterSelection('j ')">J</a>
+      <a href="javascript:void(0)" onclick="filterSelection('k ')">K</a>
+      <a href="javascript:void(0)" onclick="filterSelection('l ')">L</a>
+      <a href="javascript:void(0)" onclick="filterSelection('m ')">M</a>
+      <a href="javascript:void(0)" onclick="filterSelection('n ')">N</a>
+      <a href="javascript:void(0)" onclick="filterSelection('o ')">O</a>
+      <a href="javascript:void(0)" onclick="filterSelection('p ')">P</a>
+      <a href="javascript:void(0)" onclick="filterSelection('q ')">Q</a>
+      <a href="javascript:void(0)" onclick="filterSelection('r ')">R</a>
+      <a href="javascript:void(0)" onclick="filterSelection('s ')">S</a>
+      <a href="javascript:void(0)" onclick="filterSelection('t ')">T</a>
+      <a href="javascript:void(0)" onclick="filterSelection('u ')">U</a>
+      <a href="javascript:void(0)" onclick="filterSelection('v ')">V</a>
+      <a href="javascript:void(0)" onclick="filterSelection('w ')">W</a>
+      <a href="javascript:void(0)" onclick="filterSelection('x ')">X</a>
+      <a href="javascript:void(0)" onclick="filterSelection('y ')">Y</a>
+      <a href="javascript:void(0)" onclick="filterSelection('z ')">Z</a>
+    </div>
   </div>
 
-  <!-- *** Optgroup Toggle Hide Show (2 of 3) -->
+  <div class="dropdown">
+    <button class="dropbtn" onclick="htmlDropdownFunction()">HTML
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content" id="htmlDropdown">
+      <a href="javascript:void(0)" onclick="filterSelection('html')">All</a>
+      <a href="javascript:void(0)" onclick="filterSelection('a html')">A</a>
+      <a href="javascript:void(0)" onclick="filterSelection('b html')">B</a>
+      <a href="javascript:void(0)" onclick="filterSelection('c html')">C</a>
+      <a href="javascript:void(0)" onclick="filterSelection('d html')">D</a>
+      <a href="javascript:void(0)" onclick="filterSelection('e html')">E</a>
+      <a href="javascript:void(0)" onclick="filterSelection('f html')">F</a>
+      <a href="javascript:void(0)" onclick="filterSelection('g html')">G</a>
+      <a href="javascript:void(0)" onclick="filterSelection('h html')">H</a>
+      <a href="javascript:void(0)" onclick="filterSelection('i html')">I</a>
+      <a href="javascript:void(0)" onclick="filterSelection('j html')">J</a>
+      <a href="javascript:void(0)" onclick="filterSelection('k html')">K</a>
+      <a href="javascript:void(0)" onclick="filterSelection('l html')">L</a>
+      <a href="javascript:void(0)" onclick="filterSelection('m html')">M</a>
+      <a href="javascript:void(0)" onclick="filterSelection('n html')">N</a>
+      <a href="javascript:void(0)" onclick="filterSelection('o html')">O</a>
+      <a href="javascript:void(0)" onclick="filterSelection('p html')">P</a>
+      <a href="javascript:void(0)" onclick="filterSelection('q html')">Q</a>
+      <a href="javascript:void(0)" onclick="filterSelection('r html')">R</a>
+      <a href="javascript:void(0)" onclick="filterSelection('s html')">S</a>
+      <a href="javascript:void(0)" onclick="filterSelection('t html')">T</a>
+      <a href="javascript:void(0)" onclick="filterSelection('u html')">U</a>
+      <a href="javascript:void(0)" onclick="filterSelection('v html')">V</a>
+      <a href="javascript:void(0)" onclick="filterSelection('w html')">W</a>
+      <a href="javascript:void(0)" onclick="filterSelection('x html')">X</a>
+      <a href="javascript:void(0)" onclick="filterSelection('y html')">Y</a>
+      <a href="javascript:void(0)" onclick="filterSelection('z html')">Z</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <button class="dropbtn" onclick="cssDropdownFunction()">CSS
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content" id="cssDropdown">
+      <a href="javascript:void(0)" onclick="filterSelection('css')">All</a>
+      <a href="javascript:void(0)" onclick="filterSelection('a css')">A</a>
+      <a href="javascript:void(0)" onclick="filterSelection('b css')">B</a>
+      <a href="javascript:void(0)" onclick="filterSelection('c css')">C</a>
+      <a href="javascript:void(0)" onclick="filterSelection('d css')">D</a>
+      <a href="javascript:void(0)" onclick="filterSelection('e css')">E</a>
+      <a href="javascript:void(0)" onclick="filterSelection('f css')">F</a>
+      <a href="javascript:void(0)" onclick="filterSelection('g css')">G</a>
+      <a href="javascript:void(0)" onclick="filterSelection('h css')">H</a>
+      <a href="javascript:void(0)" onclick="filterSelection('i css')">I</a>
+      <a href="javascript:void(0)" onclick="filterSelection('j css')">J</a>
+      <a href="javascript:void(0)" onclick="filterSelection('k css')">K</a>
+      <a href="javascript:void(0)" onclick="filterSelection('l css')">L</a>
+      <a href="javascript:void(0)" onclick="filterSelection('m css')">M</a>
+      <a href="javascript:void(0)" onclick="filterSelection('n css')">N</a>
+      <a href="javascript:void(0)" onclick="filterSelection('o css')">O</a>
+      <a href="javascript:void(0)" onclick="filterSelection('p css')">P</a>
+      <a href="javascript:void(0)" onclick="filterSelection('q css')">Q</a>
+      <a href="javascript:void(0)" onclick="filterSelection('r css')">R</a>
+      <a href="javascript:void(0)" onclick="filterSelection('s css')">S</a>
+      <a href="javascript:void(0)" onclick="filterSelection('t css')">T</a>
+      <a href="javascript:void(0)" onclick="filterSelection('u css')">U</a>
+      <a href="javascript:void(0)" onclick="filterSelection('v css')">V</a>
+      <a href="javascript:void(0)" onclick="filterSelection('w css')">W</a>
+      <a href="javascript:void(0)" onclick="filterSelection('x css')">X</a>
+      <a href="javascript:void(0)" onclick="filterSelection('y css')">Y</a>
+      <a href="javascript:void(0)" onclick="filterSelection('z css')">Z</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <button class="dropbtn" onclick="jsDropdownFunction()">JS
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content" id="jsDropdown">
+      <a href="javascript:void(0)" onclick="filterSelection('js')">All</a>
+      <a href="javascript:void(0)" onclick="filterSelection('a js')">A</a>
+      <a href="javascript:void(0)" onclick="filterSelection('b js')">B</a>
+      <a href="javascript:void(0)" onclick="filterSelection('c js')">C</a>
+      <a href="javascript:void(0)" onclick="filterSelection('d js')">D</a>
+      <a href="javascript:void(0)" onclick="filterSelection('e js')">E</a>
+      <a href="javascript:void(0)" onclick="filterSelection('f js')">F</a>
+      <a href="javascript:void(0)" onclick="filterSelection('g js')">G</a>
+      <a href="javascript:void(0)" onclick="filterSelection('h js')">H</a>
+      <a href="javascript:void(0)" onclick="filterSelection('i js')">I</a>
+      <a href="javascript:void(0)" onclick="filterSelection('j js')">J</a>
+      <a href="javascript:void(0)" onclick="filterSelection('k js')">K</a>
+      <a href="javascript:void(0)" onclick="filterSelection('l js')">L</a>
+      <a href="javascript:void(0)" onclick="filterSelection('m js')">M</a>
+      <a href="javascript:void(0)" onclick="filterSelection('n js')">N</a>
+      <a href="javascript:void(0)" onclick="filterSelection('o js')">O</a>
+      <a href="javascript:void(0)" onclick="filterSelection('p js')">P</a>
+      <a href="javascript:void(0)" onclick="filterSelection('q js')">Q</a>
+      <a href="javascript:void(0)" onclick="filterSelection('r js')">R</a>
+      <a href="javascript:void(0)" onclick="filterSelection('s js')">S</a>
+      <a href="javascript:void(0)" onclick="filterSelection('t js')">T</a>
+      <a href="javascript:void(0)" onclick="filterSelection('u js')">U</a>
+      <a href="javascript:void(0)" onclick="filterSelection('v js')">V</a>
+      <a href="javascript:void(0)" onclick="filterSelection('w js')">W</a>
+      <a href="javascript:void(0)" onclick="filterSelection('x js')">X</a>
+      <a href="javascript:void(0)" onclick="filterSelection('y js')">Y</a>
+      <a href="javascript:void(0)" onclick="filterSelection('z js')">Z</a>
+    </div>
+  </div>
+
+  <!-- *** Add New Web Language to Dropdown (2 of 4) -->
+
+</div>
+
+<!-- *** Dropdown Menu (3 of 4) -->
 
 <!-- * Search Bar (2 of 3) -->
 
 <!-- Search Bar (Explanation): This creates the search bar. Autocomplete="off" is used as to not remember user input and offer suggestions. -->
-
-<!-- Open side navigation upon click of search button. (1 of 5) -->
-
-<input type="text" id="myInput" onkeyup="searchList()" placeholder="Search" title="Type in a name" onfocus="openNav(); loadPage()" autocomplete="off">
+<!-- Open side navigation upon click of dropdown or search button. (1 of 5) -->
+<input type="text" id="myInput" onkeyup="searchList()" placeholder="Search" title="Type in a name" onfocus="openNav()" onfocusout="openNav()" autocomplete="off">
 
 <!-- *** Search Bar (2 of 3) -->
 
-<!-- Optgroup & Search Bars Position Fixed (2 of 3) -->
+<!-- Dropdown & Search Bars Position Fixed (2 of 3) -->
 </div>
 
 <!-- Filter By Letter & or Web Language (Explanation): The classes added are needed for filtering. The classes are added in the javascript section. -->
@@ -299,12 +394,9 @@ optgroup option {background: #f2f2f2;}
 <!-- * Multiple Columns (2 of 2) -->
 
 <!-- Multiple Columns (Explanation): The class="multiple-columns" was added. -->
-
 <!-- Create & Alphabetize Side Navigation List (1 of 2) -->
-
 <!-- Loading Pages (1 of 3): This is accomplished in the javascript where for example
 <a href="javascript:void(0)" target="_blank" onclick="loadPage('htmlPage1')">HTML: Page 1</a> The class="sidenav" is needed to be in the side navigation panel. -->
-
 <ul id="mySidenav" class="multiple-columns"></ul>
 
 <!-- *** Multiple Columns (2 of 2) -->
@@ -312,7 +404,6 @@ optgroup option {background: #f2f2f2;}
 <!-- *** Filter By Letter & or Web Language (2 of 4) -->
 
 <!-- * Loading Pages (2 of 3) -->
-
 <!-- HTML PAGES -->
 <main id="htmlPages">
   <!-- HTML: PAGE 1 -->
@@ -400,46 +491,94 @@ function myFunction() {
 
 <script>
 
-// * Optgroup Toggle Hide Show (3 of 3)
+// * Dropdown Menu (4 of 4)
 
-// * Optgroup Toggle Hide Show (Explanation): This makes it so that all groups are intially collapsed.
-var optgroup = ["all", "html", "css", "js"];
+/* Dropdown Menu (Explanation): When the user clicks on the button,
+toggle between hiding and showing the dropdown content. */
 
-for (j = 0; j < optgroup.length; j++) {
+// * Add New Web Language to Dropdown (3 of 4)
 
-  for (i = 0; i < document.getElementById(optgroup[j]).children.length; i++) {
-    document.getElementById(optgroup[j]).children[i].style.display = "none";
-  }
+function allDropdownFunction() {
+  document.getElementById("allDropdown").classList.toggle("show-allDropdown");
+
+  // Open side navigation upon click of dropdown or search button. (2 of 5)
+  openNav();
+
+  // Hide all pages upon click of dropdown or search button. (1 of 4)
+  loadPage();
 
 }
-// *** Optgroup Toggle Hide Show (Explanation)
 
-// * Optgroup Toggle Hide Show (Explanation): This toggles between collapsing and expanding each group upon optgroup click.
-function toggleHideShowOptions(a) {
-  if (document.getElementById(a).children[0].style.display === "none") {
-    for (i = 0; i < document.getElementById(a).children.length; i++) {
-      document.getElementById(a).children[i].style.display = "block";
+function htmlDropdownFunction() {
+  document.getElementById("htmlDropdown").classList.toggle("show-htmlDropdown");
+
+  // Open side navigation upon click of dropdown or search button. (3 of 5)
+  openNav();
+
+  // Hide all pages upon click of dropdown or search button. (2 of 4)
+  loadPage();
+
+}
+
+function cssDropdownFunction() {
+  document.getElementById("cssDropdown").classList.toggle("show-cssDropdown");
+
+  // Open side navigation upon click of dropdown or search button. (4 of 5)
+  openNav();
+
+  // Hide all pages upon click of dropdown or search button. (3 of 4)
+  loadPage();
+
+}
+
+function jsDropdownFunction() {
+  document.getElementById("jsDropdown").classList.toggle("show-jsDropdown");
+
+  // Open side navigation upon click of dropdown or search button. (5 of 5)
+  openNav();
+
+  // Hide all pages upon click of dropdown or search button. (4 of 4)
+  loadPage();
+
+}
+
+// *** Add New Web Language to Dropdown (3 of 4)
+
+// Dropdown Menu (Explanation): Close the dropdown if the user clicks outside of it
+window.onclick = function(e) {
+  if (!e.target.matches('.dropbtn')) {
+
+    // * Add New Web Language to Dropdown (4 of 4)
+
+  	var allDropdownVar = document.getElementById("allDropdown");
+    if (allDropdownVar.classList.contains('show-allDropdown')) {
+      allDropdownVar.classList.remove('show-allDropdown');
     }
-  }
-  else {
-    for (i = 0; i < document.getElementById(a).children.length; i++) {
-      document.getElementById(a).children[i].style.display = "none";
+
+  	var htmlDropdownVar = document.getElementById("htmlDropdown");
+    if (htmlDropdownVar.classList.contains('show-htmlDropdown')) {
+      htmlDropdownVar.classList.remove('show-htmlDropdown');
     }
+
+  	var cssDropdownVar = document.getElementById("cssDropdown");
+    if (cssDropdownVar.classList.contains('show-cssDropdown')) {
+      cssDropdownVar.classList.remove('show-cssDropdown');
+    }
+
+  	var jsDropdownVar = document.getElementById("jsDropdown");
+    if (jsDropdownVar.classList.contains('show-jsDropdown')) {
+      jsDropdownVar.classList.remove('show-jsDropdown');
+    }
+
+    // *** Add New Web Language to Dropdown (4 of 4)
   }
 }
-// *** Optgroup Toggle Hide Show (Explanation)
 
-// *** Optgroup Toggle Hide Show (3 of 3)
+// *** Dropdown Menu (4 of 4)
 
 // * Filter By Letter & or Web Language (3 of 4)
 
 // Filter By Letter & or Web Language (Explanation): This whole section was taken from w3schools. The only adjustment was changing the name filterDIV to filter.
-
-// * Select & Filter Value With Onchange (1 of 1)
-document.getElementById("select-container").onchange = function() {
-	filterSelection(document.getElementById("select-container").value);
-};
-// *** Select & Filter Value With Onchange (1 of 1)
 
 function filterSelection(c) {
   var x, i;
@@ -501,7 +640,6 @@ function searchList() {
 
 // Create & Alphabetize Side Navigation List (Explanation): This is arrays combined into one single array.
 var list = [
-  {topic: "error3 JS", class: "e js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
   {topic: "Error2 JS", class: "e js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
   {topic: "Date JS", class: "d js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
   {topic: "Boolean JS", class: "b js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
