@@ -5,16 +5,178 @@
 <!-- Greybox for Code (1 of 4) -->
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
+<!-- * Dropdown Menu (1 of 4) -->
+
+<!-- * Dropdown Menu (Explanation): This is used to produce the down arrow. -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- *** Dropdown Menu (1 of 4) -->
+
 <style>
-/* * Side Navigation (1 of 3): Sidenav Push Content */
+/* * Dropdown Menu (2 of 4) */
+
+.navbar {
+  width: 100%;
+  overflow: hidden;
+  background-color: #333;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  cursor: pointer;
+  font-size: 15px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 7px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
+  background-color: red;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 86px;
+  background-color: #f9f9f9;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 1px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* * Add New Web Language to Dropdown (1 of 4) */
+.show-allDropdown, .show-htmlDropdown, .show-cssDropdown, .show-jsDropdown {
+  display: block;
+}
+/* *** Add New Web Language to Dropdown (1 of 4) */
+
+/* *** Dropdown Menu (2 of 4) */
+
+/* * Filter By Letter & or Web Language (1 of 4) */
+
+/* Filter By Letter & or Web Language (Explanation): The class .filter is used to hide all items in the side navigation list and .show is added specifically with javascript to show specific items since .show is added and removed. */
+
+.filter {display: none;}
+
+.show {display: block;}
+
+/* *** Filter By Letter & or Web Language (1 of 4) */
+
+/* * Search Bar (1 of 3) */
+
+/* Search Bar (Explanation): This creates the styling for the search bar and the side navigation list. */
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  top: 54px;
+  width: 100%;
+  font-size: 15px;
+  padding: 7px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#mySidenav {
+  z-index: 1;
+  position: relative;
+  top: 74px;
+  height:87vh;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  overflow-x: scroll;
+}
+
+#mySidenav li a {
+  padding: 7px;
+  text-decoration: none;
+  font-size: 15px;
+  color: black;
+}
+
+#mySidenav li a:hover:not(.header) {
+  background-color: #eee;
+}
+
+/* *** Search Bar (1 of 3) */
+
+/* * Multiple Columns (1 of 2) */
+
+/* * Reponsive Web Design For Multiple Columns (1 of 1) */
+
+/* Reponsive Web Design For Multiple Columns (Explanation): When the width of the screen can no longer support 2 columns at column-width: 200px; for example, there will be only one column. At that point that only one column appears, the height is changed to 100% for example as in
+
+@media only screen and (max-width: 470px) {
+  .multiple-columns {
+    height:100%;
+  }
+}
+
+*/
+.multiple-columns {
+  -webkit-column-count: 4; /* Chrome, Safari, Opera */
+  -moz-column-count: 4; /* Firefox */
+  column-count: 4;
+  -webkit-column-width: 200px; /* Chrome, Safari, Opera */
+  -moz-column-width: 200px; /* Firefox */
+  column-width: 212px;
+  -webkit-column-gap: 15px; /* Chrome, Safari, Opera */
+  -moz-column-gap: 15px; /* Firefox */
+  column-gap: 15px;
+  /* Reponsive Web Design For Multiple Columns (Explanation): column-fill: auto; is used so that each column is filled until it reaches the height and it does this until it runs out of content. */
+  -moz-column-fill: auto;
+  column-fill: auto;
+}
+
+/* *** Reponsive Web Design For Multiple Columns (1 of 1) */
+@media only screen and (max-width: 470px) {
+  .multiple-columns {
+    height:100%;
+  }
+}
+
+/* *** Multiple Columns (1 of 2) */
+
+/* Dropdown & Search Bars Position Fixed (1 of 3) */
+#containerDropdownSearchBars {position: fixed; top: 0; width: 100%; z-index: 2;}
+
+/* * Side Navigation Full Overlay (1 of 3) */
 .sidenav {
   height: 100%;
   width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #111;
+  background-color: white;
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
@@ -25,7 +187,6 @@
   text-decoration: none;
   font-size: 15px;
   color: white;
-  display: block;
   transition: 0.3s;
 }
 
@@ -41,42 +202,12 @@
   margin-left: 50px;
 }
 
-#sidenavButton {
-  transition: margin-left .5s;
-  padding: 1px;
-
-  /* * Headers (1 of 7) */
-  /* Headers (Explanation): The sidenavButton needs to be in front of each header. */
-  position: fixed;
-  top: 0;
-  z-index: 1;
-  /*** * Headers (1 of 7) */
-}
-
-/* * Left Margin Transition for Pages (1 of 3) */
-
-/* Left Margin Transition for Pages (Explanation): Pages need a left margin transition when the side navigation panel (mySidenav) opens. Otherwise, the side navigation panel overlays the page. We do not want side navigation panel overlay of each page except when the screen size is small. */
-
-/* Left Margin Transition for Pages (Explanation): This is needed so that each page shifts at the same speed as the side navigation panel. */
-.allPages {
-  transition: margin-left .5s;
-  padding: 1px;
-
-  /* Headers (2 of 7): This helps each page to be below the header. */
-  margin-top:25px;
-}
-
-/* *** Left Margin Transition for Pages (1 of 3) */
-
-/* Side Navigation Button Hover Color (1 of 1): Side navigation button (sidenavButton) turns lime color upon hover. */
-#sidenavButton :hover {color:lime;}
-
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
 
-/* *** Side Navigation (1 of 3): Sidenav Push Content */
+/* *** Side Navigation Full Overlay (1 of 3) */
 
 /* * Greybox for Code (2 of 4) */
 
@@ -104,9 +235,9 @@ pre {
 }
 /* *** JAVASCRIPT: PAGE 1 (1 of 2) */
 
-/* * Headers (3 of 7) */
+/* * Headers (1 of 1) */
 header {
-  position: fixed;
+  position: relative;
   top: 0;
   padding: 10px;
   text-align: center;
@@ -114,38 +245,200 @@ header {
   color: black;
   font-size: 20px;
 }
-/*** Headers (3 of 7) */
+/* *** Headers (1 of 1) */
+
+#htmlPages, #javascriptPages {position: absolute; top: 74px; width: 100%;}
 </style>
 </head>
 <body>
-<!-- * Side Navigation (2 of 3): Sidenav Push Content -->
 
-<div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <!-- * Loading Pages (1 of 3) -->
+<!-- Dropdown & Search Bars Position Fixed (2 of 3) -->
+<div id="containerDropdownSearchBars">
 
-  <!-- * Load My Pages Onmouseover & Load Online Pages On Click (1 of 1) -->
+<!-- * Dropdown Menu (3 of 4) -->
+<div class="navbar">
 
-  <a href="https://www.w3schools.com/jsref/prop_element_children.asp" target="_blank" onmouseover="loadPage('htmlPage1')">HTML: Page 1</a>
-  <a href="https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_element_children_length" target="_blank" onmouseover="loadPage('htmlPage2')">HTML: Page 2</a>
-  <a href="https://stackoverflow.com/questions/17928816/how-to-get-and-hide-siblings-in-javascript" target="_blank" onmouseover="loadPage('javascriptPage1')">JavaScript: Page 1</a>
+  <!-- * Add New Web Language to Dropdown (2 of 4) -->
 
-  <!-- *** Load My Pages Onmouseover & Load Online Pages On Click (1 of 1) -->
+  <!-- * Filter By Letter & or Web Language (2 of 4) -->
 
-  <!-- *** Loading Pages (1 of 3) -->
+  <div class="dropdown">
+    <button class="dropbtn" onclick="allDropdownFunction()">ALL
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content" id="allDropdown">
+      <a href="javascript:void(0)" onclick="filterSelection('all')">All</a>
+      <a href="javascript:void(0)" onclick="filterSelection('a ')">A</a>
+      <a href="javascript:void(0)" onclick="filterSelection('b ')">B</a>
+      <a href="javascript:void(0)" onclick="filterSelection('c ')">C</a>
+      <a href="javascript:void(0)" onclick="filterSelection('d ')">D</a>
+      <a href="javascript:void(0)" onclick="filterSelection('e ')">E</a>
+      <a href="javascript:void(0)" onclick="filterSelection('f ')">F</a>
+      <a href="javascript:void(0)" onclick="filterSelection('g ')">G</a>
+      <a href="javascript:void(0)" onclick="filterSelection('h ')">H</a>
+      <a href="javascript:void(0)" onclick="filterSelection('i ')">I</a>
+      <a href="javascript:void(0)" onclick="filterSelection('j ')">J</a>
+      <a href="javascript:void(0)" onclick="filterSelection('k ')">K</a>
+      <a href="javascript:void(0)" onclick="filterSelection('l ')">L</a>
+      <a href="javascript:void(0)" onclick="filterSelection('m ')">M</a>
+      <a href="javascript:void(0)" onclick="filterSelection('n ')">N</a>
+      <a href="javascript:void(0)" onclick="filterSelection('o ')">O</a>
+      <a href="javascript:void(0)" onclick="filterSelection('p ')">P</a>
+      <a href="javascript:void(0)" onclick="filterSelection('q ')">Q</a>
+      <a href="javascript:void(0)" onclick="filterSelection('r ')">R</a>
+      <a href="javascript:void(0)" onclick="filterSelection('s ')">S</a>
+      <a href="javascript:void(0)" onclick="filterSelection('t ')">T</a>
+      <a href="javascript:void(0)" onclick="filterSelection('u ')">U</a>
+      <a href="javascript:void(0)" onclick="filterSelection('v ')">V</a>
+      <a href="javascript:void(0)" onclick="filterSelection('w ')">W</a>
+      <a href="javascript:void(0)" onclick="filterSelection('x ')">X</a>
+      <a href="javascript:void(0)" onclick="filterSelection('y ')">Y</a>
+      <a href="javascript:void(0)" onclick="filterSelection('z ')">Z</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <button class="dropbtn" onclick="htmlDropdownFunction()">HTML
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content" id="htmlDropdown">
+      <a href="javascript:void(0)" onclick="filterSelection('html')">All</a>
+      <a href="javascript:void(0)" onclick="filterSelection('a html')">A</a>
+      <a href="javascript:void(0)" onclick="filterSelection('b html')">B</a>
+      <a href="javascript:void(0)" onclick="filterSelection('c html')">C</a>
+      <a href="javascript:void(0)" onclick="filterSelection('d html')">D</a>
+      <a href="javascript:void(0)" onclick="filterSelection('e html')">E</a>
+      <a href="javascript:void(0)" onclick="filterSelection('f html')">F</a>
+      <a href="javascript:void(0)" onclick="filterSelection('g html')">G</a>
+      <a href="javascript:void(0)" onclick="filterSelection('h html')">H</a>
+      <a href="javascript:void(0)" onclick="filterSelection('i html')">I</a>
+      <a href="javascript:void(0)" onclick="filterSelection('j html')">J</a>
+      <a href="javascript:void(0)" onclick="filterSelection('k html')">K</a>
+      <a href="javascript:void(0)" onclick="filterSelection('l html')">L</a>
+      <a href="javascript:void(0)" onclick="filterSelection('m html')">M</a>
+      <a href="javascript:void(0)" onclick="filterSelection('n html')">N</a>
+      <a href="javascript:void(0)" onclick="filterSelection('o html')">O</a>
+      <a href="javascript:void(0)" onclick="filterSelection('p html')">P</a>
+      <a href="javascript:void(0)" onclick="filterSelection('q html')">Q</a>
+      <a href="javascript:void(0)" onclick="filterSelection('r html')">R</a>
+      <a href="javascript:void(0)" onclick="filterSelection('s html')">S</a>
+      <a href="javascript:void(0)" onclick="filterSelection('t html')">T</a>
+      <a href="javascript:void(0)" onclick="filterSelection('u html')">U</a>
+      <a href="javascript:void(0)" onclick="filterSelection('v html')">V</a>
+      <a href="javascript:void(0)" onclick="filterSelection('w html')">W</a>
+      <a href="javascript:void(0)" onclick="filterSelection('x html')">X</a>
+      <a href="javascript:void(0)" onclick="filterSelection('y html')">Y</a>
+      <a href="javascript:void(0)" onclick="filterSelection('z html')">Z</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <button class="dropbtn" onclick="cssDropdownFunction()">CSS
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content" id="cssDropdown">
+      <a href="javascript:void(0)" onclick="filterSelection('css')">All</a>
+      <a href="javascript:void(0)" onclick="filterSelection('a css')">A</a>
+      <a href="javascript:void(0)" onclick="filterSelection('b css')">B</a>
+      <a href="javascript:void(0)" onclick="filterSelection('c css')">C</a>
+      <a href="javascript:void(0)" onclick="filterSelection('d css')">D</a>
+      <a href="javascript:void(0)" onclick="filterSelection('e css')">E</a>
+      <a href="javascript:void(0)" onclick="filterSelection('f css')">F</a>
+      <a href="javascript:void(0)" onclick="filterSelection('g css')">G</a>
+      <a href="javascript:void(0)" onclick="filterSelection('h css')">H</a>
+      <a href="javascript:void(0)" onclick="filterSelection('i css')">I</a>
+      <a href="javascript:void(0)" onclick="filterSelection('j css')">J</a>
+      <a href="javascript:void(0)" onclick="filterSelection('k css')">K</a>
+      <a href="javascript:void(0)" onclick="filterSelection('l css')">L</a>
+      <a href="javascript:void(0)" onclick="filterSelection('m css')">M</a>
+      <a href="javascript:void(0)" onclick="filterSelection('n css')">N</a>
+      <a href="javascript:void(0)" onclick="filterSelection('o css')">O</a>
+      <a href="javascript:void(0)" onclick="filterSelection('p css')">P</a>
+      <a href="javascript:void(0)" onclick="filterSelection('q css')">Q</a>
+      <a href="javascript:void(0)" onclick="filterSelection('r css')">R</a>
+      <a href="javascript:void(0)" onclick="filterSelection('s css')">S</a>
+      <a href="javascript:void(0)" onclick="filterSelection('t css')">T</a>
+      <a href="javascript:void(0)" onclick="filterSelection('u css')">U</a>
+      <a href="javascript:void(0)" onclick="filterSelection('v css')">V</a>
+      <a href="javascript:void(0)" onclick="filterSelection('w css')">W</a>
+      <a href="javascript:void(0)" onclick="filterSelection('x css')">X</a>
+      <a href="javascript:void(0)" onclick="filterSelection('y css')">Y</a>
+      <a href="javascript:void(0)" onclick="filterSelection('z css')">Z</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <button class="dropbtn" onclick="jsDropdownFunction()">JS
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content" id="jsDropdown">
+      <a href="javascript:void(0)" onclick="filterSelection('js')">All</a>
+      <a href="javascript:void(0)" onclick="filterSelection('a js')">A</a>
+      <a href="javascript:void(0)" onclick="filterSelection('b js')">B</a>
+      <a href="javascript:void(0)" onclick="filterSelection('c js')">C</a>
+      <a href="javascript:void(0)" onclick="filterSelection('d js')">D</a>
+      <a href="javascript:void(0)" onclick="filterSelection('e js')">E</a>
+      <a href="javascript:void(0)" onclick="filterSelection('f js')">F</a>
+      <a href="javascript:void(0)" onclick="filterSelection('g js')">G</a>
+      <a href="javascript:void(0)" onclick="filterSelection('h js')">H</a>
+      <a href="javascript:void(0)" onclick="filterSelection('i js')">I</a>
+      <a href="javascript:void(0)" onclick="filterSelection('j js')">J</a>
+      <a href="javascript:void(0)" onclick="filterSelection('k js')">K</a>
+      <a href="javascript:void(0)" onclick="filterSelection('l js')">L</a>
+      <a href="javascript:void(0)" onclick="filterSelection('m js')">M</a>
+      <a href="javascript:void(0)" onclick="filterSelection('n js')">N</a>
+      <a href="javascript:void(0)" onclick="filterSelection('o js')">O</a>
+      <a href="javascript:void(0)" onclick="filterSelection('p js')">P</a>
+      <a href="javascript:void(0)" onclick="filterSelection('q js')">Q</a>
+      <a href="javascript:void(0)" onclick="filterSelection('r js')">R</a>
+      <a href="javascript:void(0)" onclick="filterSelection('s js')">S</a>
+      <a href="javascript:void(0)" onclick="filterSelection('t js')">T</a>
+      <a href="javascript:void(0)" onclick="filterSelection('u js')">U</a>
+      <a href="javascript:void(0)" onclick="filterSelection('v js')">V</a>
+      <a href="javascript:void(0)" onclick="filterSelection('w js')">W</a>
+      <a href="javascript:void(0)" onclick="filterSelection('x js')">X</a>
+      <a href="javascript:void(0)" onclick="filterSelection('y js')">Y</a>
+      <a href="javascript:void(0)" onclick="filterSelection('z js')">Z</a>
+    </div>
+  </div>
+
+  <!-- *** Add New Web Language to Dropdown (2 of 4) -->
+
 </div>
 
-<div id = "sidenavButton">
-	<!-- Side Navigation Button (1 of 4): Close & open side navigationn panel (mySidenav) when clicking side navigation button (sidenavButton) [onclick="toggleNav()" replaced onclick="openNav()"] () -->
-	<span style="font-size:30px;cursor:pointer" onclick="toggleNav()">&#9776;</span>
+<!-- *** Dropdown Menu (3 of 4) -->
+
+<!-- * Search Bar (2 of 3) -->
+
+<!-- Search Bar (Explanation): This creates the search bar. -->
+<!-- Open side navigation upon click of dropdown or search button. (1 of 5) -->
+<input type="text" id="myInput" onkeyup="searchList()" placeholder="Search" title="Type in a name" onfocus="openNav(); this.value=''">
+
+<!-- *** Search Bar (2 of 3) -->
+
+<!-- Dropdown & Search Bars Position Fixed (2 of 3) -->
 </div>
+
+<!-- Filter By Letter & or Web Language (Explanation): The classes added are needed for filtering. The classes are added in the javascript section. -->
+
+<!-- * Multiple Columns (2 of 2) -->
+
+<!-- Multiple Columns (Explanation): The class="multiple-columns" was added. -->
+<!-- Create & Alphabetize Side Navigation List (1 of 2) -->
+<!-- * Side Navigation Full Overlay (2 of 3) -->
+<!-- Loading Pages (1 of 3): This is accomplished in the javascript where for example
+<a href="javascript:void(0)" target="_blank" onclick="loadPage('htmlPage1')">HTML: Page 1</a> The class="sidenav" is needed to be in the side navigation panel. -->
+<ul id="mySidenav" class="multiple-columns sidenav"></ul>
+
+<!-- *** Multiple Columns (2 of 2) -->
+
+<!-- *** Filter By Letter & or Web Language (2 of 4) -->
 
 <!-- * Loading Pages (2 of 3) -->
 <!-- HTML PAGES -->
-<main id="htmlPages" class="allPages">
+<main id="htmlPages">
   <!-- HTML: PAGE 1 -->
   <section id="htmlPage1">
-  	/* * Headers ( of ): Header tags added where needed. */
 	<header>Page 1</header>
   </section>
   <!-- HTML: PAGE 2 -->
@@ -155,7 +448,7 @@ header {
 </main>
 
 <!-- JAVASCRIPT PAGES -->
-<main id="javascriptPages" class="allPages">
+<main id="javascriptPages">
   <!-- * JAVASCRIPT: PAGE 1 (2 of 2) -->
   <section id="javascriptPage1">
 	<header>Page 1 (JavaScript)</header>
@@ -227,130 +520,385 @@ function myFunction() {
 </main>
 <!-- *** Loading Pages (2 of 3) -->
 
-<!-- *** Side Navigation (2 of 3): Sidenav Push Content -->
+<!-- *** Side Navigation Full Overlay (2 of 3) -->
 
 <script>
-// * Responsive Web Design: Side Navigation Push or Full-Width Overlay (1 of 2)
 
-// Responsive Web Design: Side Navigation Push or Full-Width Overlay (Explanation): For larger screen widths, the side navigation panel will push. The side navigation panel width will change depending on the screen size width for better functionality. If the screen width is really small like on a phone in portrait mode, the side navigation panel will be full width; it will be overlay and cover the full screen.
+// * Dropdown Menu (4 of 4)
 
-// Responsive Web Design: Side Navigation Push or Full-Width Overlay (Explanation): The variables represent the width when the side navigation panel (mySidenav) is open.
-var sidenavWidth;
-var pageMarginLeftWidth;
-var pageWidth;
+/* Dropdown Menu (Explanation): When the user clicks on the button,
+toggle between hiding and showing the dropdown content. */
 
-resizeSidenavPanelWidth();
+// * Add New Web Language to Dropdown (3 of 4)
 
-window.addEventListener("resize", resizeSidenavPanelWidth);
-
-function resizeSidenavPanelWidth() {
-	// Responsive Web Design: Side Navigation Push or Full-Width Overlay (Explanation): The code window.innerWidth is used so that the side navigation (mySidenav) panel opens to different widths depending on the screen size.
-    if (window.innerWidth > "1400") {
-      sidenavWidth = "300px";
-      pageMarginLeftWidth = "300px";
-
- 	  /* Headers (4 of 7) */
-      pageWidth = window.innerWidth - 300;
-
- 	  // Responsive Web Design: Side Navigation Push or Full-Width Overlay (Explanation): Closes side navigation (mySidenav) panel upon screen size change. User will need to open to see the change.
-      closeNav();
-    }
-    else if (window.innerWidth <= "1400"  && window.innerWidth > "600") {
-      sidenavWidth = "250px";
-      pageMarginLeftWidth = "250px";
-
- 	  /* Headers (5 of 7) */
-      pageWidth = window.innerWidth - 250;
-
-      // Responsive Web Design: Side Navigation Push or Full-Width Overlay (Explanation): Closes side navigation (mySidenav) panel upon screen size change. User will need to open to see the change.
-      closeNav();
-    }
-    else if (window.innerWidth <= "600") {
-      sidenavWidth = "100%";
-      pageMarginLeftWidth = "0px";
-
-      /* Headers (6 of 7) */
-      pageWidth = window.innerWidth - 0;
-
-      // Responsive Web Design: Side Navigation Push or Full-Width Overlay (Explanation): Closes side navigation (mySidenav) panel upon screen size change. User will need to open to see the change.
-      closeNav();
-    }
-
-    /* * Headers (7 of 7) */
-    var j;
-
-    for (j = 0; j < document.getElementsByTagName("header").length; j++) {
-      document.getElementsByTagName("header")[j].style.width = pageWidth + "px";
-    }
-    /* *** Headers (7 of 7) */
-
-    // Responsive Web Design: Side Navigation Push or Full-Width Overlay (Explanation): Add the following one line that is in brackets if you want to see side navigation (mySidenav) panel changes automatically as the screen changes. It automatically opens the side navigation (mySidenav) panel back up as the screen width size dynamically changes. [openNav();]
-    openNav();
+function allDropdownFunction() {openNav();
+  document.getElementById("allDropdown").classList.toggle("show-allDropdown");
+  // Open side navigation upon click of dropdown or search button. (2 of 5)
+  openNav();
 }
 
-// *** Responsive Web Design: Side Navigation Push or Full-Width Overlay (1 of 2)
+function htmlDropdownFunction() {
+  document.getElementById("htmlDropdown").classList.toggle("show-htmlDropdown");
+  // Open side navigation upon click of dropdown or search button. (3 of 5)
+  openNav();
+}
 
-// * Side Navigation (3 of 3): Sidenav Push Content
+function cssDropdownFunction() {
+  document.getElementById("cssDropdown").classList.toggle("show-cssDropdown");
+  // Open side navigation upon click of dropdown or search button. (4 of 5)
+  openNav();
+}
+
+function jsDropdownFunction() {
+  document.getElementById("jsDropdown").classList.toggle("show-jsDropdown");
+  // Open side navigation upon click of dropdown or search button. (5 of 5)
+  openNav();
+}
+
+// *** Add New Web Language to Dropdown (3 of 4)
+
+// Dropdown Menu (Explanation): Close the dropdown if the user clicks outside of it
+window.onclick = function(e) {
+  if (!e.target.matches('.dropbtn')) {
+
+    // * Add New Web Language to Dropdown (4 of 4)
+
+  	var allDropdownVar = document.getElementById("allDropdown");
+    if (allDropdownVar.classList.contains('show-allDropdown')) {
+      allDropdownVar.classList.remove('show-allDropdown');
+    }
+
+  	var htmlDropdownVar = document.getElementById("htmlDropdown");
+    if (htmlDropdownVar.classList.contains('show-htmlDropdown')) {
+      htmlDropdownVar.classList.remove('show-htmlDropdown');
+    }
+
+  	var cssDropdownVar = document.getElementById("cssDropdown");
+    if (cssDropdownVar.classList.contains('show-cssDropdown')) {
+      cssDropdownVar.classList.remove('show-cssDropdown');
+    }
+
+  	var jsDropdownVar = document.getElementById("jsDropdown");
+    if (jsDropdownVar.classList.contains('show-jsDropdown')) {
+      jsDropdownVar.classList.remove('show-jsDropdown');
+    }
+
+    // *** Add New Web Language to Dropdown (4 of 4)
+  }
+}
+
+// *** Dropdown Menu (4 of 4)
+
+// * Filter By Letter & or Web Language (3 of 4)
+
+// Filter By Letter & or Web Language (Explanation): This whole section was taken from w3schools. The only adjustment was changing the name filterDIV to filter.
+
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("filter");
+
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
+
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+// *** Filter By Letter & or Web Language (3 of 4)
+
+// * Search Bar (3 of 3)
+
+// Search Bar (Explanation): This makes it so the search bar works when the user types something.
+function searchList() {
+  var input, filter, ul, li, a, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("mySidenav");
+  li = ul.getElementsByTagName("li");
+  for (i = 0; i < li.length; i++) {
+    a = li[i].getElementsByTagName("a")[0];
+    txtValue = a.textContent || a.innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+  }
+}
+
+// *** Search Bar (3 of 3)
+
+// * Create & Alphabetize Side Navigation List (2 of 2)
+
+// Create & Alphabetize Side Navigation List (Explanation): This is arrays combined into one single array.
+var list = [
+  {topic: "Error2 JS", class: "e js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "Date JS", class: "d js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "Boolean JS", class: "b js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "Array JS", class: "a js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "e html", class: "e html", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "a css", class: "a css", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "f css", class: "f css", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "s html", class: "s html", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "Error JS", class: "e js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "Date JS", class: "d js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "Boolean JS", class: "b js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "Array JS", class: "a js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "e html", class: "e html", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "a css", class: "a css", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "f css", class: "f css", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "s html", class: "s html", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "Error JS", class: "e js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "Date JS", class: "d js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "Boolean JS", class: "b js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "Array JS", class: "a js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "e html", class: "e html", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "a css", class: "a css", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "f css", class: "f css", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "s html", class: "s html", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "Error JS", class: "e js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "Date JS", class: "d js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "Boolean JS", class: "b js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "Array JS", class: "a js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "e html", class: "e html", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "a css", class: "a css", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "f css", class: "f css", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "s html", class: "s html", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "Error JS", class: "e js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "Date JS", class: "d js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "Boolean JS", class: "b js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "Array JS", class: "a js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "e html", class: "e html", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "a css", class: "a css", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "f css", class: "f css", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "s html", class: "s html", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "Error JS", class: "e js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "Date JS", class: "d js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "Boolean JS", class: "b js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "Array JS", class: "a js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "e html", class: "e html", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "a css", class: "a css", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "f css", class: "f css", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "s html", class: "s html", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "Error JS", class: "e js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "Date JS", class: "d js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "Boolean JS", class: "b js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "Array JS", class: "a js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "e html", class: "e html", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "a css", class: "a css", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "f css", class: "f css", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "s html", class: "s html", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "Error JS", class: "e js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "Date JS", class: "d js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "Boolean JS", class: "b js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "Array JS", class: "a js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "e html", class: "e html", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "a css", class: "a css", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "f css", class: "f css", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "s html", class: "s html", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "Error JS", class: "e js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "Date JS", class: "d js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "Boolean JS", class: "b js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "Array JS", class: "a js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "e html", class: "e html", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "a css", class: "a css", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "f css", class: "f css", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "s html", class: "s html", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "Error JS", class: "e js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "Date JS", class: "d js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "Boolean JS", class: "b js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "Array JS", class: "a js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "e html", class: "e html", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "a css", class: "a css", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "f css", class: "f css", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "s html", class: "s html", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "Error JS", class: "e js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "Date JS", class: "d js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "Boolean JS", class: "b js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "Array JS", class: "a js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "e html", class: "e html", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "a css", class: "a css", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "f css", class: "f css", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "s html", class: "s html", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "Error JS", class: "e js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "Date JS", class: "d js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "Boolean JS", class: "b js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "Array JS", class: "a js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "e html", class: "e html", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "a css", class: "a css", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "f css", class: "f css", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "s html", class: "s html", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "Error JS", class: "e js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "Date JS", class: "d js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "Boolean JS", class: "b js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "Array JS", class: "a js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "e html", class: "e html", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "a css", class: "a css", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "f css", class: "f css", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "s html", class: "s html", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "Error JS", class: "e js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "Date JS", class: "d js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "Boolean JS", class: "b js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "Array JS", class: "a js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "e html", class: "e html", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "a css", class: "a css", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "f css", class: "f css", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "s html", class: "s html", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "Error JS", class: "e js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "Date JS", class: "d js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "Boolean JS", class: "b js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "Array JS", class: "a js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "e html", class: "e html", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "a css", class: "a css", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "f css", class: "f css", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "s html", class: "s html", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "Error JS", class: "e js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "Date JS", class: "d js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "Boolean JS", class: "b js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "Array JS", class: "a js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "e html", class: "e html", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "a css", class: "a css", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "f css", class: "f css", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "s html", class: "s html", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "Error JS", class: "e js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "Date JS", class: "d js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "Boolean JS", class: "b js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "Array JS", class: "a js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "e html", class: "e html", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "a css", class: "a css", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "f css", class: "f css", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "s html", class: "s html", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "Error JS", class: "e js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "Date JS", class: "d js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "Boolean JS", class: "b js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "Array JS", class: "a js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "e html", class: "e html", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "a css", class: "a css", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "g css", class: "g css", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "s html", class: "s html", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "Error JS", class: "e js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "Date JS", class: "d js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "Boolean JS", class: "b js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "Array JS", class: "a js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "e html", class: "e html", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "a css", class: "a css", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "g css", class: "g css", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "s html", class: "s html", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "Error JS", class: "e js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "Date JS", class: "d js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "Boolean JS", class: "b js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "Array JS", class: "a js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "e html", class: "e html", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "a css", class: "a css", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "g css", class: "g css", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "s html", class: "s html", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "Error JS", class: "e js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "Date JS", class: "d js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "Boolean JS", class: "b js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "Array JS", class: "a js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "e html", class: "e html", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "a css", class: "a css", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "g css", class: "g css", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "s html", class: "s html", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "Error JS", class: "e js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "Date JS", class: "d js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "Boolean JS", class: "b js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "Array JS", class: "a js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "e html", class: "e html", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "a css", class: "a css", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "g css", class: "g css", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "s html", class: "s html", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "Error JS", class: "e js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "Date JS", class: "d js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "Boolean JS", class: "b js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "Array JS", class: "a js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "e html", class: "e html", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "a css", class: "a css", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "g css", class: "g css", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "s html", class: "s html", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "Error JS", class: "e js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "Date JS", class: "d js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "Boolean JS", class: "b js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "Array JS", class: "a js", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "e html", class: "e html", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "a css", class: "a css", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "HTML: Page 1", class: "h html", onclick: "loadPage('htmlPage1')", url: "javascript:void(0)"},
+  {topic: "HTML: Page 2", class: "h html", onclick: "loadPage('htmlPage2')", url: "javascript:void(0)"},
+  {topic: "JavaScript: Page 1", class: "j js", onclick: "loadPage('javascriptPage1')", url: "javascript:void(0)"}
+];
+
+// Create & Alphabetize Side Navigation List (Explanation): This sorts (alphabetizes) the list array by topic and keeps the corresponding url, etc with the correct topic.
+list.sort(function(a, b){
+  var x = a.topic.toLowerCase();
+  var y = b.topic.toLowerCase();
+  if (x < y) {return -1;}
+  if (x > y) {return 1;}
+  return 0;
+});
+
+// Create & Alphabetize Side Navigation List (Explanation): This creates the side navigation list.
+var i;
+for (i = 0; i < list.length; i++) {
+  var nodeLI = document.createElement("li");
+  nodeLI.innerHTML = "<a class='filter " + list[i].class + "' href='" + list[i].url + "'  onclick=\"" + list[i].onclick + "\">" + list[i].topic + "</a>";
+  document.getElementById("mySidenav").appendChild(nodeLI);
+}
+
+// *** Create & Alphabetize Side Navigation List (2 of 2)
+
+// * Filter By Letter & or Web Language (4 of 4)
+
+// Filter By Letter & or Web Language (Explanation): This shows the entire list once the page loads. It needs to be after the list is created, not before or it will not execute.
+filterSelection("all");
+
+// *** Filter By Letter & or Web Language (4 of 4)
+
+// Open Side Navigation Upon Load of Page (1 of 1)
+openNav();
+
+// * Side Navigation Full Overlay (3 of 3)
 function openNav() {
-	// * Responsive Web Design: Side Navigation Push or Full-Width Overlay (2 of 2): Change back to the following in brackets if you want to remove 'Responsive Web Design: Side Navigation Push or Full-Width Overlay'. [document.getElementById("mySidenav").style.width = "250px"; document.getElementById("sidenavButton").style.marginLeft = "250px";]
-  	document.getElementById("mySidenav").style.width = sidenavWidth;
-  	document.getElementById("sidenavButton").style.marginLeft = pageMarginLeftWidth;
-    // *** Responsive Web Design: Side Navigation Push or Full-Width Overlay (2 of 2)
-
-    // * Left Margin Transition for Pages (2 of 3)
-
-	// Left Margin Transition for Pages (Explanation): This changes the page margin left width for all pages with the class .allPages. There will be pages for each programming language. So, id="htmlPages" will have class="allPages" and id="cssPages" will have class="allPages", etc.
-	[].forEach.call(document.querySelectorAll('.allPages'), function (el) {
-          el.style.marginLeft = pageMarginLeftWidth;
-	});
-
-	// *** Left Margin Transition for Pages (2 of 3)
-
-	// Side Navigation Button (2 of 4): Close & open side navigationn panel (sidenav) when clicking side navigation button (sidenavButton).
-	nav = true;
+  document.getElementById("mySidenav").style.width = "100%";
 }
 
 function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-    document.getElementById("sidenavButton").style.marginLeft= "0";
-
-	// * Left Margin Transition for Pages (3 of 3)
-
-	// Left Margin Transition for Pages (Explanation): When the user clicks to close the side navigation panel (mySidenav), the left margin all of pages needs to be 0px. This changes the page margin left width for all pages to 0px with the class .allPages. There will be pages for each programming language. So, id="htmlPages" will have class="allPages" and id="cssPages" will have class="allPages", etc.
-	[].forEach.call(document.querySelectorAll('.allPages'), function (el) {
-          el.style.marginLeft = "0";
-	});
-
-	// *** Left Margin Transition for Pages (3 of 3)
-
-	// Side Navigation Button (3 of 4): Close & open side navigationn panel (sidenav) when clicking side navigation button (sidenavButton).
-	nav = false;
+  document.getElementById("mySidenav").style.width = "0";
 }
-// *** Side Navigation (3 of 3): Sidenav Push Content
-
-// * Side Navigation Button (4 of 4): Close & open side navigationn panel (sidenav) when clicking side navigation button (sidenavButton).
-
-// Side Navigation Button (change): After the page first loaded, when clicking the side navigation button (sidenavButton), the side navigation panel (mySidenav) would not close. So, [var nav = true;] replaced [var nav = false;].
-var nav = true;
-
-function toggleNav() {
-	// Side Navigation Button (Explanation): If nav is false, then openNav(). if nav is true, then closeNav(). Executes the same as this: if (nav === false) {openNav();} else {closeNav();}.
-    nav ? closeNav() : openNav();
-}
-// *** Side Navigation Button (4 of 4): close & open side navigationn panel (sidenav) when clicking side navigation button (sidenavButton).
+// *** Side Navigation Full Overlay (3 of 3)
 
 // * Loading Pages (3 of 3)
 function loadPage(page) {
-  // * Hide All Pages Except for Given Page Onmouseover (1 of 2)
+  // * Hide All Pages Except for Given Page Onclick (1 of 2)
 
-  // Hide All Pages Except for Given Page Onmouseover (Explanation): Hides all children pages for id = "htmlPages".
+  // Hide All Pages Except for Given Page Onclick (Explanation): Hides all children pages for id = "htmlPages".
   var i;
 
   for (i = 0; i < document.getElementById("htmlPages").children.length; i++) {
     document.getElementById("htmlPages").children[i].style.display = "none";
   }
 
-  // Hide All Pages Except for Given Page Onmouseover (Explanation): Hides all children pages for id = "javascriptPages".
+  // Hide All Pages Except for Given Page Onclick (Explanation): Hides all children pages for id = "javascriptPages".
   for (i = 0; i < document.getElementById("javascriptPages").children.length; i++) {
     document.getElementById("javascriptPages").children[i].style.display = "none";
   }
@@ -358,25 +906,23 @@ function loadPage(page) {
   // Loading Pages (Explanation): Shows or loads the page for id = page (example: id = "htmlPage1").
   document.getElementById(page).style.display="block";
 
-  // *** Hide All Pages Except for Given Page Onmouseover (1 of 2)
+  // *** Hide All Pages Except for Given Page Onclick (1 of 2)
 
-  // * Responsive Web Design: Close Side Navigation Panel Upon Click for Full-Width Overlay (1 of 1)
+    // Close Side Navigation Panel Onclick of Item in Side Navigation Panel (1 of 1)
 
-    // Responsive Web Design: Close Side Navigation Panel Upon Click for Full-Width Overlay (Explanation): When clicking on the side navigation panel to go to a page, the full-width overlay side navigation panel needs to close. Otherwise, the user will need to click the 'X' to close it. So, this automatically will do it upon clicking to go to a page. The side navigation panel does not need to close upon clicking to go to a page when the screen width is larger.
+  closeNav();
 
-  if (window.innerWidth <= "600") {closeNav();}
-
-  // *** Responsive Web Design: Close Side Navigation Panel Upon Click for Full-Width Overlay (1 of 1)
 }
 
-// * Hide All Pages Except for Given Page Onmouseover (2 of 2)
+// * Hide All Pages Except for Given Page Onclick (2 of 2)
 
-// Hide All Pages Except for Given Page Onmouseover (Explanation): This hides all pages initially.
+// Hide All Pages Except for Given Page Onclick (Explanation): This hides all pages initially.
 loadPage();
 
-// *** Hide All Pages Except for Given Page Onmouseover (2 of 2)
+// *** Hide All Pages Except for Given Page Onclick (2 of 2)
 
 // *** Loading Pages (3 of 3)
+
 </script>
 
 <!-- * Greybox for Code (4 of 4) -->

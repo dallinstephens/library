@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Greybox for Code (1 of 4) -->
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<style>
+/* * Side Navigation (1 of 3): Sidenav Push Content */
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 0px 8px 0px 8px;
+  text-decoration: none;
+  font-size: 15px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: red;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#sidenavButton {
+  transition: margin-left .5s;
+  padding: 1px;
+
+  /* * Headers (1 of 7) */
+  /* Headers (Explanation): The sidenavButton needs to be in front of each header. */
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  /*** * Headers (1 of 7) */
+}
+
+/* * Left Margin Transition for Pages (1 of 3) */
+
+/* Left Margin Transition for Pages (Explanation): Pages need a left margin transition when the side navigation panel (mySidenav) opens. Otherwise, the side navigation panel overlays the page. We do not want side navigation panel overlay of each page except when the screen size is small. */
+
+/* Left Margin Transition for Pages (Explanation): This is needed so that each page shifts at the same speed as the side navigation panel. */
+.allPages {
+  transition: margin-left .5s;
+  padding: 1px;
+
+  /* Headers (2 of 7): This helps each page to be below the header. */
+  margin-top:25px;
+}
+
+/* *** Left Margin Transition for Pages (1 of 3) */
+
+/* Side Navigation Button Hover Color (1 of 1): Side navigation button (sidenavButton) turns lime color upon hover. */
+#sidenavButton :hover {color:lime;}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+/* *** Side Navigation (1 of 3): Sidenav Push Content */
+
+/* * Greybox for Code (2 of 4) */
+
+.greybox {
+	margin-top:10px; margin-bottom: 8px; padding: 5px 10px 5px 10px; 		background: lightgrey; border-radius: 25px; box-shadow: 0px 0px 5px 1px #888888;
+}
+
+/* Greybox for Code (Explanation): This makes it so that text can be wrapped in pre tags. */
+pre {
+    overflow-x: auto;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+}
+
+/* *** Greybox for Code (2 of 4) */
+
+/* * JAVASCRIPT: PAGE 1 (1 of 2) */
+#myDIV {
+  border: 1px solid black;
+  margin: 5px;
+  background: lightblue;
+}
+/* *** JAVASCRIPT: PAGE 1 (1 of 2) */
+
+/* * Headers (3 of 7) */
+header {
+  position: fixed;
+  top: 0;
+  padding: 10px;
+  text-align: center;
+  background: #1abc9c;
+  color: black;
+  font-size: 20px;
+}
+/*** Headers (3 of 7) */
+</style>
+</head>
+<body>
+<!-- * Side Navigation (2 of 3): Sidenav Push Content -->
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <!-- * Loading Pages (1 of 3) -->
+
+  <!-- * Load My Pages Onmouseover & Load Online Pages On Click (1 of 1) -->
+
+  <a href="https://www.w3schools.com/jsref/prop_element_children.asp" target="_blank" onmouseover="loadPage('htmlPage1')">HTML: Page 1</a>
+  <a href="https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_element_children_length" target="_blank" onmouseover="loadPage('htmlPage2')">HTML: Page 2</a>
+  <a href="https://stackoverflow.com/questions/17928816/how-to-get-and-hide-siblings-in-javascript" target="_blank" onmouseover="loadPage('javascriptPage1')">JavaScript: Page 1</a>
+
+  <!-- *** Load My Pages Onmouseover & Load Online Pages On Click (1 of 1) -->
+
+  <!-- *** Loading Pages (1 of 3) -->
+</div>
+
+<div id = "sidenavButton">
+	<!-- Side Navigation Button (1 of 4): Close & open side navigationn panel (mySidenav) when clicking side navigation button (sidenavButton) [onclick="toggleNav()" replaced onclick="openNav()"] () -->
+	<span style="font-size:30px;cursor:pointer" onclick="toggleNav()">&#9776;</span>
+</div>
+
+<!-- * Loading Pages (2 of 3) -->
+<!-- HTML PAGES -->
+<main id="htmlPages" class="allPages">
+  <!-- HTML: PAGE 1 -->
+  <section id="htmlPage1">
+  	/* * Headers ( of ): Header tags added where needed. */
+	<header>Page 1</header>
+  </section>
+  <!-- HTML: PAGE 2 -->
+  <section id="htmlPage2">
+	<header>Page 2</header>
+  </section>
+</main>
+
+<!-- JAVASCRIPT PAGES -->
+<main id="javascriptPages" class="allPages">
+  <!-- * JAVASCRIPT: PAGE 1 (2 of 2) -->
+  <section id="javascriptPage1">
+	<header>Page 1 (JavaScript)</header>
+
+    <button onclick="myFunction()">Try it</button>
+
+    <div id="myDIV">
+      <p>First p element (index 0)</p>
+      <p>Second p element (index 1)</p>
+      <p id="index2">Second p element (index 2)</p>
+      <p>Second p element (index 3)</p>
+      <p>Second p element (index 4)</p>
+      <p>Second p element (index 5)</p>
+    </div>
+
+    <script>
+    function myFunction() {
+      var i;
+      for (i = 0; i < document.getElementById("myDIV").children.length; i++) {
+        document.getElementById("myDIV").children[i].style.display = "none";
+      }
+      document.getElementById("index2").style.display="block";
+    }
+    </script>
+
+    <!-- * Greybox for Code (3 of 4) -->
+    <div class="greybox">
+
+<h4>CSS</h4>
+<pre class="w3-code cssHigh">
+#myDIV {
+  border: 1px solid black;
+  margin: 5px;
+  background: lightblue;
+}
+</pre>
+
+<h4>HTML</h4>
+<pre class="w3-code htmlHigh">
+&lt;button onclick=&quot;myFunction()&quot;&gt;Try it&lt;/button&gt;
+
+&lt;div id=&quot;myDIV&quot;&gt;
+  &lt;p&gt;First p element (index 0)&lt;/p&gt;
+  &lt;p&gt;Second p element (index 1)&lt;/p&gt;
+  &lt;p id=&quot;index2&quot;&gt;Second p element (index 2)&lt;/p&gt;
+  &lt;p&gt;Second p element (index 3)&lt;/p&gt;
+  &lt;p&gt;Second p element (index 4)&lt;/p&gt;
+  &lt;p&gt;Second p element (index 5)&lt;/p&gt;
+&lt;/div&gt;
+</pre>
+
+<h4>JavaScript</h4>
+<pre class="w3-code jsHigh">
+&lt;script&gt;
+function myFunction() {
+  var i;
+  for (i = 0; i &lt; document.getElementById(&quot;myDIV&quot;).children.length; i++) {
+    document.getElementById(&quot;myDIV&quot;).children[i].style.display = &quot;none&quot;;
+  }
+  document.getElementById(&quot;index2&quot;).style.display=&quot;block&quot;;
+}
+&lt;/script&gt;
+</pre>
+
+    </div>
+    <!-- *** Greybox for Code (3 of 4) -->
+  </section>
+  <!-- *** JAVASCRIPT: PAGE 1 (2 of 2) -->
+</main>
+<!-- *** Loading Pages (2 of 3) -->
+
+<!-- *** Side Navigation (2 of 3): Sidenav Push Content -->
+
+<script>
+// * Responsive Web Design: Side Navigation Push or Full-Width Overlay (1 of 2)
+
+// Responsive Web Design: Side Navigation Push or Full-Width Overlay (Explanation): For larger screen widths, the side navigation panel will push. The side navigation panel width will change depending on the screen size width for better functionality. If the screen width is really small like on a phone in portrait mode, the side navigation panel will be full width; it will be overlay and cover the full screen.
+
+// Responsive Web Design: Side Navigation Push or Full-Width Overlay (Explanation): The variables represent the width when the side navigation panel (mySidenav) is open.
+var sidenavWidth;
+var pageMarginLeftWidth;
+var pageWidth;
+
+resizeSidenavPanelWidth();
+
+window.addEventListener("resize", resizeSidenavPanelWidth);
+
+function resizeSidenavPanelWidth() {
+	// Responsive Web Design: Side Navigation Push or Full-Width Overlay (Explanation): The code window.innerWidth is used so that the side navigation (mySidenav) panel opens to different widths depending on the screen size.
+    if (window.innerWidth > "1400") {
+      sidenavWidth = "300px";
+      pageMarginLeftWidth = "300px";
+
+ 	  /* Headers (4 of 7) */
+      pageWidth = window.innerWidth - 300;
+
+ 	  // Responsive Web Design: Side Navigation Push or Full-Width Overlay (Explanation): Closes side navigation (mySidenav) panel upon screen size change. User will need to open to see the change.
+      closeNav();
+    }
+    else if (window.innerWidth <= "1400"  && window.innerWidth > "600") {
+      sidenavWidth = "250px";
+      pageMarginLeftWidth = "250px";
+
+ 	  /* Headers (5 of 7) */
+      pageWidth = window.innerWidth - 250;
+
+      // Responsive Web Design: Side Navigation Push or Full-Width Overlay (Explanation): Closes side navigation (mySidenav) panel upon screen size change. User will need to open to see the change.
+      closeNav();
+    }
+    else if (window.innerWidth <= "600") {
+      sidenavWidth = "100%";
+      pageMarginLeftWidth = "0px";
+
+      /* Headers (6 of 7) */
+      pageWidth = window.innerWidth - 0;
+
+      // Responsive Web Design: Side Navigation Push or Full-Width Overlay (Explanation): Closes side navigation (mySidenav) panel upon screen size change. User will need to open to see the change.
+      closeNav();
+    }
+
+    /* * Headers (7 of 7) */
+    var j;
+
+    for (j = 0; j < document.getElementsByTagName("header").length; j++) {
+      document.getElementsByTagName("header")[j].style.width = pageWidth + "px";
+    }
+    /* *** Headers (7 of 7) */
+
+    // Responsive Web Design: Side Navigation Push or Full-Width Overlay (Explanation): Add the following one line that is in brackets if you want to see side navigation (mySidenav) panel changes automatically as the screen changes. It automatically opens the side navigation (mySidenav) panel back up as the screen width size dynamically changes. [openNav();]
+    openNav();
+}
+
+// *** Responsive Web Design: Side Navigation Push or Full-Width Overlay (1 of 2)
+
+// * Side Navigation (3 of 3): Sidenav Push Content
+function openNav() {
+	// * Responsive Web Design: Side Navigation Push or Full-Width Overlay (2 of 2): Change back to the following in brackets if you want to remove 'Responsive Web Design: Side Navigation Push or Full-Width Overlay'. [document.getElementById("mySidenav").style.width = "250px"; document.getElementById("sidenavButton").style.marginLeft = "250px";]
+  	document.getElementById("mySidenav").style.width = sidenavWidth;
+  	document.getElementById("sidenavButton").style.marginLeft = pageMarginLeftWidth;
+    // *** Responsive Web Design: Side Navigation Push or Full-Width Overlay (2 of 2)
+
+    // * Left Margin Transition for Pages (2 of 3)
+
+	// Left Margin Transition for Pages (Explanation): This changes the page margin left width for all pages with the class .allPages. There will be pages for each programming language. So, id="htmlPages" will have class="allPages" and id="cssPages" will have class="allPages", etc.
+	[].forEach.call(document.querySelectorAll('.allPages'), function (el) {
+          el.style.marginLeft = pageMarginLeftWidth;
+	});
+
+	// *** Left Margin Transition for Pages (2 of 3)
+
+	// Side Navigation Button (2 of 4): Close & open side navigationn panel (sidenav) when clicking side navigation button (sidenavButton).
+	nav = true;
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("sidenavButton").style.marginLeft= "0";
+
+	// * Left Margin Transition for Pages (3 of 3)
+
+	// Left Margin Transition for Pages (Explanation): When the user clicks to close the side navigation panel (mySidenav), the left margin all of pages needs to be 0px. This changes the page margin left width for all pages to 0px with the class .allPages. There will be pages for each programming language. So, id="htmlPages" will have class="allPages" and id="cssPages" will have class="allPages", etc.
+	[].forEach.call(document.querySelectorAll('.allPages'), function (el) {
+          el.style.marginLeft = "0";
+	});
+
+	// *** Left Margin Transition for Pages (3 of 3)
+
+	// Side Navigation Button (3 of 4): Close & open side navigationn panel (sidenav) when clicking side navigation button (sidenavButton).
+	nav = false;
+}
+// *** Side Navigation (3 of 3): Sidenav Push Content
+
+// * Side Navigation Button (4 of 4): Close & open side navigationn panel (sidenav) when clicking side navigation button (sidenavButton).
+
+// Side Navigation Button (change): After the page first loaded, when clicking the side navigation button (sidenavButton), the side navigation panel (mySidenav) would not close. So, [var nav = true;] replaced [var nav = false;].
+var nav = true;
+
+function toggleNav() {
+	// Side Navigation Button (Explanation): If nav is false, then openNav(). if nav is true, then closeNav(). Executes the same as this: if (nav === false) {openNav();} else {closeNav();}.
+    nav ? closeNav() : openNav();
+}
+// *** Side Navigation Button (4 of 4): close & open side navigationn panel (sidenav) when clicking side navigation button (sidenavButton).
+
+// * Loading Pages (3 of 3)
+function loadPage(page) {
+  // * Hide All Pages Except for Given Page Onmouseover (1 of 2)
+
+  // Hide All Pages Except for Given Page Onmouseover (Explanation): Hides all children pages for id = "htmlPages".
+  var i;
+
+  for (i = 0; i < document.getElementById("htmlPages").children.length; i++) {
+    document.getElementById("htmlPages").children[i].style.display = "none";
+  }
+
+  // Hide All Pages Except for Given Page Onmouseover (Explanation): Hides all children pages for id = "javascriptPages".
+  for (i = 0; i < document.getElementById("javascriptPages").children.length; i++) {
+    document.getElementById("javascriptPages").children[i].style.display = "none";
+  }
+
+  // Loading Pages (Explanation): Shows or loads the page for id = page (example: id = "htmlPage1").
+  document.getElementById(page).style.display="block";
+
+  // *** Hide All Pages Except for Given Page Onmouseover (1 of 2)
+
+  // * Responsive Web Design: Close Side Navigation Panel Upon Click for Full-Width Overlay (1 of 1)
+
+    // Responsive Web Design: Close Side Navigation Panel Upon Click for Full-Width Overlay (Explanation): When clicking on the side navigation panel to go to a page, the full-width overlay side navigation panel needs to close. Otherwise, the user will need to click the 'X' to close it. So, this automatically will do it upon clicking to go to a page. The side navigation panel does not need to close upon clicking to go to a page when the screen width is larger.
+
+  if (window.innerWidth <= "600") {closeNav();}
+
+  // *** Responsive Web Design: Close Side Navigation Panel Upon Click for Full-Width Overlay (1 of 1)
+}
+
+// * Hide All Pages Except for Given Page Onmouseover (2 of 2)
+
+// Hide All Pages Except for Given Page Onmouseover (Explanation): This hides all pages initially.
+loadPage();
+
+// *** Hide All Pages Except for Given Page Onmouseover (2 of 2)
+
+// *** Loading Pages (3 of 3)
+</script>
+
+<!-- * Greybox for Code (4 of 4) -->
+
+<script src="https://www.w3schools.com/lib/w3codecolor.js"></script>
+
+<script>w3CodeColor();</script>
+
+<!-- *** Greybox for Code (4 of 4) -->
+
+</body>
+</html>

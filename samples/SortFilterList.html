@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<style>
+<style>
+/* * Search Bar (1 of 3) */
+
+/* Search Bar (Explanation): This creates the styling for the search bar and the side navigation list. */
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 7px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#mySidenav {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#mySidenav li a {
+  padding: 7px;
+  text-decoration: none;
+  font-size: 15px;
+  color: black;
+  display: block
+}
+
+#mySidenav li a:hover:not(.header) {
+  background-color: #eee;
+}
+
+/* *** Search Bar (1 of 3) */
+</style>
+<body>
+
+<!-- * Search Bar (2 of 3) -->
+
+<!-- Search Bar (Explanation): This creates the search bar. -->
+<input type="text" id="myInput" onkeyup="searchList()" placeholder="Search" title="Type in a name">
+
+<!-- *** Search Bar (2 of 3) -->
+
+<!-- Create & Alphabetize Side Navigation List (1 of 2) -->
+<ul id="mySidenav"></ul>
+
+<script>
+// * Create & Alphabetize Side Navigation List (2 of 2)
+
+// Create & Alphabetize Side Navigation List (Explanation): This is arrays combined into one single array.
+var list = [
+  {topic: "JS Error", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "JS Date", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "JS Boolean", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "JS Array", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"}
+];
+
+// Create & Alphabetize Side Navigation List (Explanation): This sorts (alphabetizes) the list array by topic and keeps the corresponding url, etc with the correct topic.
+list.sort(function(a, b){
+  var x = a.topic.toLowerCase();
+  var y = b.topic.toLowerCase();
+  if (x < y) {return -1;}
+  if (x > y) {return 1;}
+  return 0;
+});
+
+// Create & Alphabetize Side Navigation List (Explanation): This creates the side navigation list.
+var i;
+for (i = 0; i < list.length; i++) {
+  var nodeLI = document.createElement("LI");
+  nodeLI.innerHTML = "<a href='" + list[i].url + "'>" + list[i].topic + "</a>";
+  document.getElementById("mySidenav").appendChild(nodeLI);
+}
+
+// *** Create & Alphabetize Side Navigation List (2 of 2)
+
+// * Search Bar (3 of 3)
+
+// Search Bar (Explanation): This makes it so the search bar works when the user types something.
+function searchList() {
+  var input, filter, ul, li, a, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("mySidenav");
+  li = ul.getElementsByTagName("li");
+  for (i = 0; i < li.length; i++) {
+    a = li[i].getElementsByTagName("a")[0];
+    txtValue = a.textContent || a.innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+  }
+}
+
+// *** Search Bar (3 of 3)
+</script>
+
+</body>
+</html>

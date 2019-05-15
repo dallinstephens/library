@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- * Dropdown Menu (1 of 4) -->
+
+<!-- * Dropdown Menu (Explanation): This is used to produce the down arrow. -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- *** Dropdown Menu (1 of 4) -->
+
+<style>
+/* * Dropdown Menu (2 of 4) */
+
+.navbar {
+  width: 100%;
+  overflow: hidden;
+  background-color: #333;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  cursor: pointer;
+  font-size: 15px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 7px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
+  background-color: red;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 86px;
+  background-color: #f9f9f9;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 1px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* * Add New Web Language to Dropdown (1 of 4) */
+.show-allDropdown, .show-htmlDropdown, .show-cssDropdown, .show-jsDropdown {
+  display: block;
+}
+/* *** Add New Web Language to Dropdown (1 of 4) */
+
+/* *** Dropdown Menu (2 of 4) */
+
+/* * Filter By Letter & or Web Language (1 of 4) */
+
+/* Filter By Letter & or Web Language (Explanation): The class .filter is used to hide all items in the side navigation list and .show is added specifically with javascript to show specific items since .show is added and removed. */
+
+.filter {display: none;}
+
+.show {display: block;}
+
+/* *** Filter By Letter & or Web Language (1 of 4) */
+
+/* * Search Bar (1 of 3) */
+
+/* Search Bar (Explanation): This creates the styling for the search bar and the side navigation list. */
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  top: 54px;
+  width: 100%;
+  font-size: 15px;
+  padding: 7px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#mySidenav {
+  position: relative;
+  top: 56px;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#mySidenav li a {
+  padding: 7px;
+  text-decoration: none;
+  font-size: 15px;
+  color: black;
+}
+
+#mySidenav li a:hover:not(.header) {
+  background-color: #eee;
+}
+
+/* *** Search Bar (1 of 3) */
+
+/* * Multiple Columns (1 of 2) */
+
+/* * Reponsive Web Design For Multiple Columns (1 of 1) */
+
+/* Reponsive Web Design For Multiple Columns (Explanation): When the width of the screen can no longer support 2 columns at column-width: 200px; for example, there will be only one column. At that point that only one column appears, the height is changed to 100% for example as in
+
+@media only screen and (max-width: 470px) {
+  .multiple-columns {
+    height:100%;
+  }
+}
+
+*/
+.multiple-columns {
+  -webkit-column-count: 4; /* Chrome, Safari, Opera */
+  -moz-column-count: 4; /* Firefox */
+  column-count: 4;
+  -webkit-column-width: 200px; /* Chrome, Safari, Opera */
+  -moz-column-width: 200px; /* Firefox */
+  column-width: 212px;
+  -webkit-column-gap: 15px; /* Chrome, Safari, Opera */
+  -moz-column-gap: 15px; /* Firefox */
+  column-gap: 15px;
+  height: 87vh;
+  /* Reponsive Web Design For Multiple Columns (Explanation): column-fill: auto; is used so that each column is filled until it reaches the height and it does this until it runs out of content. */
+  -moz-column-fill: auto;
+  column-fill: auto;
+  /* overflow-x: hidden; */
+}
+
+/* *** Reponsive Web Design For Multiple Columns (1 of 1) */
+@media only screen and (max-width: 470px) {
+  .multiple-columns {
+    height:100%;
+  }
+}
+
+/* *** Multiple Columns (1 of 2) */
+
+/* Dropdown & Search Bars Position Fixed (1 of 3) */
+#containerDropdownSearchBars {position: fixed; top: 0; width: 100%; z-index: 1; padding-right: 15px;}
+
+</style>
+
+</head>
+<body>
+
+<!-- Dropdown & Search Bars Position Fixed (2 of 3) -->
+<div id="containerDropdownSearchBars">
+
+<!-- * Dropdown Menu (3 of 4) -->
+<div class="navbar">
+
+  <!-- * Add New Web Language to Dropdown (2 of 4) -->
+
+  <!-- * Filter By Letter & or Web Language (2 of 4) -->
+
+  <div class="dropdown">
+    <button class="dropbtn" onclick="allDropdownFunction()">ALL
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content" id="allDropdown">
+      <a href="javascript:void(0)" onclick="filterSelection('all')">All</a>
+      <a href="javascript:void(0)" onclick="filterSelection('a ')">A</a>
+      <a href="javascript:void(0)" onclick="filterSelection('b ')">B</a>
+      <a href="javascript:void(0)" onclick="filterSelection('c ')">C</a>
+      <a href="javascript:void(0)" onclick="filterSelection('d ')">D</a>
+      <a href="javascript:void(0)" onclick="filterSelection('e ')">E</a>
+      <a href="javascript:void(0)" onclick="filterSelection('f ')">F</a>
+      <a href="javascript:void(0)" onclick="filterSelection('g ')">G</a>
+      <a href="javascript:void(0)" onclick="filterSelection('h ')">H</a>
+      <a href="javascript:void(0)" onclick="filterSelection('i ')">I</a>
+      <a href="javascript:void(0)" onclick="filterSelection('j ')">J</a>
+      <a href="javascript:void(0)" onclick="filterSelection('k ')">K</a>
+      <a href="javascript:void(0)" onclick="filterSelection('l ')">L</a>
+      <a href="javascript:void(0)" onclick="filterSelection('m ')">M</a>
+      <a href="javascript:void(0)" onclick="filterSelection('n ')">N</a>
+      <a href="javascript:void(0)" onclick="filterSelection('o ')">O</a>
+      <a href="javascript:void(0)" onclick="filterSelection('p ')">P</a>
+      <a href="javascript:void(0)" onclick="filterSelection('q ')">Q</a>
+      <a href="javascript:void(0)" onclick="filterSelection('r ')">R</a>
+      <a href="javascript:void(0)" onclick="filterSelection('s ')">S</a>
+      <a href="javascript:void(0)" onclick="filterSelection('t ')">T</a>
+      <a href="javascript:void(0)" onclick="filterSelection('u ')">U</a>
+      <a href="javascript:void(0)" onclick="filterSelection('v ')">V</a>
+      <a href="javascript:void(0)" onclick="filterSelection('w ')">W</a>
+      <a href="javascript:void(0)" onclick="filterSelection('x ')">X</a>
+      <a href="javascript:void(0)" onclick="filterSelection('y ')">Y</a>
+      <a href="javascript:void(0)" onclick="filterSelection('z ')">Z</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <button class="dropbtn" onclick="htmlDropdownFunction()">HTML
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content" id="htmlDropdown">
+      <a href="javascript:void(0)" onclick="filterSelection('html')">All</a>
+      <a href="javascript:void(0)" onclick="filterSelection('a html')">A</a>
+      <a href="javascript:void(0)" onclick="filterSelection('b html')">B</a>
+      <a href="javascript:void(0)" onclick="filterSelection('c html')">C</a>
+      <a href="javascript:void(0)" onclick="filterSelection('d html')">D</a>
+      <a href="javascript:void(0)" onclick="filterSelection('e html')">E</a>
+      <a href="javascript:void(0)" onclick="filterSelection('f html')">F</a>
+      <a href="javascript:void(0)" onclick="filterSelection('g html')">G</a>
+      <a href="javascript:void(0)" onclick="filterSelection('h html')">H</a>
+      <a href="javascript:void(0)" onclick="filterSelection('i html')">I</a>
+      <a href="javascript:void(0)" onclick="filterSelection('j html')">J</a>
+      <a href="javascript:void(0)" onclick="filterSelection('k html')">K</a>
+      <a href="javascript:void(0)" onclick="filterSelection('l html')">L</a>
+      <a href="javascript:void(0)" onclick="filterSelection('m html')">M</a>
+      <a href="javascript:void(0)" onclick="filterSelection('n html')">N</a>
+      <a href="javascript:void(0)" onclick="filterSelection('o html')">O</a>
+      <a href="javascript:void(0)" onclick="filterSelection('p html')">P</a>
+      <a href="javascript:void(0)" onclick="filterSelection('q html')">Q</a>
+      <a href="javascript:void(0)" onclick="filterSelection('r html')">R</a>
+      <a href="javascript:void(0)" onclick="filterSelection('s html')">S</a>
+      <a href="javascript:void(0)" onclick="filterSelection('t html')">T</a>
+      <a href="javascript:void(0)" onclick="filterSelection('u html')">U</a>
+      <a href="javascript:void(0)" onclick="filterSelection('v html')">V</a>
+      <a href="javascript:void(0)" onclick="filterSelection('w html')">W</a>
+      <a href="javascript:void(0)" onclick="filterSelection('x html')">X</a>
+      <a href="javascript:void(0)" onclick="filterSelection('y html')">Y</a>
+      <a href="javascript:void(0)" onclick="filterSelection('z html')">Z</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <button class="dropbtn" onclick="cssDropdownFunction()">CSS
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content" id="cssDropdown">
+      <a href="javascript:void(0)" onclick="filterSelection('css')">All</a>
+      <a href="javascript:void(0)" onclick="filterSelection('a css')">A</a>
+      <a href="javascript:void(0)" onclick="filterSelection('b css')">B</a>
+      <a href="javascript:void(0)" onclick="filterSelection('c css')">C</a>
+      <a href="javascript:void(0)" onclick="filterSelection('d css')">D</a>
+      <a href="javascript:void(0)" onclick="filterSelection('e css')">E</a>
+      <a href="javascript:void(0)" onclick="filterSelection('f css')">F</a>
+      <a href="javascript:void(0)" onclick="filterSelection('g css')">G</a>
+      <a href="javascript:void(0)" onclick="filterSelection('h css')">H</a>
+      <a href="javascript:void(0)" onclick="filterSelection('i css')">I</a>
+      <a href="javascript:void(0)" onclick="filterSelection('j css')">J</a>
+      <a href="javascript:void(0)" onclick="filterSelection('k css')">K</a>
+      <a href="javascript:void(0)" onclick="filterSelection('l css')">L</a>
+      <a href="javascript:void(0)" onclick="filterSelection('m css')">M</a>
+      <a href="javascript:void(0)" onclick="filterSelection('n css')">N</a>
+      <a href="javascript:void(0)" onclick="filterSelection('o css')">O</a>
+      <a href="javascript:void(0)" onclick="filterSelection('p css')">P</a>
+      <a href="javascript:void(0)" onclick="filterSelection('q css')">Q</a>
+      <a href="javascript:void(0)" onclick="filterSelection('r css')">R</a>
+      <a href="javascript:void(0)" onclick="filterSelection('s css')">S</a>
+      <a href="javascript:void(0)" onclick="filterSelection('t css')">T</a>
+      <a href="javascript:void(0)" onclick="filterSelection('u css')">U</a>
+      <a href="javascript:void(0)" onclick="filterSelection('v css')">V</a>
+      <a href="javascript:void(0)" onclick="filterSelection('w css')">W</a>
+      <a href="javascript:void(0)" onclick="filterSelection('x css')">X</a>
+      <a href="javascript:void(0)" onclick="filterSelection('y css')">Y</a>
+      <a href="javascript:void(0)" onclick="filterSelection('z css')">Z</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <button class="dropbtn" onclick="jsDropdownFunction()">JS
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content" id="jsDropdown">
+      <a href="javascript:void(0)" onclick="filterSelection('js')">All</a>
+      <a href="javascript:void(0)" onclick="filterSelection('a js')">A</a>
+      <a href="javascript:void(0)" onclick="filterSelection('b js')">B</a>
+      <a href="javascript:void(0)" onclick="filterSelection('c js')">C</a>
+      <a href="javascript:void(0)" onclick="filterSelection('d js')">D</a>
+      <a href="javascript:void(0)" onclick="filterSelection('e js')">E</a>
+      <a href="javascript:void(0)" onclick="filterSelection('f js')">F</a>
+      <a href="javascript:void(0)" onclick="filterSelection('g js')">G</a>
+      <a href="javascript:void(0)" onclick="filterSelection('h js')">H</a>
+      <a href="javascript:void(0)" onclick="filterSelection('i js')">I</a>
+      <a href="javascript:void(0)" onclick="filterSelection('j js')">J</a>
+      <a href="javascript:void(0)" onclick="filterSelection('k js')">K</a>
+      <a href="javascript:void(0)" onclick="filterSelection('l js')">L</a>
+      <a href="javascript:void(0)" onclick="filterSelection('m js')">M</a>
+      <a href="javascript:void(0)" onclick="filterSelection('n js')">N</a>
+      <a href="javascript:void(0)" onclick="filterSelection('o js')">O</a>
+      <a href="javascript:void(0)" onclick="filterSelection('p js')">P</a>
+      <a href="javascript:void(0)" onclick="filterSelection('q js')">Q</a>
+      <a href="javascript:void(0)" onclick="filterSelection('r js')">R</a>
+      <a href="javascript:void(0)" onclick="filterSelection('s js')">S</a>
+      <a href="javascript:void(0)" onclick="filterSelection('t js')">T</a>
+      <a href="javascript:void(0)" onclick="filterSelection('u js')">U</a>
+      <a href="javascript:void(0)" onclick="filterSelection('v js')">V</a>
+      <a href="javascript:void(0)" onclick="filterSelection('w js')">W</a>
+      <a href="javascript:void(0)" onclick="filterSelection('x js')">X</a>
+      <a href="javascript:void(0)" onclick="filterSelection('y js')">Y</a>
+      <a href="javascript:void(0)" onclick="filterSelection('z js')">Z</a>
+    </div>
+  </div>
+
+  <!-- *** Add New Web Language to Dropdown (2 of 4) -->
+
+</div>
+
+<!-- *** Dropdown Menu (3 of 4) -->
+
+<!-- * Search Bar (2 of 3) -->
+
+<!-- Search Bar (Explanation): This creates the search bar. -->
+<input type="text" id="myInput" onkeyup="searchList()" placeholder="Search" title="Type in a name">
+
+<!-- *** Search Bar (2 of 3) -->
+
+<!-- Dropdown & Search Bars Position Fixed (2 of 3) -->
+</div>
+
+<!-- Filter By Letter & or Web Language (Explanation): The classes added are needed for filtering. The classes are added in the javascript section. -->
+
+<!-- * Multiple Columns (2 of 2) -->
+
+<!-- Multiple Columns (Explanation): The class="multiple-columns" was added. -->
+<!-- Create & Alphabetize Side Navigation List (1 of 2) -->
+<ul id="mySidenav" class="multiple-columns"></ul>
+
+<!-- *** Multiple Columns (2 of 2) -->
+
+<!-- *** Filter By Letter & or Web Language (2 of 4) -->
+
+<script>
+
+// * Dropdown Menu (4 of 4)
+
+/* Dropdown Menu (Explanation): When the user clicks on the button,
+toggle between hiding and showing the dropdown content. */
+
+// * Add New Web Language to Dropdown (3 of 4)
+
+function allDropdownFunction() {
+  document.getElementById("allDropdown").classList.toggle("show-allDropdown");
+}
+
+function htmlDropdownFunction() {
+  document.getElementById("htmlDropdown").classList.toggle("show-htmlDropdown");
+}
+
+function cssDropdownFunction() {
+  document.getElementById("cssDropdown").classList.toggle("show-cssDropdown");
+}
+
+function jsDropdownFunction() {
+  document.getElementById("jsDropdown").classList.toggle("show-jsDropdown");
+}
+
+// *** Add New Web Language to Dropdown (3 of 4)
+
+// Dropdown Menu (Explanation): Close the dropdown if the user clicks outside of it
+window.onclick = function(e) {
+  if (!e.target.matches('.dropbtn')) {
+
+    // * Add New Web Language to Dropdown (4 of 4)
+
+  	var allDropdownVar = document.getElementById("allDropdown");
+    if (allDropdownVar.classList.contains('show-allDropdown')) {
+      allDropdownVar.classList.remove('show-allDropdown');
+    }
+
+  	var htmlDropdownVar = document.getElementById("htmlDropdown");
+    if (htmlDropdownVar.classList.contains('show-htmlDropdown')) {
+      htmlDropdownVar.classList.remove('show-htmlDropdown');
+    }
+
+  	var cssDropdownVar = document.getElementById("cssDropdown");
+    if (cssDropdownVar.classList.contains('show-cssDropdown')) {
+      cssDropdownVar.classList.remove('show-cssDropdown');
+    }
+
+  	var jsDropdownVar = document.getElementById("jsDropdown");
+    if (jsDropdownVar.classList.contains('show-jsDropdown')) {
+      jsDropdownVar.classList.remove('show-jsDropdown');
+    }
+
+    // *** Add New Web Language to Dropdown (4 of 4)
+  }
+}
+
+// *** Dropdown Menu (4 of 4)
+
+// * Filter By Letter & or Web Language (3 of 4)
+
+// Filter By Letter & or Web Language (Explanation): This whole section was taken from w3schools. The only adjustment was changing the name filterDIV to filter.
+
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("filter");
+
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
+
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+// *** Filter By Letter & or Web Language (3 of 4)
+
+// * Search Bar (3 of 3)
+
+// Search Bar (Explanation): This makes it so the search bar works when the user types something.
+function searchList() {
+  var input, filter, ul, li, a, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("mySidenav");
+  li = ul.getElementsByTagName("li");
+  for (i = 0; i < li.length; i++) {
+    a = li[i].getElementsByTagName("a")[0];
+    txtValue = a.textContent || a.innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+  }
+}
+
+// *** Search Bar (3 of 3)
+
+// * Create & Alphabetize Side Navigation List (2 of 2)
+
+// Create & Alphabetize Side Navigation List (Explanation): This is arrays combined into one single array.
+var list = [
+  {topic: "Error JS", class: "e js", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "Date JS", class: "d js", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "Boolean JS", class: "b js", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "Array JS", class: "a js", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "e html", class: "e html", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "a css", class: "a css", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "f css", class: "f css", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "s html", class: "s html", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "Error JS", class: "e js", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "Date JS", class: "d js", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "Boolean JS", class: "b js", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "Array JS", class: "a js", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "e html", class: "e html", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "a css", class: "a css", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "f css", class: "f css", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "s html", class: "s html", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "Error JS", class: "e js", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "Date JS", class: "d js", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "Boolean JS", class: "b js", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "Array JS", class: "a js", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "e html", class: "e html", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "a css", class: "a css", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "f css", class: "f css", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "s html", class: "s html", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "Error JS", class: "e js", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "Date JS", class: "d js", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "Boolean JS", class: "b js", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "Array JS", class: "a js", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "e html", class: "e html", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "a css", class: "a css", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "f css", class: "f css", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "s html", class: "s html", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "Error JS", class: "e js", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "Date JS", class: "d js", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "Boolean JS", class: "b js", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "Array JS", class: "a js", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "e html", class: "e html", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "a css", class: "a css", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "f css", class: "f css", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "s html", class: "s html", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "Error JS", class: "e js", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "Date JS", class: "d js", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "Boolean JS", class: "b js", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "Array JS", class: "a js", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "e html", class: "e html", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "a css", class: "a css", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "f css", class: "f css", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "s html", class: "s html", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "Error JS", class: "e js", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "Date JS", class: "d js", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "Boolean JS", class: "b js", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "Array JS", class: "a js", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "e html", class: "e html", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "a css", class: "a css", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "f css", class: "f css", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "s html", class: "s html", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "Error JS", class: "e js", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "Date JS", class: "d js", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "Boolean JS", class: "b js", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "Array JS", class: "a js", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "e html", class: "e html", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "a css", class: "a css", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "f css", class: "f css", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "s html", class: "s html", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "Error JS", class: "e js", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "Date JS", class: "d js", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "Boolean JS", class: "b js", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "Array JS", class: "a js", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "e html", class: "e html", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "a css", class: "a css", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "f css", class: "f css", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "s html", class: "s html", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "Error JS", class: "e js", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "Date JS", class: "d js", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "Boolean JS", class: "b js", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "Array JS", class: "a js", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "e html", class: "e html", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "a css", class: "a css", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "f css", class: "f css", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "s html", class: "s html", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "Error JS", class: "e js", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "Date JS", class: "d js", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "Boolean JS", class: "b js", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "Array JS", class: "a js", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "e html", class: "e html", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "a css", class: "a css", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "f css", class: "f css", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "s html", class: "s html", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "Error JS", class: "e js", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "Date JS", class: "d js", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "Boolean JS", class: "b js", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "Array JS", class: "a js", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "e html", class: "e html", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "a css", class: "a css", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "f css", class: "f css", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "s html", class: "s html", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "Error JS", class: "e js", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "Date JS", class: "d js", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "Boolean JS", class: "b js", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "Array JS", class: "a js", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "e html", class: "e html", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "a css", class: "a css", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "f css", class: "f css", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "s html", class: "s html", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "Error JS", class: "e js", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "Date JS", class: "d js", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "Boolean JS", class: "b js", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "Array JS", class: "a js", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "e html", class: "e html", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "a css", class: "a css", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "f css", class: "f css", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "s html", class: "s html", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "Error JS", class: "e js", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "Date JS", class: "d js", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "Boolean JS", class: "b js", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "Array JS", class: "a js", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "e html", class: "e html", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "a css", class: "a css", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "f css", class: "f css", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "s html", class: "s html", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "Error JS", class: "e js", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "Date JS", class: "d js", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "Boolean JS", class: "b js", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "Array JS", class: "a js", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "e html", class: "e html", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "a css", class: "a css", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "f css", class: "f css", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "s html", class: "s html", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "Error JS", class: "e js", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "Date JS", class: "d js", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "Boolean JS", class: "b js", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "Array JS", class: "a js", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "e html", class: "e html", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "a css", class: "a css", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "f css", class: "f css", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "s html", class: "s html", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "Error JS", class: "e js", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "Date JS", class: "d js", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "Boolean JS", class: "b js", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "Array JS", class: "a js", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "e html", class: "e html", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "a css", class: "a css", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "g css", class: "g css", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "s html", class: "s html", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "Error JS", class: "e js", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "Date JS", class: "d js", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "Boolean JS", class: "b js", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "Array JS", class: "a js", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "e html", class: "e html", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "a css", class: "a css", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "g css", class: "g css", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "s html", class: "s html", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "Error JS", class: "e js", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "Date JS", class: "d js", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "Boolean JS", class: "b js", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "Array JS", class: "a js", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "e html", class: "e html", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "a css", class: "a css", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "g css", class: "g css", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "s html", class: "s html", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "Error JS", class: "e js", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "Date JS", class: "d js", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "Boolean JS", class: "b js", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "Array JS", class: "a js", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "e html", class: "e html", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "a css", class: "a css", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "g css", class: "g css", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "s html", class: "s html", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "Error JS", class: "e js", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "Date JS", class: "d js", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "Boolean JS", class: "b js", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "Array JS", class: "a js", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "e html", class: "e html", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "a css", class: "a css", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "g css", class: "g css", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "s html", class: "s html", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "Error JS", class: "e js", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "Date JS", class: "d js", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "Boolean JS", class: "b js", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "Array JS", class: "a js", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "e html", class: "e html", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "a css", class: "a css", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "g css", class: "g css", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "s html", class: "s html", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "Error JS", class: "e js", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "Date JS", class: "d js", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "Boolean JS", class: "b js", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "Array JS", class: "a js", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "e html", class: "e html", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
+  {topic: "a css", class: "a css", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "h css", class: "h css", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "s html", class: "s html", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"}
+];
+
+// Create & Alphabetize Side Navigation List (Explanation): This sorts (alphabetizes) the list array by topic and keeps the corresponding url, etc with the correct topic.
+list.sort(function(a, b){
+  var x = a.topic.toLowerCase();
+  var y = b.topic.toLowerCase();
+  if (x < y) {return -1;}
+  if (x > y) {return 1;}
+  return 0;
+});
+
+// Create & Alphabetize Side Navigation List (Explanation): This creates the side navigation list.
+var i;
+for (i = 0; i < list.length; i++) {
+  var nodeLI = document.createElement("li");
+  nodeLI.innerHTML = "<a class='filter " + list[i].class + "' href='" + list[i].url + "'>" + list[i].topic + "</a>";
+  document.getElementById("mySidenav").appendChild(nodeLI);
+}
+
+// *** Create & Alphabetize Side Navigation List (2 of 2)
+
+// * Filter By Letter & or Web Language (4 of 4)
+
+// Filter By Letter & or Web Language (Explanation): This shows the entire list once the page loads. It needs to be after the list is created, not before or it will not execute.
+filterSelection("all");
+
+// *** Filter By Letter & or Web Language (4 of 4)
+</script>
+</body>
+</html>

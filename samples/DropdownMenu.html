@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- * Dropdown Menu (1 of 4) -->
+
+<!-- * Dropdown Menu (Explanation): This is used to produce the down arrow. -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- *** Dropdown Menu (1 of 4) -->
+<style>
+/* * Dropdown Menu (2 of 4) */
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  cursor: pointer;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
+  background-color: red;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 86px;
+  background-color: #f9f9f9;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 1px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* * Add New Web Language to Dropdown (1 of 4) */
+.show-allDropdown, .show-htmlDropdown, .show-cssDropdown, .show-jsDropdown {
+  display: block;
+}
+/* *** Add New Web Language to Dropdown (1 of 4) */
+
+/* *** Dropdown Menu (2 of 4) */
+</style>
+</head>
+<body>
+
+<!-- * Dropdown Menu (3 of 4) -->
+<div class="navbar">
+
+  <!-- * Add New Web Language to Dropdown (2 of 4) -->
+
+  <div class="dropdown">
+    <button class="dropbtn" onclick="allDropdownFunction()">ALL
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content" id="allDropdown">
+      <a href="#">All</a>
+      <a href="#">A</a>
+      <a href="#">B</a>
+      <a href="#">C</a>
+      <a href="#">D</a>
+      <a href="#">E</a>
+      <a href="#">F</a>
+      <a href="#">G</a>
+      <a href="#">H</a>
+      <a href="#">I</a>
+      <a href="#">J</a>
+      <a href="#">K</a>
+      <a href="#">L</a>
+      <a href="#">M</a>
+      <a href="#">N</a>
+      <a href="#">O</a>
+      <a href="#">P</a>
+      <a href="#">Q</a>
+      <a href="#">R</a>
+      <a href="#">S</a>
+      <a href="#">T</a>
+      <a href="#">U</a>
+      <a href="#">V</a>
+      <a href="#">W</a>
+      <a href="#">X</a>
+      <a href="#">Y</a>
+      <a href="#">Z</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <button class="dropbtn" onclick="htmlDropdownFunction()">HTML
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content" id="htmlDropdown">
+      <a href="#">All</a>
+      <a href="#">A</a>
+      <a href="#">B</a>
+      <a href="#">C</a>
+      <a href="#">D</a>
+      <a href="#">E</a>
+      <a href="#">F</a>
+      <a href="#">G</a>
+      <a href="#">H</a>
+      <a href="#">I</a>
+      <a href="#">J</a>
+      <a href="#">K</a>
+      <a href="#">L</a>
+      <a href="#">M</a>
+      <a href="#">N</a>
+      <a href="#">O</a>
+      <a href="#">P</a>
+      <a href="#">Q</a>
+      <a href="#">R</a>
+      <a href="#">S</a>
+      <a href="#">T</a>
+      <a href="#">U</a>
+      <a href="#">V</a>
+      <a href="#">W</a>
+      <a href="#">X</a>
+      <a href="#">Y</a>
+      <a href="#">Z</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <button class="dropbtn" onclick="cssDropdownFunction()">CSS
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content" id="cssDropdown">
+      <a href="#">All</a>
+      <a href="#">A</a>
+      <a href="#">B</a>
+      <a href="#">C</a>
+      <a href="#">D</a>
+      <a href="#">E</a>
+      <a href="#">F</a>
+      <a href="#">G</a>
+      <a href="#">H</a>
+      <a href="#">I</a>
+      <a href="#">J</a>
+      <a href="#">K</a>
+      <a href="#">L</a>
+      <a href="#">M</a>
+      <a href="#">N</a>
+      <a href="#">O</a>
+      <a href="#">P</a>
+      <a href="#">Q</a>
+      <a href="#">R</a>
+      <a href="#">S</a>
+      <a href="#">T</a>
+      <a href="#">U</a>
+      <a href="#">V</a>
+      <a href="#">W</a>
+      <a href="#">X</a>
+      <a href="#">Y</a>
+      <a href="#">Z</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <button class="dropbtn" onclick="jsDropdownFunction()">JS
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content" id="jsDropdown">
+      <a href="#">All</a>
+      <a href="#">A</a>
+      <a href="#">B</a>
+      <a href="#">C</a>
+      <a href="#">D</a>
+      <a href="#">E</a>
+      <a href="#">F</a>
+      <a href="#">G</a>
+      <a href="#">H</a>
+      <a href="#">I</a>
+      <a href="#">J</a>
+      <a href="#">K</a>
+      <a href="#">L</a>
+      <a href="#">M</a>
+      <a href="#">N</a>
+      <a href="#">O</a>
+      <a href="#">P</a>
+      <a href="#">Q</a>
+      <a href="#">R</a>
+      <a href="#">S</a>
+      <a href="#">T</a>
+      <a href="#">U</a>
+      <a href="#">V</a>
+      <a href="#">W</a>
+      <a href="#">X</a>
+      <a href="#">Y</a>
+      <a href="#">Z</a>
+    </div>
+  </div>
+
+  <!-- *** Add New Web Language to Dropdown (2 of 4) -->
+
+</div>
+
+<!-- *** Dropdown Menu (3 of 4) -->
+
+<script>
+
+// * Dropdown Menu (4 of 4)
+
+/* Dropdown Menu (Explanation): When the user clicks on the button,
+toggle between hiding and showing the dropdown content. */
+
+// * Add New Web Language to Dropdown (3 of 4)
+
+function allDropdownFunction() {
+  document.getElementById("allDropdown").classList.toggle("show-allDropdown");
+}
+
+function htmlDropdownFunction() {
+  document.getElementById("htmlDropdown").classList.toggle("show-htmlDropdown");
+}
+
+function cssDropdownFunction() {
+  document.getElementById("cssDropdown").classList.toggle("show-cssDropdown");
+}
+
+function jsDropdownFunction() {
+  document.getElementById("jsDropdown").classList.toggle("show-jsDropdown");
+}
+
+// *** Add New Web Language to Dropdown (3 of 4)
+
+// Dropdown Menu (Explanation): Close the dropdown if the user clicks outside of it
+window.onclick = function(e) {
+  if (!e.target.matches('.dropbtn')) {
+
+    // * Add New Web Language to Dropdown (4 of 4)
+
+  	var allDropdownVar = document.getElementById("allDropdown");
+    if (allDropdownVar.classList.contains('show-allDropdown')) {
+      allDropdownVar.classList.remove('show-allDropdown');
+    }
+
+  	var htmlDropdownVar = document.getElementById("htmlDropdown");
+    if (htmlDropdownVar.classList.contains('show-htmlDropdown')) {
+      htmlDropdownVar.classList.remove('show-htmlDropdown');
+    }
+
+  	var cssDropdownVar = document.getElementById("cssDropdown");
+    if (cssDropdownVar.classList.contains('show-cssDropdown')) {
+      cssDropdownVar.classList.remove('show-cssDropdown');
+    }
+
+  	var jsDropdownVar = document.getElementById("jsDropdown");
+    if (jsDropdownVar.classList.contains('show-jsDropdown')) {
+      jsDropdownVar.classList.remove('show-jsDropdown');
+    }
+
+    // *** Add New Web Language to Dropdown (4 of 4)
+  }
+}
+
+// *** Dropdown Menu (4 of 4)
+
+</script>
+</body>
+</html>
