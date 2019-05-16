@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<body>
+<!-- * Get All Selected Values From a Multiple Select Box (1 of 2) -->
+<select multiple>
+  <option value="opt 1 value">opt 1 text</option>
+  <option value="opt 2 value">opt 2 text</option>
+  <option value="opt 3 value">opt 3 text</option>
+</select>
+
+<!-- * Get All Selected Values From a Multiple Select Box (Explanation) -->
+
+<!-- document.getElementsByTagName('select')[0].innerHTML =
+      <option value="opt 1 value">opt 1 text</option>
+      <option value="opt 2 value">opt 2 text</option>
+      <option value="opt 3 value">opt 3 text</option> -->
+
+<button onclick="
+  var el = document.getElementsByTagName('select')[0];
+  getSelectValues(el);
+">Show selected values</button>
+
+<!-- *** Get All Selected Values From a Multiple Select Box (Explanation) -->
+
+<p id="demo">How to get all selected values of a multiple select box?</p>
+
+<!-- *** Get All Selected Values From a Multiple Select Box (1 of 2) -->
+
+<script>
+
+// * Get All Selected Values From a Multiple Select Box (2 of 2)
+
+// * Get All Selected Values From a Multiple Select Box (Explanation)
+// Return an array of the selected option values
+// select is an HTML select element
+function getSelectValues(select) {
+  var result = [];
+  // select.innerHTML =
+    // <option value="opt 1 value">opt 1 text</option>
+    // <option value="opt 2 value">opt 2 text</option>
+    // <option value="opt 3 value">opt 3 text</option>
+  // select.options[0].innerHTML = "opt 1 text";
+
+  var options = select && select.options;
+  var opt;
+
+  for (var i=0, iLen=options.length; i<iLen; i++) {
+    opt = options[i];
+
+    if (opt.selected) {
+      result.push(opt.value || opt.text);
+    }
+  }
+
+  var text = result[0];
+
+  if (result.length === 1) {
+  	text = result[0];
+  }
+  else {
+    for (j = 1; j < result.length; j++) {
+      text = text + " " + result[j];
+    }
+  }
+  document.getElementById("demo").innerHTML = text;
+
+}
+
+// *** Get All Selected Values From a Multiple Select Box (Explanation)
+
+// *** Get All Selected Values From a Multiple Select Box (2 of 2)
+</script>
+
+</body>
+</html>

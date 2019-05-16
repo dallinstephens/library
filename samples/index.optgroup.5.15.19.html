@@ -95,8 +95,8 @@
 /* *** Multiple Columns (1 of 2) */
 
 
-/* Select Options & Search Bars Position Fixed (1 of 3) */
-#containerSelectOptionsSearchBars {position: fixed; z-index:1; top: 0; width: 100%;}
+/* Optgroup & Search Bars Position Fixed (1 of 3) */
+#containerOptgroupSearchBars {position: fixed; z-index:1; top: 0; width: 100%;}
 
 /* * Greybox for Code (2 of 4) */
 
@@ -140,27 +140,27 @@ header {
 
 #htmlPages, #javascriptPages {position: relative; margin-top: 123px; width: 80%; margin-left: 20px; font-size: 8px;}
 
-/* * Select Option Styling (1 of 1) */
+/* * Optgroup Toggle Hide Show (1 of 3) */
 #select-container {width: 100%;}
-option {background: #f2f2f2;}
-option:hover {background: #d9d9d9;}
-/* *** Select Option Styling (1 of 1) */
+optgroup {background: #f2f2f2;}
+optgroup:hover {background: #d9d9d9;}
+optgroup option {background: #f2f2f2;}
+/* *** Optgroup Toggle Hide Show (1 of 3) */
 </style>
 </head>
 <body>
 
-<!-- Select Options & Search Bars Position Fixed (1 of 3) -->
-<div id="containerSelectOptionsSearchBars">
+<!-- Optgroup & Search Bars Position Fixed (2 of 3) -->
+<div id="containerOptgroupSearchBars">
 
   <!-- * Filter By Letter & or Web Language (2 of 4) -->
 
+  <!-- * Optgroup Toggle Hide Show (2 of 3) -->
+
   <div>
-
- 	<!-- * Get All Selected Values From a Multiple Select Box (1 of 2) -->
-
-  	<!-- Get All Selected Values From a Multiple Select Box (Explanation): openNav() opens the side navigation panel and loadPage() hides any pages. -->
-
-    <select id="select-container" multiple="multiple" onclick="openNav(); loadPage()">>
+    <select id="select-container" multiple="multiple">
+      <!-- Optgroup Toggle Hide Show (Explanation): openNav opens the side navigation panel and load page hides any pages. -->
+      <optgroup id="all" label="ALL" onclick="toggleHideShowOptions('all'); openNav(); loadPage()">
         <option value="all">All</option>
         <option value="a ">A</option>
         <option value="b ">B</option>
@@ -188,13 +188,98 @@ option:hover {background: #d9d9d9;}
         <option value="x ">X</option>
         <option value="y ">Y</option>
         <option value="z ">Z</option>
-        <option value="html">HTML</option>
-        <option value="css">CSS</option>
-        <option value="js">JS</option>
+      </optgroup>
+      <optgroup id="html" label="HTML" onclick="toggleHideShowOptions('html'); openNav(); loadPage()">
+        <option value="html">All</option>
+        <option value="a html">A</option>
+        <option value="b html">B</option>
+        <option value="c html">C</option>
+        <option value="d html">D</option>
+        <option value="e html">E</option>
+        <option value="f html">F</option>
+        <option value="g html">G</option>
+        <option value="h html">H</option>
+        <option value="i html">I</option>
+        <option value="j html">J</option>
+        <option value="k html">K</option>
+        <option value="l html">L</option>
+        <option value="m html">M</option>
+        <option value="n html">N</option>
+        <option value="o html">O</option>
+        <option value="p html">P</option>
+        <option value="q html">Q</option>
+        <option value="r html">R</option>
+        <option value="s html">S</option>
+        <option value="t html">T</option>
+        <option value="u html">U</option>
+        <option value="v html">V</option>
+        <option value="w html">W</option>
+        <option value="x html">X</option>
+        <option value="y html">Y</option>
+        <option value="z html">Z</option>
+      </optgroup>
+      <optgroup id="css" label="CSS" onclick="toggleHideShowOptions('css'); openNav(); loadPage()">
+        <option value="css">All</option>
+        <option value="a css">A</option>
+        <option value="b css">B</option>
+        <option value="c css">C</option>
+        <option value="d css">D</option>
+        <option value="e css">E</option>
+        <option value="f css">F</option>
+        <option value="g css">G</option>
+        <option value="h css">H</option>
+        <option value="i css">I</option>
+        <option value="j css">J</option>
+        <option value="k css">K</option>
+        <option value="l css">L</option>
+        <option value="m css">M</option>
+        <option value="n css">N</option>
+        <option value="o css">O</option>
+        <option value="p css">P</option>
+        <option value="q css">Q</option>
+        <option value="r css">R</option>
+        <option value="s css">S</option>
+        <option value="t css">T</option>
+        <option value="u css">U</option>
+        <option value="v css">V</option>
+        <option value="w css">W</option>
+        <option value="x css">X</option>
+        <option value="y css">Y</option>
+        <option value="z css">Z</option>
+      </optgroup>
+      <optgroup id="js" label="JS" onclick="toggleHideShowOptions('js'); openNav(); loadPage()">
+        <option value="js">All</option>
+        <option value="a js">A</option>
+        <option value="b js">B</option>
+        <option value="c js">C</option>
+        <option value="d js">D</option>
+        <option value="e js">E</option>
+        <option value="f js">F</option>
+        <option value="g js">G</option>
+        <option value="h js">H</option>
+        <option value="i js">I</option>
+        <option value="j js">J</option>
+        <option value="k js">K</option>
+        <option value="l js">L</option>
+        <option value="m js">M</option>
+        <option value="n js">N</option>
+        <option value="o js">O</option>
+        <option value="p js">P</option>
+        <option value="q js">Q</option>
+        <option value="r js">R</option>
+        <option value="s js">S</option>
+        <option value="t js">T</option>
+        <option value="u js">U</option>
+        <option value="v js">V</option>
+        <option value="w js">W</option>
+        <option value="x js">X</option>
+        <option value="y js">Y</option>
+        <option value="z js">Z</option>
+      </optgroup>
     </select>
   </div>
 
-  <!-- *** Get All Selected Values From a Multiple Select Box (1 of 2) -->
+  <!-- *** Optgroup Toggle Hide Show (2 of 3) -->
 
 <!-- * Search Bar (2 of 3) -->
 
@@ -206,7 +291,7 @@ option:hover {background: #d9d9d9;}
 
 <!-- *** Search Bar (2 of 3) -->
 
-<!-- Select Options & Search Bars Position Fixed (2 of 3) -->
+<!-- Optgroup & Search Bars Position Fixed (2 of 3) -->
 </div>
 
 <!-- Filter By Letter & or Web Language (Explanation): The classes added are needed for filtering. The classes are added in the javascript section. -->
@@ -315,64 +400,46 @@ function myFunction() {
 
 <script>
 
+// * Optgroup Toggle Hide Show (3 of 3)
+
+// * Optgroup Toggle Hide Show (Explanation): This makes it so that all groups are intially collapsed.
+var optgroup = ["all", "html", "css", "js"];
+
+for (j = 0; j < optgroup.length; j++) {
+
+  for (i = 0; i < document.getElementById(optgroup[j]).children.length; i++) {
+    document.getElementById(optgroup[j]).children[i].style.display = "none";
+  }
+
+}
+// *** Optgroup Toggle Hide Show (Explanation)
+
+// * Optgroup Toggle Hide Show (Explanation): This toggles between collapsing and expanding each group upon optgroup click.
+function toggleHideShowOptions(a) {
+  if (document.getElementById(a).children[0].style.display === "none") {
+    for (i = 0; i < document.getElementById(a).children.length; i++) {
+      document.getElementById(a).children[i].style.display = "block";
+    }
+  }
+  else {
+    for (i = 0; i < document.getElementById(a).children.length; i++) {
+      document.getElementById(a).children[i].style.display = "none";
+    }
+  }
+}
+// *** Optgroup Toggle Hide Show (Explanation)
+
+// *** Optgroup Toggle Hide Show (3 of 3)
+
 // * Filter By Letter & or Web Language (3 of 4)
 
 // Filter By Letter & or Web Language (Explanation): This whole section was taken from w3schools. The only adjustment was changing the name filterDIV to filter.
 
-// * Select & Filter Value(s) With Onchange (1 of 1)
-
-// * Get All Selected Values From a Multiple Select Box (2 of 2)
-
+// * Select & Filter Value With Onchange (1 of 1)
 document.getElementById("select-container").onchange = function() {
-
-    // * Get All Selected Values From a Multiple Select Box (Explanation)
-
-    // Example: document.getElementsByTagName('select')[0].innerHTML =
-          // <option value="opt 1 value">opt 1 text</option>
-          // <option value="opt 2 value">opt 2 text</option>
-          // <option value="opt 3 value">opt 3 text</option>
-
-	var select = document.getElementsByTagName('select')[0];
-
-    // *** Get All Selected Values From a Multiple Select Box (Explanation)
-
-    // * Get All Selected Values From a Multiple Select Box (Explanation)
-    // Return an array of the selected option values
-    // select is an HTML select element
-
-    var result = [];
-
-    var options = select && select.options;
-    var opt;
-
-    for (var i=0, iLen=options.length; i<iLen; i++) {
-      opt = options[i];
-
-      if (opt.selected) {
-        result.push(opt.value || opt.text);
-      }
-    }
-
-    var text = result[0];
-
-    if (result.length === 1) {
-      text = result[0];
-    }
-    else {
-      for (j = 1; j < result.length; j++) {
-        text = text + result[j];
-      }
-    }
-    // text holds the value or multiple values and is passed to through filterSelection()
-    alert(text);
-    filterSelection(text);
-
-    // *** Get All Selected Values From a Multiple Select Box (Explanation)
-
-    // *** Get All Selected Values From a Multiple Select Box (2 of 2)
-
+	filterSelection(document.getElementById("select-container").value);
 };
-// *** Select & Filter Value(s) With Onchange (1 of 1)
+// *** Select & Filter Value With Onchange (1 of 1)
 
 function filterSelection(c) {
   var x, i;
