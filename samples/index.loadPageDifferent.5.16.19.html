@@ -2,6 +2,8 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Greybox for Code (1 of 4) -->
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 <style>
 
@@ -31,8 +33,8 @@
 
 #mySidenav {
   position: relative;
-  top: 85px;
-  height: 80vh;
+  top: 105px;
+  height: 82vh;
   list-style-type: none;
   padding-left: 7px;
   padding-right: 7px;
@@ -96,7 +98,47 @@
 /* Select Options & Search Bars Position Fixed (1 of 3) */
 #containerSelectOptionsSearchBars {position: fixed; z-index:1; top: 0; width: 100%;}
 
-#loadPage {position: relative; width: 100%; height: 83vh; margin-top: 101px; margin-left: 0px; font-size: 8px; border: 1px solid black;}
+/* * Greybox for Code (2 of 4) */
+
+.greybox {
+	margin: 7px; padding: 5px 10px 5px 10px; background: lightgrey; border-radius: 25px; box-shadow: 0px 0px 5px 1px #888888;
+}
+
+/* Greybox for Code (Explanation): This makes it so that text can be wrapped in pre tags. */
+pre {
+	font-size: 8px !important;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+}
+
+/* *** Greybox for Code (2 of 4) */
+
+/* * JAVASCRIPT: PAGE 1 (1 of 2) */
+#myDIV {
+  border: 1px solid black;
+  margin: 5px;
+  background: lightblue;
+}
+/* *** JAVASCRIPT: PAGE 1 (1 of 2) */
+
+/* * Headers (1 of 1) */
+header {
+  position: relative;
+  top: 0;
+  padding: 7px;
+  text-align: center;
+  background: #1abc9c;
+  color: black;
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+/* *** Headers (1 of 1) */
+
+#htmlPages, #javascriptPages {position: relative; margin-top: 123px; width: 80%; margin-left: 20px; font-size: 8px;}
 
 /* * Select Option Styling (1 of 1) */
 #select-container {width: 100%;}
@@ -118,7 +160,7 @@ option:hover {background: #d9d9d9;}
 
   	<!-- Get All Selected Values From a Multiple Select Box (Explanation): openNav() opens the side navigation panel and loadPage() hides any pages. -->
 
-    <select id="select-container" multiple="multiple" onclick="openNav(); loadPage(undefined, undefined)">>
+    <select id="select-container" multiple="multiple" onclick="openNav(); loadPage()">>
         <option value="all">All</option>
         <option value="a ">A</option>
         <option value="b ">B</option>
@@ -162,7 +204,7 @@ option:hover {background: #d9d9d9;}
 
 <!-- Open side navigation upon click of search button. (1 of 5) -->
 
-<input type="text" id="myInput" onkeyup="searchList()" placeholder="Search" title="Type in a name" onfocus="openNav(); loadPage(undefined, undefined)" autocomplete="off">
+<input type="text" id="myInput" onkeyup="searchList()" placeholder="Search" title="Type in a name" onfocus="openNav(); loadPage()" autocomplete="off">
 
 <!-- *** Search Bar (2 of 3) -->
 
@@ -177,8 +219,8 @@ option:hover {background: #d9d9d9;}
 
 <!-- Create & Alphabetize Side Navigation List (1 of 2) -->
 
-<!-- Load Page ( of ): This is accomplished in the javascript where for example
-<a href="javascript:void(0)" onclick="loadPage('htmlPage1')">HTML: Page 1</a> -->
+<!-- Loading Pages (1 of 3): This is accomplished in the javascript where for example
+<a href="javascript:void(0)" target="_blank" onclick="loadPage('htmlPage1')">HTML: Page 1</a> The class="sidenav" is needed to be in the side navigation panel. -->
 
 <ul id="mySidenav" class="multiple-columns"></ul>
 
@@ -186,15 +228,92 @@ option:hover {background: #d9d9d9;}
 
 <!-- *** Filter By Letter & or Web Language (2 of 4) -->
 
-<!-- Viewsource Button (1 of 1) -->
+<!-- * Loading Pages (2 of 3) -->
+<!-- DALLIN BOOKMARK -->
+<!-- HTML PAGES -->
+<main id="htmlPages">
+  <!-- HTML: PAGE 1 -->
+  <section id="htmlPage1">
+	<header>Page 1</header>
+  </section>
+  <!-- HTML: PAGE 2 -->
+  <section id="htmlPage2">
+	<header>Page 2</header>
+  </section>
+</main>
 
-<div id="viewsourceButton" style="position: fixed; top:105px; left: 11px; z-index:6; width: 150px"></div>
+<!-- JAVASCRIPT PAGES -->
+<main id="javascriptPages">
+  <!-- * JAVASCRIPT: PAGE 1 (2 of 2) -->
+  <section id="javascriptPage1">
+	<header>Page 1 (JavaScript)</header>
 
-<!-- * Load Page (1 of 2) -->
+    <button onclick="myFunction()">Try it</button>
 
-<main id="loadPage"></main>
+    <div id="myDIV">
+      <p>First p element (index 0)</p>
+      <p>Second p element (index 1)</p>
+      <p id="index2">Second p element (index 2)</p>
+      <p>Second p element (index 3)</p>
+      <p>Second p element (index 4)</p>
+      <p>Second p element (index 5)</p>
+    </div>
 
-<!-- *** Load Page (1 of 2) -->
+    <script>
+    function myFunction() {
+      var i;
+      for (i = 0; i < document.getElementById("myDIV").children.length; i++) {
+        document.getElementById("myDIV").children[i].style.display = "none";
+      }
+      document.getElementById("index2").style.display="block";
+    }
+    </script>
+
+    <!-- * Greybox for Code (3 of 4) -->
+    <div class="greybox"><br>
+
+<h7>CSS</h7>
+<pre class="w3-code cssHigh">
+#myDIV {
+  border: 1px solid black;
+  margin: 5px;
+  background: lightblue;
+}
+</pre>
+
+<h7>HTML</h7>
+<pre class="w3-code htmlHigh">
+&lt;button onclick=&quot;myFunction()&quot;&gt;Try it&lt;/button&gt;
+
+&lt;div id=&quot;myDIV&quot;&gt;
+  &lt;p&gt;First p element (index 0)&lt;/p&gt;
+  &lt;p&gt;Second p element (index 1)&lt;/p&gt;
+  &lt;p id=&quot;index2&quot;&gt;Second p element (index 2)&lt;/p&gt;
+  &lt;p&gt;Second p element (index 3)&lt;/p&gt;
+  &lt;p&gt;Second p element (index 4)&lt;/p&gt;
+  &lt;p&gt;Second p element (index 5)&lt;/p&gt;
+&lt;/div&gt;
+</pre>
+
+<h7>JavaScript</h7>
+<pre class="w3-code jsHigh">
+&lt;script&gt;
+function myFunction() {
+  var i;
+  for (i = 0; i &lt; document.getElementById(&quot;myDIV&quot;).children.length; i++) {
+    document.getElementById(&quot;myDIV&quot;).children[i].style.display = &quot;none&quot;;
+  }
+  document.getElementById(&quot;index2&quot;).style.display=&quot;block&quot;;
+}
+&lt;/script&gt;
+</pre>
+
+    </div>
+    <!-- *** Greybox for Code (3 of 4) -->
+  </section>
+  <!-- *** JAVASCRIPT: PAGE 1 (2 of 2) -->
+</main>
+<!-- *** Loading Pages (2 of 3) -->
 
 <script>
 
@@ -315,12 +434,12 @@ function searchList() {
 
 // * Create & Alphabetize Side Navigation List (2 of 2)
 
-// Create & Alphabetize Side Navigation List (Explanation): Arrays combined into one single array.
+// Create & Alphabetize Side Navigation List (Explanation): This is arrays combined into one single array.
 var list = [
   {topic: "Pre Tag: How do I wrap text in a pre tag in HTML?", class: "p css online", onclick: "", url: "https://www.tutorialspoint.com/How-do-I-wrap-text-in-a-pre-tag-in-HTML"},
   {topic: "Select Option Tag: How do I get all selected values of a multiple select box?", class: "s js online o js online", onclick: "", url: "https://stackoverflow.com/questions/5866169/how-to-get-all-selected-values-of-a-multiple-select-box"},
-  {topic: "Load Page into HTML Page: How do I load an HTML page in a div using JavaScript?", class: "l js online", onclick: "", url: "https://stackoverflow.com/questions/17636528/how-do-i-load-an-html-page-in-a-div-using-javascript"},
-  {topic: "Boolean JS", class: "b js online", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "Object Tag: How do I load an HTML page in a div using JavaScript?", class: "o js online l js online", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "Boolean JS", class: "b js online", onclick: "", url: "https://stackoverflow.com/questions/43643795/mozilla-firefox-ver-53-doesnt-show-device-option-in-responsive-design-mode"},
   {topic: "Array JS", class: "a js online", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
   {topic: "e html", class: "e html online", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
   {topic: "a css", class: "a css online", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
@@ -507,7 +626,10 @@ var list = [
   {topic: "Boolean JS", class: "b js online", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
   {topic: "Array JS", class: "a js online", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
   {topic: "e html", class: "e html online", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
-  {topic: "a css", class: "a css online", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"}, {topic: "Load page", class: "j js dallin", onclick: "closeNav(); loadPage('https://www.w3schools.com/css/css3_flexbox.asp', 'https://www.w3schools.com/css/tryit.asp?filename=tryresponsive_styles')", url: "javascript:void(0)"}, {topic: "Load w3 page", class: "j js dallin", onclick: "closeNav(); loadPage('https://www.w3schools.com/css/css3_flexbox.asp')", url: "javascript:void(0)"}
+  {topic: "a css", class: "a css online", onclick: "", url: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "HTML: Page 1", class: "h html dallin", onclick: "closeNav(); loadPage('htmlPage1')", url: "javascript:void(0)"},
+  {topic: "HTML: Page 2", class: "h html dallin", onclick: "closeNav(); loadPage('htmlPage2')", url: "javascript:void(0)"},
+  {topic: "JavaScript: Page 1", class: "j js dallin", onclick: "closeNav(); loadPage('javascriptPage1')", url: "javascript:void(0)"}
 ];
 
 // Create & Alphabetize Side Navigation List (Explanation): This sorts (alphabetizes) the list array by topic and keeps the corresponding url, etc with the correct topic.
@@ -553,39 +675,50 @@ function closeNav() {
 }
 // *** Side Navigation Open Close (1 of 1)
 
-// * Load Page (2 of 2)
+// * Loading Pages (3 of 3)
+function loadPage(page) {
+  // * Hide All Pages Except for Given Page Onclick (1 of 2)
 
-      var g;
+  // Clear Input Value Upon Click of Item
+  document.getElementById('myInput').value = '';
 
-function loadPage(page, viewsource) {
+  // Hide All Pages Except for Given Page Onclick (Explanation): Hides all children pages for id = "htmlPages".
+  var i;
 
-  	if (page === undefined) {document.getElementById("loadPage").style.display = "none";}
+  for (i = 0; i < document.getElementById("htmlPages").children.length; i++) {
+    document.getElementById("htmlPages").children[i].style.display = "none";
+  }
 
-    else {document.getElementById("loadPage").style.display = "block";}
+  // Hide All Pages Except for Given Page Onclick (Explanation): Hides all children pages for id = "javascriptPages".
+  for (i = 0; i < document.getElementById("javascriptPages").children.length; i++) {
+    document.getElementById("javascriptPages").children[i].style.display = "none";
+  }
 
-    document.getElementById("loadPage").innerHTML='<object style="position: relative; top: 0; width: 100%; height: 100%" type="text/html" data="'+ page + '"></object>';
+  // Loading Pages (Explanation): Shows or loads the page for id = page (example: id = "htmlPage1").
+  document.getElementById(page).style.display="block";
 
-    // Load Page (Explanation): If statement is needed to hide button until page loads.
-
-    if (page === undefined && viewsource === undefined) {
-    	document.getElementById("viewsourceButton").innerHTML = "";
-    }
-    else {
-
-      if (g === undefined || g === 1) {buttonName = "View Page Source"; g = 0;}
-      else {buttonName = "Back"; g = 1;}
-
-      document.getElementById("viewsourceButton").innerHTML= '<button type="button" onclick="loadPage(\'' + viewsource + '\', \'' + page + '\')">' + buttonName + '</button>';
-
-    }
+  // *** Hide All Pages Except for Given Page Onclick (1 of 2)
 
 }
 
+// * Hide All Pages Except for Given Page Onclick (2 of 2)
+
+// Hide All Pages Except for Given Page Onclick (Explanation): This hides all pages initially.
 loadPage();
 
-// *** Load Page (2 of 2)
+// *** Hide All Pages Except for Given Page Onclick (2 of 2)
+
+// *** Loading Pages (3 of 3)
 
 </script>
+
+<!-- * Greybox for Code (4 of 4) -->
+
+<script src="https://www.w3schools.com/lib/w3codecolor.js"></script>
+
+<script>w3CodeColor();</script>
+
+<!-- *** Greybox for Code (4 of 4) -->
 
 </body>
 </html>
