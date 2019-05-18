@@ -120,7 +120,7 @@ option:hover {background: #d9d9d9;}
 <!-- onfocus = "searchList(); document.getElementById('select-container').value = 'all'; document.getElementById('select-container').dispatchEvent(new Event('change'));" -->
     <select id="select-container" multiple="multiple">
         <optgroup disabled hidden></optgroup>
-        <option value="all">All</option>
+        <option id="all" value="all">All</option>
         <option value="html">HTML</option>
         <option value="css">CSS</option>
         <option value="js">JS</option>
@@ -172,7 +172,7 @@ option:hover {background: #d9d9d9;}
 <!-- document.getElementById('select-container').value = 'all' is used so that the value all is selected upon click of clear button -->
 <!-- document.getElementById('select-container').dispatchEvent(new Event('change')) is needed so that if the select box is clicked by the user and some item is selected and then the clear button is selected, the list is reformatted to reflect the value selected which is "all" in this case. -->
 
-<input type="submit" value="Clear" style="width:50px" onclick="document.getElementById('myInput').value = ''; searchList(); document.getElementById('select-container').selectedIndex = 0; document.getElementById('select-container').dispatchEvent(new Event('change'));">
+<input type="submit" value="Clear" style="width:50px" onclick="document.getElementById('myInput').value = ''; searchList(); filterSelection('all'); document.getElementById('all').scrollIntoView()">
 
 <!-- *** Clear (1 of 1) -->
 
@@ -320,7 +320,7 @@ var list = [
   {topic: "Select Option Tag: How do I get all selected values of a multiple select box?", class: "js s online js o online", href: "https://stackoverflow.com/questions/5866169/how-to-get-all-selected-values-of-a-multiple-select-box"},
   {topic: "Load Page into HTML Page: How do I load an HTML page in a div using JavaScript?", class: "js l online", href: "https://stackoverflow.com/questions/17636528/how-do-i-load-an-html-page-in-a-div-using-javascript"},
   {topic: "Select Option Tag: How to programmatically click Select element?", class: "js s online js o online", href: "https://stackoverflow.com/questions/42944308/how-to-programmatically-click-select-element-and-trigger-onchange-handler"},
-  {topic: "Array JS", class: "js a online", href: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
+  {topic: "Multiple: Select Option Tag - Mobile Safari multiple select bug", class: "html m online", href: "https://stackoverflow.com/questions/34660500/mobile-safari-multi-select-bug"},
   {topic: "e html", class: "html e online", href: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
   {topic: "a css", class: "css a online", href: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
   {topic: "f css", class: "css f online", href: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
@@ -544,7 +544,7 @@ filterSelection("all");
 // This is needed upon load of page. The if statement is needed because the width only applies for screen widths greater than 470. For smaller screen sizes less than or equal to 470, the vertical scroll is needed and so that affects the width so the clear button stays put. Without the if statement, the clear button jumps down to the next line when screen size width is less than or equal to 470px.
 
 if (window.innerWidth > 470) {
-  document.getElementById("myInput").style.width = window.innerWidth - 74 + "px";
+  document.getElementById("myInput").style.width = window.innerWidth - 88 + "px";
 }
 else {
   document.body.style.overflowY = "scroll";
@@ -555,7 +555,7 @@ else {
 
 window.addEventListener("resize", function() {
   if (window.innerWidth > 470) {
-    document.getElementById("myInput").style.width = window.innerWidth - 74 + "px";
+    document.getElementById("myInput").style.width = window.innerWidth - 88 + "px";
   }
   else {
     document.getElementById("myInput").style.width = window.innerWidth - 175 + "px";
