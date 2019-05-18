@@ -5,7 +5,7 @@
 
 <style>
 
-body {background: red;}
+body {background: #ffe6e6;}
 
 /* * Filter By Letter & or Web Language (1 of 4) */
 
@@ -37,10 +37,10 @@ body {background: red;}
 #mySidenav {
   position: relative;
   list-style-type: none;
+  top: 112px;
   padding-left: 7px;
   padding-right: 7px;
   margin-left: -5px;
-  overflow-x: auto;
 }
 
 #mySidenav li a {
@@ -96,7 +96,7 @@ body {background: red;}
 /* *** Multiple Columns (1 of 2) */
 
 /* Select Options & Search Bars Position Fixed (1 of 3) */
-#containerSelectOptionsSearchBars {position: fixed; z-index:1; top: 0; left: 0; margin-left: 10px; margin-right: 10px;}
+#containerSelectOptionsSearchBars {position: fixed; z-index:1; top: 0; left: 0; margin-left: 10px; margin-right: 10px; height: 126px;}
 
 /* * Select Option Styling (1 of 1) */
 #select-container {width: 100%;}
@@ -545,24 +545,32 @@ filterSelection("all");
 // This is needed upon load of page. The if statement is needed because the width only applies for screen widths greater than 470. For smaller screen sizes less than or equal to 470, the vertical scroll is needed and so that affects the width.
 
 if (window.innerWidth > 470) {
+  document.body.style.overflowX = "scroll";
   document.body.style.overflowY = "hidden";
   document.getElementById("containerSelectOptionsSearchBars").style.width = window.innerWidth - 20 + "px";
+  document.getElementById("mySidenav").style.height = window.innerHeight - document.getElementById("containerSelectOptionsSearchBars").style.height - 141 + "px";
 }
 else {
+  document.body.style.overflowX = "hidden";
   document.body.style.overflowY = "scroll";
   document.getElementById("containerSelectOptionsSearchBars").style.width = window.innerWidth - 37 + "px";
+  document.getElementById("mySidenav").style.height = "100%";
 }
 
 // This is needed upon resizing of page.
 
 window.addEventListener("resize", function() {
   if (window.innerWidth > 470) {
+    document.body.style.overflowX = "scroll";
     document.body.style.overflowY = "hidden";
     document.getElementById("containerSelectOptionsSearchBars").style.width = window.innerWidth - 20 + "px";
+    document.getElementById("mySidenav").style.height = window.innerHeight - document.getElementById("containerSelectOptionsSearchBars").style.height - 141 + "px";
   }
   else {
+    document.body.style.overflowX = "hidden";
     document.body.style.overflowY = "scroll";
     document.getElementById("containerSelectOptionsSearchBars").style.width = window.innerWidth - 37 + "px";
+    document.getElementById("mySidenav").style.height = "100%";
   }
 });
 
@@ -576,29 +584,19 @@ window.addEventListener("resize", function() {
 
 // This is needed upon load of page. The if statement is needed because the height only applies for screen widths greater than 470. For smaller screen sizes less than or equal to 470, the page is needed to scroll vertically and without the if statement, this code would prevent vertically scrolling since the height is specificied.
 
-document.getElementById("mySidenav").style.top = document.getElementById("containerSelectOptionsSearchBars").style.height + 15 + "vh";
+// document.getElementById("mySidenav").style.top = document.getElementById("containerSelectOptionsSearchBars").style.height + 20 + "vh";
 
-if (window.innerWidth > 470) {
-  document.getElementById("mySidenav").style.height = window.innerHeight - 104 + "px";
-}
-else {
-  document.getElementById("mySidenav").style.height = "100%";
-}
+
 
 // This is needed upon resizing of page.
 
-window.addEventListener("resize", function() {
+//window.addEventListener("resize", function() {
 
-	document.getElementById("mySidenav").style.top = document.getElementById("containerSelectOptionsSearchBars").style.height + 15 + "vh";
+	// document.getElementById("mySidenav").style.top = document.getElementById("containerSelectOptionsSearchBars").style.height + 20 + "vh";
 
-  if (window.innerWidth > 470) {
-    document.getElementById("mySidenav").style.height = window.innerHeight - 104 + "px";
-  }
-  else {
-    document.getElementById("mySidenav").style.height = "100%";
-  }
 
-});
+
+//});
 
 // *** Dynamically change height of mySidenav (Explanation)
 
