@@ -1,8 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+
+/* * Filter By Letter & or Web Language (1 of 4) */
+
+/* Filter By Letter & or Web Language (Explanation): The class .filter is used to hide all items in the side navigation list and .show is added specifically with javascript to show specific items since .show is added and removed. */
+
+.filter {display: none;}
+
+.show {display: block;}
+
+/* *** Filter By Letter & or Web Language (1 of 4) */
+
+/* * Search Bar (1 of 3) */
+
+/* Search Bar (Explanation): This creates the styling for the search bar and the side navigation list. */
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  font-size: 15px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border: 1px solid #ddd;
+}
+
+#mySidenav {
+  position: relative;
+  top: 88px;
+  list-style-type: none;
+  padding-left: 7px;
+  padding-right: 7px;
+  margin-left: -5px;
+  overflow-x: auto;
+}
+
+#mySidenav li a {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 4px;
+  text-decoration: none;
+  font-size: 15px;
+  color: black;
+}
+
+#mySidenav li a:hover:not(.header) {
+  background-color: #eee;
+}
+
+/* *** Search Bar (1 of 3) */
+
+/* * Multiple Columns (1 of 2) */
+
+/* * Reponsive Web Design For Multiple Columns (1 of 1) */
+
+/* Reponsive Web Design For Multiple Columns (Explanation): When the width of the screen can no longer support 2 columns at column-width: 200px; for example, there will be only one column. At that point that only one column appears, the height is changed to 100% for example as in
+
+@media only screen and (max-width: 470px) {
+  #mySidenav {
+    height:100%;
+  }
+}
+
+*/
+.multiple-columns {
+  -webkit-column-count: 4; /* Chrome, Safari, Opera */
+  -moz-column-count: 4; /* Firefox */
+  column-count: 4;
+  -webkit-column-width: 200px; /* Chrome, Safari, Opera */
+  -moz-column-width: 200px; /* Firefox */
+  column-width: 207px;
+  -webkit-column-gap: 15px; /* Chrome, Safari, Opera */
+  -moz-column-gap: 15px; /* Firefox */
+  column-gap: 15px;
+  /* Reponsive Web Design For Multiple Columns (Explanation): column-fill: auto; is used so that each column is filled until it reaches the height and it does this until it runs out of content. */
+  -moz-column-fill: auto;
+  column-fill: auto;
+}
+
+/* *** Reponsive Web Design For Multiple Columns (1 of 1) */
+@media only screen and (max-width: 470px) {
+  #mySidenav {
+    height:100%;
+  }
+}
+
+/* *** Multiple Columns (1 of 2) */
+
+/* Select Options & Search Bars Position Fixed (1 of 3) */
+#containerSelectOptionsSearchBars {position: fixed; z-index:1; top: 0; left: 0; margin-left: 10px; margin-right: 10px;}
+
+/* * Select Option Styling (1 of 1) */
+#select-container {width: 100%;}
+option {background: #f2f2f2;}
+option:hover {background: #d9d9d9;}
+/* *** Select Option Styling (1 of 1) */
+</style>
+</head>
+<body>
+
+<!-- Select Options & Search Bars Position Fixed (1 of 3) -->
+<div id="containerSelectOptionsSearchBars">
+
+  <!-- * Filter By Letter & or Web Language (2 of 4) -->
+
+  <div>
+
+ 	<!-- * Get All Selected Values From a Multiple Select Box (1 of 2) -->
+
+  	<!-- Get All Selected Values From a Multiple Select Box (Explanation): openNav() opens the side navigation panel. -->
+
+    <select id="select-container" multiple="multiple">
+        <option value="all">All</option>
+        <option value="html">HTML</option>
+        <option value="css">CSS</option>
+        <option value="js">JS</option>
+        <option value=" a ">A</option>
+        <option value=" b ">B</option>
+        <option value=" c ">C</option>
+        <option value=" d ">D</option>
+        <option value=" e ">E</option>
+        <option value=" f ">F</option>
+        <option value=" g ">G</option>
+        <option value=" h ">H</option>
+        <option value=" i ">I</option>
+        <option value=" j ">J</option>
+        <option value=" k ">K</option>
+        <option value=" l ">L</option>
+        <option value=" m ">M</option>
+        <option value=" n ">N</option>
+        <option value=" o ">O</option>
+        <option value=" p ">P</option>
+        <option value=" q ">Q</option>
+        <option value=" r ">R</option>
+        <option value=" s ">S</option>
+        <option value=" t ">T</option>
+        <option value=" u ">U</option>
+        <option value=" v ">V</option>
+        <option value=" w ">W</option>
+        <option value=" x ">X</option>
+        <option value=" y ">Y</option>
+        <option value=" z ">Z</option>
+        <option value="online">ONLINE</option>
+        <option value="dallin">DALLIN</option>
+    </select>
+  </div>
+
+  <!-- *** Get All Selected Values From a Multiple Select Box (1 of 2) -->
+
+<!-- * Search Bar (2 of 3) -->
+
+<!-- Search Bar (Explanation): This creates the search bar. Autocomplete="off" is used as to not remember user input and offer suggestions. -->
+
+<!-- Open side navigation upon click of search button. (1 of 5) -->
+
+<input type="text" id="myInput" onkeyup="searchList()" placeholder="Search" title="Type in a name" autocomplete="off">
+
+<!-- * Clear (1 of 1) -->
+<!-- Clear (Explanation) -->
+<!-- document.getElementById('myInput').value = '' clears the search bar upon click of clear button -->
+<!-- searchList() is needed so that when items are selected in the select tag, the list appears correctly for each item selected. -->
+<!-- document.getElementById('select-container').value = 'all' is used so that the value all is selected upon click of clear button -->
+<!-- document.getElementById('select-container').dispatchEvent(new Event('change')) is needed so that if the select box is clicked by the user and some item is selected and then the clear button is selected, the list is reformatted to reflect the value selected which is "all" in this case. -->
+
+<input type="submit" value="Clear" style="width:50px" onclick="document.getElementById('myInput').value = ''; searchList(); document.getElementById('select-container').value = 'all'; document.getElementById('select-container').dispatchEvent(new Event('change'));">
+
+<!-- *** Clear (1 of 1) -->
+
+<!-- *** Search Bar (2 of 3) -->
+
+<!-- Select Options & Search Bars Position Fixed (2 of 3) -->
+</div>
+
+<!-- Filter By Letter & or Web Language (Explanation): The classes added are needed for filtering. The classes are added in the javascript section. -->
+
+<!-- * Multiple Columns (2 of 2) -->
+
+<!-- Multiple Columns (Explanation): The class="multiple-columns" was added. -->
+
+<!-- Create & Alphabetize Side Navigation List (1 of 2) -->
+
+<ul id="mySidenav" class="multiple-columns"></ul>
+
+<!-- *** Multiple Columns (2 of 2) -->
+
+<!-- *** Filter By Letter & or Web Language (2 of 4) -->
+
+<script>
+
+// * Filter By Letter & or Web Language (3 of 4)
+
+// Filter By Letter & or Web Language (Explanation): This whole section was taken from w3schools. The only adjustment was changing the name filterDIV to filter.
+
+// * Select & Filter Value(s) With Onchange (1 of 1)
+
+// * Get All Selected Values From a Multiple Select Box (2 of 2)
+
+document.getElementById("select-container").onchange = function() {
+
+    // * Get All Selected Values From a Multiple Select Box (Explanation)
+
+    // Example: document.getElementsByTagName('select')[0].innerHTML =
+          // <option value="opt 1 value">opt 1 text</option>
+          // <option value="opt 2 value">opt 2 text</option>
+          // <option value="opt 3 value">opt 3 text</option>
+
+	var select = document.getElementsByTagName('select')[0];
+
+    // *** Get All Selected Values From a Multiple Select Box (Explanation)
+
+    // * Get All Selected Values From a Multiple Select Box (Explanation)
+    // Return an array of the selected option values
+    // select is an HTML select element
+
+    var result = [];
+
+    var options = select && select.options;
+    var opt;
+
+    for (var i=0, iLen=options.length; i<iLen; i++) {
+      opt = options[i];
+
+      if (opt.selected) {
+        result.push(opt.value || opt.text);
+      }
+    }
+
+    var text = result[0];
+
+    if (result.length === 1) {
+      text = result[0];
+    }
+    else {
+      for (j = 1; j < result.length; j++) {
+        text = text + result[j];
+      }
+    }
+    // text holds the value or multiple values and is passed to through filterSelection()
+    // alert(text);
+    filterSelection(text);
+
+    // *** Get All Selected Values From a Multiple Select Box (Explanation)
+
+    // *** Get All Selected Values From a Multiple Select Box (2 of 2)
+
+};
+// *** Select & Filter Value(s) With Onchange (1 of 1)
+
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("filter");
+
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
+
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+// *** Filter By Letter & or Web Language (3 of 4)
+
+// * Search Bar (3 of 3)
+
+// Search Bar (Explanation): This makes it so the search bar works when the user types something.
+function searchList() {
+  var input, filter, ul, li, a, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("mySidenav");
+  li = ul.getElementsByTagName("li");
+  for (i = 0; i < li.length; i++) {
+    a = li[i].getElementsByTagName("a")[0];
+    txtValue = a.textContent || a.innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+  }
+}
+
+// *** Search Bar (3 of 3)
+
+// * Create & Alphabetize Side Navigation List (2 of 2)
+
+// Create & Alphabetize Side Navigation List (Explanation): Arrays combined into one single array.
 var list = [
-  {topic: "Pre Tag: How do I wrap text in a pre tag in HTML?", class: "css p css online p", href: "https://www.tutorialspoint.com/How-do-I-wrap-text-in-a-pre-tag-in-HTML"},
-  {topic: "Select Option Tag: How do I get all selected values of a multiple select box?", class: "js s js online s js o js online o", href: "https://stackoverflow.com/questions/5866169/how-to-get-all-selected-values-of-a-multiple-select-box"},
-  {topic: "Load Page into HTML Page: How do I load an HTML page in a div using JavaScript?", class: "js l js l online", href: "https://stackoverflow.com/questions/17636528/how-do-i-load-an-html-page-in-a-div-using-javascript"},
-  {topic: "Boolean JS", class: "js b online", href: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
+  {topic: "Pre Tag: How do I wrap text in a pre tag in HTML?", class: "css p online", href: "https://www.tutorialspoint.com/How-do-I-wrap-text-in-a-pre-tag-in-HTML"},
+  {topic: "Select Option Tag: How do I get all selected values of a multiple select box?", class: "js s online js o online", href: "https://stackoverflow.com/questions/5866169/how-to-get-all-selected-values-of-a-multiple-select-box"},
+  {topic: "Load Page into HTML Page: How do I load an HTML page in a div using JavaScript?", class: "js l online", href: "https://stackoverflow.com/questions/17636528/how-do-i-load-an-html-page-in-a-div-using-javascript"},
+  {topic: "Select Option Tag: How to programmatically click Select element?", class: "js s online js o online", href: "https://stackoverflow.com/questions/42944308/how-to-programmatically-click-select-element-and-trigger-onchange-handler"},
   {topic: "Array JS", class: "js a online", href: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
   {topic: "e html", class: "html e online", href: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
   {topic: "a css", class: "css a online", href: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
@@ -193,3 +507,92 @@ var list = [
   {topic: "Load page", class: "js j dallin", href: "samples/DropdownMenu.html"},
   {topic: "Load w3 page", class: "js j dallin", href: "samples/SortFilterList.html"}
 ];
+
+// Create & Alphabetize Side Navigation List (Explanation): This sorts (alphabetizes) the list array by topic and keeps the corresponding url, etc with the correct topic.
+list.sort(function(a, b){
+  var x = a.topic.toLowerCase();
+  var y = b.topic.toLowerCase();
+  if (x < y) {return -1;}
+  if (x > y) {return 1;}
+  return 0;
+});
+
+// Create & Alphabetize Side Navigation List (Explanation): This creates the side navigation list.
+var i;
+for (i = 0; i < list.length; i++) {
+  var nodeLI = document.createElement("li");
+  nodeLI.innerHTML = "<a class='filter " + list[i].class + "' href='" + list[i].href + "'>" + list[i].topic + "</a>";
+  document.getElementById("mySidenav").appendChild(nodeLI);
+}
+
+// *** Create & Alphabetize Side Navigation List (2 of 2)
+
+// * Filter By Letter & or Web Language (4 of 4)
+
+// Filter By Letter & or Web Language (Explanation): This shows the entire list once the page loads. It needs to be after the list is created, not before or it will not execute.
+filterSelection("all");
+
+// *** Filter By Letter & or Web Language (4 of 4)
+
+// * Dynamically changes width of search box so clear button can be on the right of the search box. (1 of 1)
+
+// * Dynamically changes width of search box so clear button can be on the right of the search box. (Explanation)
+
+// This is needed upon load of page. The if statement is needed because the width only applies for screen widths greater than 470. For smaller screen sizes less than or equal to 470, the vertical scroll is needed and so that affects the width so the clear button stays put. Without the if statement, the clear button jumps down to the next line when screen size width is less than or equal to 470px.
+
+if (window.innerWidth > 470) {
+  document.getElementById("myInput").style.width = window.innerWidth - 74 + "px";
+}
+else {
+  document.getElementById("myInput").style.width = window.innerWidth - 91 + "px";
+}
+
+// This is needed upon resizing of page.
+
+window.addEventListener("resize", function() {
+  if (window.innerWidth > 470) {
+    document.getElementById("myInput").style.width = window.innerWidth - 74 + "px";
+  }
+  else {
+    document.getElementById("myInput").style.width = window.innerWidth - 91 + "px";
+  }
+});
+
+// *** Dynamically changes width of search box so clear button can be on the right of the search box. (Explanation)
+
+// *** Dynamically changes width of search box so clear button can be on the right of the search box. (1 of 1)
+
+// * Dynamically change height of mySidenav (1 of 1)
+
+// * Dynamically change height of mySidenav (Explanation)
+
+// This is needed upon load of page. The if statement is needed because the height only applies for screen widths greater than 470. For smaller screen sizes less than or equal to 470, the page is needed to scroll vertically and without the if statement, this code would prevent vertically scrolling since the height is specificied.
+
+if (window.innerWidth > 470) {
+  document.getElementById("mySidenav").style.height = window.innerHeight - 104 + "px";
+}
+else {
+  document.getElementById("mySidenav").style.height = "100%";
+}
+
+// This is needed upon resizing of page.
+
+window.addEventListener("resize", function() {
+
+  if (window.innerWidth > 470) {
+    document.getElementById("mySidenav").style.height = window.innerHeight - 104 + "px";
+  }
+  else {
+    document.getElementById("mySidenav").style.height = "100%";
+  }
+
+});
+
+// *** Dynamically change height of mySidenav (Explanation)
+
+// *** Dynamically change heigh of mySidenav (1 of 1)
+
+</script>
+
+</body>
+</html>
