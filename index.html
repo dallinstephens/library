@@ -5,7 +5,7 @@
 
 <style>
 
-body {background:lightgreen;}
+body {background:orange;}
 
 /* * Filter By Letter & or Web Language (1 of 4) */
 
@@ -112,7 +112,7 @@ option:hover {background: #d9d9d9;}
 
   <!-- * Filter By Letter & or Web Language (2 of 4) -->
 
-  <div>
+<form>
 
  	<!-- * Get All Selected Values From a Multiple Select Box (1 of 2) -->
 
@@ -153,7 +153,6 @@ option:hover {background: #d9d9d9;}
         <option value="online">ONLINE</option>
         <option value="dallin">DALLIN</option>
     </select>
-  </div>
 
   <!-- *** Get All Selected Values From a Multiple Select Box (1 of 2) -->
 
@@ -172,7 +171,9 @@ option:hover {background: #d9d9d9;}
 <!-- document.getElementById('select-container').value = 'all' is used so that the value all is selected upon click of clear button -->
 <!-- document.getElementById('select-container').dispatchEvent(new Event('change')) is needed so that if the select box is clicked by the user and some item is selected and then the clear button is selected, the list is reformatted to reflect the value selected which is "all" in this case. -->
 
-<input type="submit" value="Clear" style="width:50px" onclick="document.getElementById('myInput').value = ''; document.getElementById('select-container').value = ''; searchList(); filterSelection('all'); document.getElementById('all').scrollIntoView()">
+<input type="reset" value="Clear" style="width:50px" onclick="document.getElementById('myInput').value = ''; document.getElementById('select-container').value = ''; searchList(); filterSelection('all'); document.getElementById('all').scrollIntoView()">
+
+</form>
 
 <!-- *** Clear (1 of 1) -->
 
