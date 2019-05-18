@@ -5,7 +5,7 @@
 
 <style>
 
-body {background: #ccffcc;}
+body {background: white;}
 
 /* * Filter By Letter & or Web Language (1 of 4) */
 
@@ -27,8 +27,8 @@ body {background: #ccffcc;}
 #myInput {
   width: 100%;
   font-size: 15px;
-  padding-top: 7px;
-  padding-bottom: 7px;
+  padding-top: 3px;
+  padding-bottom: 3px;
   padding-left: 8px;
   padding-right: 8px;
   border: 1px solid #ddd;
@@ -37,7 +37,6 @@ body {background: #ccffcc;}
 #mySidenav {
   position: relative;
   list-style-type: none;
-  top: 112px;
   padding-left: 7px;
   padding-right: 7px;
   margin-left: -5px;
@@ -75,8 +74,8 @@ body {background: #ccffcc;}
   -webkit-column-count: 4; /* Chrome, Safari, Opera */
   -moz-column-count: 4; /* Firefox */
   column-count: 4;
-  -webkit-column-width: 200px; /* Chrome, Safari, Opera */
-  -moz-column-width: 200px; /* Firefox */
+  -webkit-column-width: 207px; /* Chrome, Safari, Opera */
+  -moz-column-width: 207px; /* Firefox */
   column-width: 207px;
   -webkit-column-gap: 15px; /* Chrome, Safari, Opera */
   -moz-column-gap: 15px; /* Firefox */
@@ -85,6 +84,24 @@ body {background: #ccffcc;}
   -moz-column-fill: auto;
   column-fill: auto;
 }
+
+/* * Color Pickers (1 of 3) */
+.color-columns {
+  -webkit-column-count: 4; /* Chrome, Safari, Opera */
+  -moz-column-count: 4; /* Firefox */
+  column-count: 4;
+  -webkit-column-width: 20px; /* Chrome, Safari, Opera */
+  -moz-column-width: 20px; /* Firefox */
+  column-width: 20px;
+  -webkit-column-gap: 5px; /* Chrome, Safari, Opera */
+  -moz-column-gap: 5px; /* Firefox */
+  column-gap: 5px;
+  height: 25px;
+  /* Reponsive Web Design For Multiple Columns (Explanation): column-fill: balance; and height: 25px are used so that each column is filled to equal height. */
+  -moz-column-fill: balance;
+  column-fill: balance;
+}
+/* *** Color Pickers (1 of 3) */
 
 /* *** Reponsive Web Design For Multiple Columns (1 of 1) */
 @media only screen and (max-width: 470px) {
@@ -96,7 +113,7 @@ body {background: #ccffcc;}
 /* *** Multiple Columns (1 of 2) */
 
 /* Select Options & Search Bars Position Fixed (1 of 3) */
-#containerSelectOptionsSearchBars {position: fixed; z-index:1; top: 0; left: 0; margin-left: 10px; margin-right: 10px; height: 126px;}
+#containerSelectOptionsSearchBars {position: fixed; z-index:1; top: 0; left: 0; margin-left: 10px; margin-right: 10px;}
 
 /* * Select Option Styling (1 of 1) */
 #select-container {width: 100%;}
@@ -110,6 +127,19 @@ option:hover {background: #d9d9d9;}
 <!-- Select Options & Search Bars Position Fixed (1 of 3) -->
 <div id="containerSelectOptionsSearchBars">
 
+  <!-- * Color Pickers (2 of 3) -->
+ <div class="color-columns">
+  <input id="myPageColor" type="color" name="favcolor" value="#ff0000" onchange="myPageColor()" style="width: 100%">
+
+  <input id="myTextColor" type="color" name="favcolor" value="#ff0000" onchange="myTextColor()" style="width: 100%">
+
+  <input id="myHoverBackgroundColor" type="color" name="favcolor" value="#ff0000" onchange="myHoverBackgroundColor()" style="; width: 100%">
+
+  <input id="myHoverColor" type="color" name="favcolor" value="#ff0000" onchange="myHoverColor()" style="; width: 100%">
+ </div>
+
+  <!-- *** Color Pickers (2 of 3) -->
+
   <!-- * Filter By Letter & or Web Language (2 of 4) -->
 
 <form>
@@ -118,7 +148,7 @@ option:hover {background: #d9d9d9;}
 
   	<!-- Get All Selected Values From a Multiple Select Box (Explanation): openNav() opens the side navigation panel. -->
 <!-- onfocus = "searchList(); document.getElementById('select-container').value = 'all'; document.getElementById('select-container').dispatchEvent(new Event('change'));" -->
-    <select id="select-container" multiple="multiple" size=4>
+    <select id="select-container" multiple="multiple">
         <optgroup disabled hidden></optgroup>
         <option id="all" value="all">All</option>
         <option value="html">HTML</option>
@@ -322,8 +352,8 @@ var list = [
   {topic: "Load Page into HTML Page: How do I load an HTML page in a div using JavaScript?", class: "js l online", href: "https://stackoverflow.com/questions/17636528/how-do-i-load-an-html-page-in-a-div-using-javascript"},
   {topic: "Select Option Tag: How to programmatically click Select element?", class: "js s online js o online", href: "https://stackoverflow.com/questions/42944308/how-to-programmatically-click-select-element-and-trigger-onchange-handler"},
   {topic: "Multiple: Select Option Tag - Mobile Safari multiple select bug", class: "html m online", href: "https://stackoverflow.com/questions/34660500/mobile-safari-multi-select-bug"},
-  {topic: "e html", class: "html e online", href: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
-  {topic: "a css", class: "css a online", href: "https://www.w3schools.com/jsref/jsref_obj_date.asp"},
+  {topic: "Viewport Zoom: How do you disable viewport zooming on Mobile Safari?", class: "css v online", href: "https://stackoverflow.com/questions/4389932/how-do-you-disable-viewport-zooming-on-mobile-safari"},
+  {topic: "Color Picker: Create your own color picker.", class: "html c online js c online", href: "https://www.w3schools.com/tags/att_input_type_color.asp"},
   {topic: "f css", class: "css f online", href: "https://www.w3schools.com/jsref/jsref_obj_boolean.asp"},
   {topic: "s html", class: "html s online", href: "https://www.w3schools.com/jsref/jsref_obj_array.asp"},
   {topic: "Error JS", class: "js e online", href: "https://www.w3schools.com/jsref/jsref_obj_error.asp"},
@@ -559,12 +589,16 @@ if (window.innerWidth > 470) {
   document.body.style.overflowY = "hidden";
   document.getElementById("containerSelectOptionsSearchBars").style.width = window.innerWidth - 20 + "px";
   document.getElementById("mySidenav").style.height = window.innerHeight - document.getElementById("containerSelectOptionsSearchBars").style.height - 141 + "px";
+  document.getElementById("select-container").size = "4";
+  document.getElementById("mySidenav").style.top = "128px";
 }
 else {
   document.body.style.overflowX = "hidden";
   document.body.style.overflowY = "scroll";
   document.getElementById("containerSelectOptionsSearchBars").style.width = window.innerWidth - 37 + "px";
   document.getElementById("mySidenav").style.height = "100%";
+  document.getElementById("select-container").size = "1";
+  document.getElementById("mySidenav").style.top = "79px";
 }
 
 // * Dynamically changes width of select box, search box, and clear button (Explanation)
@@ -585,12 +619,16 @@ window.addEventListener("resize", function() {
     document.body.style.overflowY = "hidden";
     document.getElementById("containerSelectOptionsSearchBars").style.width = window.innerWidth - 20 + "px";
     document.getElementById("mySidenav").style.height = window.innerHeight - document.getElementById("containerSelectOptionsSearchBars").style.height - 141 + "px";
+    document.getElementById("select-container").size = "4";
+    document.getElementById("mySidenav").style.top = "128px";
   }
   else {
     document.body.style.overflowX = "hidden";
     document.body.style.overflowY = "scroll";
     document.getElementById("containerSelectOptionsSearchBars").style.width = window.innerWidth - 37 + "px";
     document.getElementById("mySidenav").style.height = "100%";
+    document.getElementById("select-container").size = "1";
+    document.getElementById("mySidenav").style.top = "79px";
   }
 });
 
@@ -599,6 +637,51 @@ window.addEventListener("resize", function() {
 // *** Dynamically changes width of select box, search box, and clear button (Explanation)
 
 // *** Dynamically changes width of select box, search box, and clear button (1 of 1)
+
+// * Color Pickers (3 of 3)
+
+  document.body.style.backgroundColor = localStorage.myPageColor;
+
+function myPageColor() {
+  localStorage.myPageColor = document.getElementById('myPageColor').value;
+  document.body.style.backgroundColor = document.getElementById('myPageColor').value;
+}
+
+for (i = 0; i < document.getElementsByClassName("filter").length; i++) {
+  document.getElementsByClassName("filter")[i].style.color = localStorage.myTextColor;
+}
+
+function myTextColor() {
+  for (i = 0; i < document.getElementsByClassName("filter").length; i++) {
+    localStorage.myTextColor = document.getElementById('myTextColor').value;
+  	document.getElementsByClassName("filter")[i].style.color = document.getElementById('myTextColor').value;
+  }
+}
+
+for (i = 0; i < document.getElementsByClassName("filter").length; i++) {
+  document.getElementsByClassName("filter")[i].onmouseover = function() {
+      this.style.backgroundColor = localStorage.myHoverBackgroundColor;
+      this.style.color = localStorage.myHoverColor;;
+  }
+  document.getElementsByClassName("filter")[i].onmouseout = function() {
+      this.style.backgroundColor = localStorage.myPageColor;
+      this.style.color = localStorage.myTextColor;
+  }
+}
+
+function myHoverBackgroundColor() {
+  for (i = 0; i < document.getElementsByClassName("filter").length; i++) {
+    localStorage.myHoverBackgroundColor = document.getElementById('myHoverBackgroundColor').value;
+  }
+}
+
+function myHoverColor() {
+  for (i = 0; i < document.getElementsByClassName("filter").length; i++) {
+    localStorage.myHoverColor = document.getElementById('myHoverColor').value;
+  }
+}
+
+// *** Color Pickers (3 of 3)
 
 </script>
 
