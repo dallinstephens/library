@@ -85,6 +85,24 @@ body {background: white;}
   column-fill: auto;
 }
 
+/* * Color Pickers (1 of 3) */
+.color-columns {
+  -webkit-column-count: 4; /* Chrome, Safari, Opera */
+  -moz-column-count: 4; /* Firefox */
+  column-count: 4;
+  -webkit-column-width: 20px; /* Chrome, Safari, Opera */
+  -moz-column-width: 20px; /* Firefox */
+  column-width: 20px;
+  -webkit-column-gap: 5px; /* Chrome, Safari, Opera */
+  -moz-column-gap: 5px; /* Firefox */
+  column-gap: 5px;
+  height: 25px;
+  /* Reponsive Web Design For Multiple Columns (Explanation): column-fill: balance; and height: 25px are used so that each column is filled to equal height. */
+  -moz-column-fill: balance;
+  column-fill: balance;
+}
+/* *** Color Pickers (1 of 3) */
+
 /* *** Reponsive Web Design For Multiple Columns (1 of 1) */
 @media only screen and (max-width: 470px) {
   #mySidenav {
@@ -109,12 +127,27 @@ option:hover {background: #d9d9d9;}
 <!-- Select Options & Search Bars Position Fixed (1 of 3) -->
 <div id="containerSelectOptionsSearchBars">
 
+  <!-- * Color Pickers (2 of 3) -->
+ <div class="color-columns">
+  <button type="button" onclick="PageColor()" style="width: 100%; height:21px; font-size: 1vw">Page Color</button>
+
+  <button type="button" onclick="TextColor()" style="width: 100%; height:21px; font-size: 1vw">Text Color</button>
+
+  <button type="button" onclick="HoverBackgroundColor()" style="width: 100%; height:21px; font-size: 1vw">Hover Bkgd Color</button>
+
+  <button type="button" onclick="HoverColor()" style="width: 100%; height:21px; font-size: 1vw">Hover Color</button>
+ </div>
+
+  <!-- *** Color Pickers (2 of 3) -->
+
   <!-- * Filter By Letter & or Web Language (2 of 4) -->
 
-  <form>
+<form>
 
-    <!-- * Get All Selected Values From a Multiple Select Box (1 of 2) -->
+ 	<!-- * Get All Selected Values From a Multiple Select Box (1 of 2) -->
 
+  	<!-- Get All Selected Values From a Multiple Select Box (Explanation): openNav() opens the side navigation panel. -->
+<!-- onfocus = "searchList(); document.getElementById('select-container').value = 'all'; document.getElementById('select-container').dispatchEvent(new Event('change'));" -->
     <select id="select-container" multiple="multiple">
         <optgroup disabled hidden></optgroup>
         <option id="all" value="all">All</option>
@@ -151,30 +184,30 @@ option:hover {background: #d9d9d9;}
         <option value="dallin">DALLIN</option>
     </select>
 
-    <!-- *** Get All Selected Values From a Multiple Select Box (1 of 2) -->
+  <!-- *** Get All Selected Values From a Multiple Select Box (1 of 2) -->
 
-    <!-- * Search Bar (2 of 3) -->
+<!-- * Search Bar (2 of 3) -->
 
-    <!-- Search Bar (Explanation): This creates the search bar. Autocomplete="off" is used as to not remember user input and offer suggestions. -->
+<!-- Search Bar (Explanation): This creates the search bar. Autocomplete="off" is used as to not remember user input and offer suggestions. -->
 
-    <!-- Open side navigation upon click of search button. (1 of 5) -->
+<!-- Open side navigation upon click of search button. (1 of 5) -->
 
-    <input type="text" id="myInput" onkeyup="searchList()" placeholder="Search" title="Type in a name" autocomplete="off">
+<input type="text" id="myInput" onkeyup="searchList()" placeholder="Search" title="Type in a name" autocomplete="off">
 
-    <!-- * Clear (1 of 1) -->
-    <!-- Clear (Explanation) -->
-    <!-- document.getElementById('myInput').value = '' clears the search bar upon click of clear button -->
-    <!-- searchList() is needed so that when items are selected in the select tag, the list appears correctly for each item selected. -->
-    <!-- document.getElementById('select-container').value = 'all' is used so that the value all is selected upon click of clear button -->
-    <!-- document.getElementById('select-container').dispatchEvent(new Event('change')) is needed so that if the select box is clicked by the user and some item is selected and then the clear button is selected, the list is reformatted to reflect the value selected which is "all" in this case. -->
+<!-- * Clear (1 of 1) -->
+<!-- Clear (Explanation) -->
+<!-- document.getElementById('myInput').value = '' clears the search bar upon click of clear button -->
+<!-- searchList() is needed so that when items are selected in the select tag, the list appears correctly for each item selected. -->
+<!-- document.getElementById('select-container').value = 'all' is used so that the value all is selected upon click of clear button -->
+<!-- document.getElementById('select-container').dispatchEvent(new Event('change')) is needed so that if the select box is clicked by the user and some item is selected and then the clear button is selected, the list is reformatted to reflect the value selected which is "all" in this case. -->
 
-    <input type="reset" value="Clear" style="width:100%" onclick="document.getElementById('myInput').value = ''; document.getElementById('select-container').value = ''; searchList(); filterSelection('all'); document.getElementById('all').scrollIntoView()">
+<input type="reset" value="Clear" style="width:100%" onclick="document.getElementById('myInput').value = ''; document.getElementById('select-container').value = ''; searchList(); filterSelection('all'); document.getElementById('all').scrollIntoView()">
 
-  </form>
+</form>
 
-  <!-- *** Clear (1 of 1) -->
+<!-- *** Clear (1 of 1) -->
 
-  <!-- *** Search Bar (2 of 3) -->
+<!-- *** Search Bar (2 of 3) -->
 
 <!-- Select Options & Search Bars Position Fixed (2 of 3) -->
 </div>
@@ -555,9 +588,9 @@ if (window.innerWidth > 470) {
   document.body.style.overflowX = "scroll";
   document.body.style.overflowY = "hidden";
   document.getElementById("containerSelectOptionsSearchBars").style.width = window.innerWidth - 20 + "px";
-  document.getElementById("mySidenav").style.height = window.innerHeight - document.getElementById("containerSelectOptionsSearchBars").style.height - 145 + "px";
+  document.getElementById("mySidenav").style.height = window.innerHeight - document.getElementById("containerSelectOptionsSearchBars").style.height - 165 + "px";
   document.getElementById("select-container").size = "4";
-  document.getElementById("mySidenav").style.top = "105px";
+  document.getElementById("mySidenav").style.top = "128px";
 }
 else {
   document.body.style.overflowX = "hidden";
@@ -565,7 +598,7 @@ else {
   document.getElementById("containerSelectOptionsSearchBars").style.width = window.innerWidth - 37 + "px";
   document.getElementById("mySidenav").style.height = "100%";
   document.getElementById("select-container").size = "1";
-  document.getElementById("mySidenav").style.top = "60px";
+  document.getElementById("mySidenav").style.top = "89px";
 }
 
 // * Dynamically changes width of select box, search box, and clear button (Explanation)
@@ -585,9 +618,9 @@ window.addEventListener("resize", function() {
     document.body.style.overflowX = "scroll";
     document.body.style.overflowY = "hidden";
     document.getElementById("containerSelectOptionsSearchBars").style.width = window.innerWidth - 20 + "px";
-    document.getElementById("mySidenav").style.height = window.innerHeight - document.getElementById("containerSelectOptionsSearchBars").style.height - 145 + "px";
+    document.getElementById("mySidenav").style.height = window.innerHeight - document.getElementById("containerSelectOptionsSearchBars").style.height - 141 + "px";
     document.getElementById("select-container").size = "4";
-    document.getElementById("mySidenav").style.top = "105px";
+    document.getElementById("mySidenav").style.top = "128px";
   }
   else {
     document.body.style.overflowX = "hidden";
@@ -595,7 +628,7 @@ window.addEventListener("resize", function() {
     document.getElementById("containerSelectOptionsSearchBars").style.width = window.innerWidth - 37 + "px";
     document.getElementById("mySidenav").style.height = "100%";
     document.getElementById("select-container").size = "1";
-    document.getElementById("mySidenav").style.top = "60px";
+    document.getElementById("mySidenav").style.top = "89px";
   }
 });
 
@@ -604,6 +637,75 @@ window.addEventListener("resize", function() {
 // *** Dynamically changes width of select box, search box, and clear button (Explanation)
 
 // *** Dynamically changes width of select box, search box, and clear button (1 of 1)
+
+// * Color Pickers (3 of 3)
+
+document.body.style.backgroundColor = localStorage.myPageColor;
+
+var colorNumber;
+
+function PageColor() {
+  var colorNames = ["#F0F8FF", "#FAEBD7", "#00FFFF", "#7FFFD4", "#F0FFFF", "#F5F5DC", "#FFE4C4", "#000000", "#FFEBCD", "#0000FF", "#8A2BE2", "#A52A2A", "#DEB887", "#5F9EA0", "#7FFF00", "#D2691E", "#FF7F50", "#6495ED", "#FFF8DC", "#DC143C", "#00FFFF", "#00008B", "#008B8B", "#B8860B", "#A9A9A9", "#A9A9A9", "#006400", "#BDB76B", "#8B008B", "#556B2F", "#FF8C00", "#9932CC", "#8B0000", "#E9967A", "#8FBC8F", "#483D8B", "#2F4F4F", "#2F4F4F", "#00CED1", "#9400D3", "#FF1493", "#00BFFF", "#696969", "#696969", "#1E90FF", "#B22222", "#FFFAF0", "#228B22", "#FF00FF", "#DCDCDC", "#F8F8FF", "#FFD700", "#DAA520", "#808080", "#808080", "#008000", "#ADFF2F", "#F0FFF0", "#FF69B4", "#CD5C5C", "#4B0082", "#FFFFF0", "#F0E68C", "#E6E6FA", "#FFF0F5", "#7CFC00", "#FFFACD", "#ADD8E6", "#F08080", "#E0FFFF", "#FAFAD2", "#D3D3D3", "#D3D3D3", "#90EE90", "#FFB6C1", "#FFA07A", "#20B2AA", "#87CEFA", "#778899", "#778899", "#B0C4DE", "#FFFFE0", "#00FF00", "#32CD32", "#FAF0E6", "#FF00FF", "#800000", "#66CDAA", "#0000CD", "#BA55D3", "#9370DB", "#3CB371", "#7B68EE", "#00FA9A", "#48D1CC", "#C71585", "#191970", "#F5FFFA", "#FFE4E1", "#FFE4B5", "#FFDEAD", "#000080", "#FDF5E6", "#808000", "#6B8E23", "#FFA500", "#FF4500", "#DA70D6", "#EEE8AA", "#98FB98", "#AFEEEE", "#DB7093", "#FFEFD5", "#FFDAB9", "#CD853F", "#FFC0CB", "#DDA0DD", "#B0E0E6", "#800080", "#663399", "#FF0000", "#BC8F8F", "#4169E1", "#8B4513", "#FA8072", "#F4A460", "#2E8B57", "#FFF5EE", "#A0522D", "#C0C0C0", "#87CEEB", "#6A5ACD", "#708090", "#708090", "#FFFAFA", "#00FF7F", "#4682B4", "#D2B48C", "#008080", "#D8BFD8", "#FF6347", "#40E0D0", "#EE82EE", "#F5DEB3", "#FFFFFF", "#F5F5F5", "#FFFF00", "#9ACD32"];
+
+  if (colorNumber === undefined || colorNumber === 149) {colorNumber = 0;}
+  else {colorNumber = colorNumber + 1;}
+  localStorage.myPageColor = colorNames[colorNumber];
+  document.body.style.backgroundColor = colorNames[colorNumber];
+}
+
+for (i = 0; i < document.getElementsByClassName("filter").length; i++) {
+  document.getElementsByClassName("filter")[i].style.color = localStorage.myTextColor;
+}
+
+var colorNumber2;
+
+function TextColor() {
+  var colorNames2 = ["#F0F8FF", "#FAEBD7", "#00FFFF", "#7FFFD4", "#F0FFFF", "#F5F5DC", "#FFE4C4", "#000000", "#FFEBCD", "#0000FF", "#8A2BE2", "#A52A2A", "#DEB887", "#5F9EA0", "#7FFF00", "#D2691E", "#FF7F50", "#6495ED", "#FFF8DC", "#DC143C", "#00FFFF", "#00008B", "#008B8B", "#B8860B", "#A9A9A9", "#A9A9A9", "#006400", "#BDB76B", "#8B008B", "#556B2F", "#FF8C00", "#9932CC", "#8B0000", "#E9967A", "#8FBC8F", "#483D8B", "#2F4F4F", "#2F4F4F", "#00CED1", "#9400D3", "#FF1493", "#00BFFF", "#696969", "#696969", "#1E90FF", "#B22222", "#FFFAF0", "#228B22", "#FF00FF", "#DCDCDC", "#F8F8FF", "#FFD700", "#DAA520", "#808080", "#808080", "#008000", "#ADFF2F", "#F0FFF0", "#FF69B4", "#CD5C5C", "#4B0082", "#FFFFF0", "#F0E68C", "#E6E6FA", "#FFF0F5", "#7CFC00", "#FFFACD", "#ADD8E6", "#F08080", "#E0FFFF", "#FAFAD2", "#D3D3D3", "#D3D3D3", "#90EE90", "#FFB6C1", "#FFA07A", "#20B2AA", "#87CEFA", "#778899", "#778899", "#B0C4DE", "#FFFFE0", "#00FF00", "#32CD32", "#FAF0E6", "#FF00FF", "#800000", "#66CDAA", "#0000CD", "#BA55D3", "#9370DB", "#3CB371", "#7B68EE", "#00FA9A", "#48D1CC", "#C71585", "#191970", "#F5FFFA", "#FFE4E1", "#FFE4B5", "#FFDEAD", "#000080", "#FDF5E6", "#808000", "#6B8E23", "#FFA500", "#FF4500", "#DA70D6", "#EEE8AA", "#98FB98", "#AFEEEE", "#DB7093", "#FFEFD5", "#FFDAB9", "#CD853F", "#FFC0CB", "#DDA0DD", "#B0E0E6", "#800080", "#663399", "#FF0000", "#BC8F8F", "#4169E1", "#8B4513", "#FA8072", "#F4A460", "#2E8B57", "#FFF5EE", "#A0522D", "#C0C0C0", "#87CEEB", "#6A5ACD", "#708090", "#708090", "#FFFAFA", "#00FF7F", "#4682B4", "#D2B48C", "#008080", "#D8BFD8", "#FF6347", "#40E0D0", "#EE82EE", "#F5DEB3", "#FFFFFF", "#F5F5F5", "#FFFF00", "#9ACD32"];
+
+  if (colorNumber2 === undefined || colorNumber2 === 149) {colorNumber2 = 0;}
+  else {colorNumber2 = colorNumber2 + 1;}
+  for (i = 0; i < document.getElementsByClassName("filter").length; i++) {
+    localStorage.myTextColor = colorNames2[colorNumber2];
+    document.getElementsByClassName("filter")[i].style.color = colorNames2[colorNumber2];
+  }
+}
+
+for (i = 0; i < document.getElementsByClassName("filter").length; i++) {
+  document.getElementsByClassName("filter")[i].onmouseover = function() {
+      this.style.backgroundColor = localStorage.myHoverBackgroundColor;
+      this.style.color = localStorage.myHoverColor;
+  }
+  document.getElementsByClassName("filter")[i].onmouseout = function() {
+      this.style.backgroundColor = localStorage.myPageColor;
+      this.style.color = localStorage.myTextColor;
+  }
+}
+
+var colorNumber3;
+
+function HoverBackgroundColor() {
+  var colorNames3 = ["#F0F8FF", "#FAEBD7", "#00FFFF", "#7FFFD4", "#F0FFFF", "#F5F5DC", "#FFE4C4", "#000000", "#FFEBCD", "#0000FF", "#8A2BE2", "#A52A2A", "#DEB887", "#5F9EA0", "#7FFF00", "#D2691E", "#FF7F50", "#6495ED", "#FFF8DC", "#DC143C", "#00FFFF", "#00008B", "#008B8B", "#B8860B", "#A9A9A9", "#A9A9A9", "#006400", "#BDB76B", "#8B008B", "#556B2F", "#FF8C00", "#9932CC", "#8B0000", "#E9967A", "#8FBC8F", "#483D8B", "#2F4F4F", "#2F4F4F", "#00CED1", "#9400D3", "#FF1493", "#00BFFF", "#696969", "#696969", "#1E90FF", "#B22222", "#FFFAF0", "#228B22", "#FF00FF", "#DCDCDC", "#F8F8FF", "#FFD700", "#DAA520", "#808080", "#808080", "#008000", "#ADFF2F", "#F0FFF0", "#FF69B4", "#CD5C5C", "#4B0082", "#FFFFF0", "#F0E68C", "#E6E6FA", "#FFF0F5", "#7CFC00", "#FFFACD", "#ADD8E6", "#F08080", "#E0FFFF", "#FAFAD2", "#D3D3D3", "#D3D3D3", "#90EE90", "#FFB6C1", "#FFA07A", "#20B2AA", "#87CEFA", "#778899", "#778899", "#B0C4DE", "#FFFFE0", "#00FF00", "#32CD32", "#FAF0E6", "#FF00FF", "#800000", "#66CDAA", "#0000CD", "#BA55D3", "#9370DB", "#3CB371", "#7B68EE", "#00FA9A", "#48D1CC", "#C71585", "#191970", "#F5FFFA", "#FFE4E1", "#FFE4B5", "#FFDEAD", "#000080", "#FDF5E6", "#808000", "#6B8E23", "#FFA500", "#FF4500", "#DA70D6", "#EEE8AA", "#98FB98", "#AFEEEE", "#DB7093", "#FFEFD5", "#FFDAB9", "#CD853F", "#FFC0CB", "#DDA0DD", "#B0E0E6", "#800080", "#663399", "#FF0000", "#BC8F8F", "#4169E1", "#8B4513", "#FA8072", "#F4A460", "#2E8B57", "#FFF5EE", "#A0522D", "#C0C0C0", "#87CEEB", "#6A5ACD", "#708090", "#708090", "#FFFAFA", "#00FF7F", "#4682B4", "#D2B48C", "#008080", "#D8BFD8", "#FF6347", "#40E0D0", "#EE82EE", "#F5DEB3", "#FFFFFF", "#F5F5F5", "#FFFF00", "#9ACD32"];
+
+  if (colorNumber3 === undefined || colorNumber3 === 149) {colorNumber3 = 0;}
+  else {colorNumber3 = colorNumber3 + 1;}
+  for (i = 0; i < document.getElementsByClassName("filter").length; i++) {
+    localStorage.myHoverBackgroundColor = colorNames3[colorNumber3];
+  }
+}
+
+var colorNumber4;
+
+function HoverColor() {
+  var colorNames4 = ["#F0F8FF", "#FAEBD7", "#00FFFF", "#7FFFD4", "#F0FFFF", "#F5F5DC", "#FFE4C4", "#000000", "#FFEBCD", "#0000FF", "#8A2BE2", "#A52A2A", "#DEB887", "#5F9EA0", "#7FFF00", "#D2691E", "#FF7F50", "#6495ED", "#FFF8DC", "#DC143C", "#00FFFF", "#00008B", "#008B8B", "#B8860B", "#A9A9A9", "#A9A9A9", "#006400", "#BDB76B", "#8B008B", "#556B2F", "#FF8C00", "#9932CC", "#8B0000", "#E9967A", "#8FBC8F", "#483D8B", "#2F4F4F", "#2F4F4F", "#00CED1", "#9400D3", "#FF1493", "#00BFFF", "#696969", "#696969", "#1E90FF", "#B22222", "#FFFAF0", "#228B22", "#FF00FF", "#DCDCDC", "#F8F8FF", "#FFD700", "#DAA520", "#808080", "#808080", "#008000", "#ADFF2F", "#F0FFF0", "#FF69B4", "#CD5C5C", "#4B0082", "#FFFFF0", "#F0E68C", "#E6E6FA", "#FFF0F5", "#7CFC00", "#FFFACD", "#ADD8E6", "#F08080", "#E0FFFF", "#FAFAD2", "#D3D3D3", "#D3D3D3", "#90EE90", "#FFB6C1", "#FFA07A", "#20B2AA", "#87CEFA", "#778899", "#778899", "#B0C4DE", "#FFFFE0", "#00FF00", "#32CD32", "#FAF0E6", "#FF00FF", "#800000", "#66CDAA", "#0000CD", "#BA55D3", "#9370DB", "#3CB371", "#7B68EE", "#00FA9A", "#48D1CC", "#C71585", "#191970", "#F5FFFA", "#FFE4E1", "#FFE4B5", "#FFDEAD", "#000080", "#FDF5E6", "#808000", "#6B8E23", "#FFA500", "#FF4500", "#DA70D6", "#EEE8AA", "#98FB98", "#AFEEEE", "#DB7093", "#FFEFD5", "#FFDAB9", "#CD853F", "#FFC0CB", "#DDA0DD", "#B0E0E6", "#800080", "#663399", "#FF0000", "#BC8F8F", "#4169E1", "#8B4513", "#FA8072", "#F4A460", "#2E8B57", "#FFF5EE", "#A0522D", "#C0C0C0", "#87CEEB", "#6A5ACD", "#708090", "#708090", "#FFFAFA", "#00FF7F", "#4682B4", "#D2B48C", "#008080", "#D8BFD8", "#FF6347", "#40E0D0", "#EE82EE", "#F5DEB3", "#FFFFFF", "#F5F5F5", "#FFFF00", "#9ACD32"];
+
+  if (colorNumber4 === undefined || colorNumber4 === 149) {colorNumber4 = 0;}
+  else {colorNumber4 = colorNumber4 + 1;}
+  for (i = 0; i < document.getElementsByClassName("filter").length; i++) {
+    localStorage.myHoverBackgroundColor = colorNames4[colorNumber4];
+  }
+}
+
+// *** Color Pickers (3 of 3)
 
 </script>
 
