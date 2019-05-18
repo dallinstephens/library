@@ -118,7 +118,7 @@ option:hover {background: #d9d9d9;}
 
   	<!-- Get All Selected Values From a Multiple Select Box (Explanation): openNav() opens the side navigation panel. -->
 <!-- onfocus = "searchList(); document.getElementById('select-container').value = 'all'; document.getElementById('select-container').dispatchEvent(new Event('change'));" -->
-    <select id="select-container" multiple="multiple">
+    <select id="select-container" multiple="multiple" size=4>
         <optgroup disabled hidden></optgroup>
         <option id="all" value="all">All</option>
         <option value="html">HTML</option>
@@ -544,6 +544,16 @@ filterSelection("all");
 
 // This is needed upon load of page. The if statement is needed because the width only applies for screen widths greater than 470. For smaller screen sizes less than or equal to 470, the vertical scroll is needed and so that affects the width.
 
+// *** Dynamically changes width of select box, search box, and clear button (Explanation)
+
+// * Dynamically change height of mySidenav (1 of 1)
+
+// * Dynamically change height of mySidenav (Explanation)
+
+// This is needed upon load of page. The if statement is needed because the height only applies for screen widths greater than 470. For smaller screen sizes less than or equal to 470, the page is needed to scroll vertically and without the if statement, this code would prevent vertically scrolling since the height is specificied.
+
+// *** Dynamically change height of mySidenav (Explanation)
+
 if (window.innerWidth > 470) {
   document.body.style.overflowX = "scroll";
   document.body.style.overflowY = "hidden";
@@ -557,7 +567,17 @@ else {
   document.getElementById("mySidenav").style.height = "100%";
 }
 
+// * Dynamically changes width of select box, search box, and clear button (Explanation)
+
 // This is needed upon resizing of page.
+
+// *** Dynamically changes width of select box, search box, and clear button (Explanation)
+
+// * Dynamically change height of mySidenav (Explanation)
+
+// This is needed upon resizing of page.
+
+// *** Dynamically change height of mySidenav (Explanation)
 
 window.addEventListener("resize", function() {
   if (window.innerWidth > 470) {
@@ -574,33 +594,11 @@ window.addEventListener("resize", function() {
   }
 });
 
+// *** Dynamically change heigh of mySidenav (1 of 1)
+
 // *** Dynamically changes width of select box, search box, and clear button (Explanation)
 
 // *** Dynamically changes width of select box, search box, and clear button (1 of 1)
-
-// * Dynamically change height of mySidenav (1 of 1)
-
-// * Dynamically change height of mySidenav (Explanation)
-
-// This is needed upon load of page. The if statement is needed because the height only applies for screen widths greater than 470. For smaller screen sizes less than or equal to 470, the page is needed to scroll vertically and without the if statement, this code would prevent vertically scrolling since the height is specificied.
-
-// document.getElementById("mySidenav").style.top = document.getElementById("containerSelectOptionsSearchBars").style.height + 20 + "vh";
-
-
-
-// This is needed upon resizing of page.
-
-//window.addEventListener("resize", function() {
-
-	// document.getElementById("mySidenav").style.top = document.getElementById("containerSelectOptionsSearchBars").style.height + 20 + "vh";
-
-
-
-//});
-
-// *** Dynamically change height of mySidenav (Explanation)
-
-// *** Dynamically change heigh of mySidenav (1 of 1)
 
 </script>
 
