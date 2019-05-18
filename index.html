@@ -5,7 +5,7 @@
 
 <style>
 
-body {background: #ffe6e6;}
+body {background: lightblue;}
 
 /* * Filter By Letter & or Web Language (1 of 4) */
 
@@ -25,6 +25,7 @@ body {background: #ffe6e6;}
 }
 
 #myInput {
+  width: 100%;
   font-size: 15px;
   padding-top: 7px;
   padding-bottom: 7px;
@@ -538,34 +539,37 @@ filterSelection("all");
 
 // *** Filter By Letter & or Web Language (4 of 4)
 
-// * Dynamically changes width of search box so clear button can be on the right of the search box. (1 of 1)
+// * Dynamically changes width of select box, search box, and clear button (1 of 1)
 
-// * Dynamically changes width of search box so clear button can be on the right of the search box. (Explanation)
+// * Dynamically changes width of select box, search box, and clear button (Explanation)
 
-// This is needed upon load of page. The if statement is needed because the width only applies for screen widths greater than 470. For smaller screen sizes less than or equal to 470, the vertical scroll is needed and so that affects the width so the clear button stays put. Without the if statement, the clear button jumps down to the next line when screen size width is less than or equal to 470px.
+// This is needed upon load of page. The if statement is needed because the width only applies for screen widths greater than 470. For smaller screen sizes less than or equal to 470, the vertical scroll is needed and so that affects the width.
 
 if (window.innerWidth > 470) {
-  document.getElementById("myInput").style.width = window.innerWidth - 88 + "px";
+  document.body.style.overflowY = "hidden";
+  document.getElementById("containerSelectOptionsSearchBars").style.width = window.innerWidth - 20 + "px";
 }
 else {
   document.body.style.overflowY = "scroll";
-  document.getElementById("myInput").style.width = window.innerWidth - 88 + "px";
+  document.getElementById("containerSelectOptionsSearchBars").style.width = window.innerWidth - 37 + "px";
 }
 
 // This is needed upon resizing of page.
 
 window.addEventListener("resize", function() {
   if (window.innerWidth > 470) {
-    document.getElementById("myInput").style.width = window.innerWidth - 88 + "px";
+    document.body.style.overflowY = "hidden";
+    document.getElementById("containerSelectOptionsSearchBars").style.width = window.innerWidth - 20 + "px";
   }
   else {
-    document.getElementById("myInput").style.width = window.innerWidth - 88 + "px";
+    document.body.style.overflowY = "scroll";
+    document.getElementById("containerSelectOptionsSearchBars").style.width = window.innerWidth - 37 + "px";
   }
 });
 
-// *** Dynamically changes width of search box so clear button can be on the right of the search box. (Explanation)
+// *** Dynamically changes width of select box, search box, and clear button (Explanation)
 
-// *** Dynamically changes width of search box so clear button can be on the right of the search box. (1 of 1)
+// *** Dynamically changes width of select box, search box, and clear button (1 of 1)
 
 // * Dynamically change height of mySidenav (1 of 1)
 
