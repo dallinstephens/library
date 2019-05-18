@@ -84,6 +84,13 @@
   column-fill: auto;
 }
 
+/* *** Reponsive Web Design For Multiple Columns (1 of 1) */
+@media only screen and (max-width: 470px) {
+  #mySidenav {
+    height:100%;
+  }
+}
+
 /* *** Multiple Columns (1 of 2) */
 
 /* Select Options & Search Bars Position Fixed (1 of 3) */
@@ -531,14 +538,24 @@ filterSelection("all");
 
 // * Dynamically changes width of search box so clear button can be on the right of the search box. (Explanation)
 
-// This is needed upon load of page.
+// This is needed upon load of page. The if statement is needed because the width only applies for screen widths greater than 470. For smaller screen sizes less than or equal to 470, the vertical scroll is needed and so that affects the width so the clear button stays put. Without the if statement, the clear button jumps down to the next line when screen size width is less than or equal to 470px.
 
-document.getElementById("myInput").style.width = window.innerWidth - 74 + "px";
+if (window.innerWidth > 470) {
+  document.getElementById("myInput").style.width = window.innerWidth - 74 + "px";
+}
+else {
+  document.getElementById("myInput").style.width = window.innerWidth - 91 + "px";
+}
 
 // This is needed upon resizing of page.
 
 window.addEventListener("resize", function() {
+  if (window.innerWidth > 470) {
     document.getElementById("myInput").style.width = window.innerWidth - 74 + "px";
+  }
+  else {
+    document.getElementById("myInput").style.width = window.innerWidth - 91 + "px";
+  }
 });
 
 // *** Dynamically changes width of search box so clear button can be on the right of the search box. (Explanation)
@@ -549,14 +566,26 @@ window.addEventListener("resize", function() {
 
 // * Dynamically change height of mySidenav (Explanation)
 
-// This is needed upon load of page.
+// This is needed upon load of page. The if statement is needed because the height only applies for screen widths greater than 470. For smaller screen sizes less than or equal to 470, the page is needed to scroll vertically and without the if statement, this code would prevent vertically scrolling since the height is specificied.
 
+if (window.innerWidth > 470) {
   document.getElementById("mySidenav").style.height = window.innerHeight - 104 + "px";
+}
+else {
+  document.getElementById("mySidenav").style.height = "100%";
+}
 
 // This is needed upon resizing of page.
 
 window.addEventListener("resize", function() {
+
+  if (window.innerWidth > 470) {
     document.getElementById("mySidenav").style.height = window.innerHeight - 104 + "px";
+  }
+  else {
+    document.getElementById("mySidenav").style.height = "100%";
+  }
+
 });
 
 // *** Dynamically change height of mySidenav (Explanation)
