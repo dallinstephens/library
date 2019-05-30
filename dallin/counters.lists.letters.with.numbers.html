@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+ol {
+  list-style-type: none;
+}
+
+ol.first-level-ol {
+  counter-reset: section;
+}
+
+ol.second-level-ol {counter-reset: subsection;}
+
+ol.third-level-ol {counter-reset: sub-subsection;}
+
+li.first-level-li::before {
+  counter-increment: section;
+  content: counter(section, upper-alpha) " ";
+}
+
+li.second-level-li::before {
+  counter-increment: subsection;
+  content: counter(section, upper-alpha) "." counter(subsection) " ";
+}
+
+li.third-level-li::before {
+  counter-increment: sub-subsection;
+  content: counter(section, upper-alpha) "." counter(subsection) counter(sub-subsection, lower-alpha) " ";
+}
+</style>
+</head>
+<body>
+
+<ol class="first-level-ol">
+  <li class="first-level-li">item
+    <ol class="second-level-ol">
+      <li class="second-level-li">item
+        <ol class="third-level-ol">
+          <li class="third-level-li">item</li>
+          <li class="third-level-li">item</li>
+          <li class="third-level-li">item</li>
+        </ol>
+      </li>
+      <li class="second-level-li">item
+        <ol class="third-level-ol">
+          <li class="third-level-li">item</li>
+          <li class="third-level-li">item</li>
+          <li class="third-level-li">item</li>
+        </ol>
+      </li>
+      <li class="second-level-li">item
+        <ol class="third-level-ol">
+          <li class="third-level-li">item</li>
+          <li class="third-level-li">item</li>
+          <li class="third-level-li">item</li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+  <li class="first-level-li">item
+    <ol class="second-level-ol">
+      <li class="second-level-li">item</li>
+      <li class="second-level-li">item</li>
+      <li class="second-level-li">item
+        <ol class="third-level-ol">
+          <li class="third-level-li">item</li>
+          <li class="third-level-li">item</li>
+          <li class="third-level-li">item</li>
+        </ol>
+      </li>
+      <li class="second-level-li">item</li>
+    </ol>
+  </li>
+  <li class="first-level-li">item</li>
+  <li class="first-level-li">item</li>
+</ol>
+
+<p><b>Note:</b> IE8 supports these properties only if a !DOCTYPE is specified.</p>
+
+</body>
+</html>

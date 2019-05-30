@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+ol {
+  list-style-type: none;
+}
+
+ol.main {
+  counter-reset: section;
+}
+
+ol.main > ol  {
+  counter-reset: subsection;
+}
+
+ol.main > ol > ol  {
+  counter-reset: sub-subsection;
+}
+
+ol.main > li::before {
+  counter-increment: section;
+  content: counter(section, upper-alpha) " ";
+}
+
+ol.main > li > ol > li::before {
+  counter-increment: subsection;
+  content: counter(section, upper-alpha) "." counter(subsection) " ";
+}
+
+ol.main > li > ol > li > ol > li::before {
+  counter-increment: sub-subsection;
+  content: counter(section, upper-alpha) "." counter(subsection) counter(sub-subsection, lower-alpha) " ";
+}
+</style>
+</head>
+<body>
+
+<ol class="main">
+  <li>item
+    <ol>
+      <li>item
+        <ol>
+          <li>item</li>
+          <li>item</li>
+          <li>item</li>
+        </ol>
+      </li>
+      <li>item
+        <ol>
+          <li>item</li>
+          <li>item</li>
+          <li>item</li>
+        </ol>
+      </li>
+      <li>item
+        <ol>
+          <li>item</li>
+          <li>item</li>
+          <li>item</li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+  <li>item
+    <ol>
+      <li>item</li>
+      <li>item</li>
+      <li>item
+        <ol>
+          <li>item</li>
+          <li>item</li>
+          <li>item</li>
+        </ol>
+      </li>
+      <li>item</li>
+    </ol>
+  </li>
+  <li>item</li>
+  <li>item</li>
+</ol>
+
+<p><b>Note:</b> IE8 supports these properties only if a !DOCTYPE is specified.</p>
+
+</body>
+</html>
